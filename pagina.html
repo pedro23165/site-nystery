@@ -1,295 +1,244 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4.1.0/turn.css"
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <!-- Link para o seu CSS -->
-    <title>Código de Trânsito</title>
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Roboto", sans-serif;
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="pagina.css">
+  <title>Código de Trânsito - Mapa Mental</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-      body {
-        background-color: #f9f9f9; /* Fundo claro */
-        color: #333; /* Texto escuro para boa legibilidade */
-      }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
 
-      header {
-        background-color: #4a90e2; /* Azul suave */
-        color: #fff;
-        padding: 20px;
-        text-align: center;
-      }
+    body {
+      background-color: #f9f9f9;
+      color: #333;
+    }
 
-      h1 {
-        font-size: 2.5em;
-        margin-bottom: 10px;
-      }
+    header {
+      background-color: #4A90E2;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
 
-      nav {
-        margin: 20px 0;
-      }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
 
-      nav a {
-        color: #fff;
-        text-decoration: none;
-        padding: 10px 15px;
-        border-radius: 5px;
-        transition: background-color 0.3s ease;
-      }
+    nav {
+      margin: 20px 0;
+    }
 
-      nav a:hover {
-        background-color: #357abd; /* Azul mais escuro ao passar o mouse */
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #357ABD;
+    }
+
+    .dashboard {
+      position: fixed;
+      left: -250px;
+      top: 60px;
+      width: 200px;
+      background-color: #e9ecef;
+      border-radius: 5px;
+      padding: 15px;
+      transition: left 0.3s ease;
+    }
+
+    .dashboard.active {
+      left: 0;
+    }
+
+    .dashboard a {
+      display: block;
+      padding: 10px;
+      color: #4A90E2;
+      text-decoration: none;
+      margin: 5px 0;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .dashboard a:hover {
+      background-color: #357ABD;
+      color: #fff;
+    }
+
+    .toggle-dashboard {
+      position: fixed;
+      left: 0;
+      top: 20px;
+      background-color: #4A90E2;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .toggle-dashboard:hover {
+      background-color: #357ABD;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      margin-left: 220px;
+    }
+
+    section {
+      margin-bottom: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #4A90E2;
+      color: #fff;
+    }
+
+    .image-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .image-container {
+      flex: 1 1 calc(33% - 20px);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .image-container:hover {
+      transform: scale(1.05);
+    }
+
+    .image-container img {
+      width: 30%;
+      height: auto;
+    }
+
+    @media (max-width: 768px) {
+      .dashboard {
+        width: 100%;
       }
 
       .container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 20px;
+        margin-left: 0;
       }
 
-      .section {
-        width: 100%;
-        margin: 20px 0;
-        padding: 20px;
-        background-color: #e9ecef; /* Fundo cinza claro para as seções */
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      .image-container {
+        flex: 1 1 calc(50% - 20px);
       }
+    }
 
-      .section h2 {
-        font-size: 2em;
-        margin-bottom: 15px;
-        color: #4a90e2; /* Azul suave para os títulos das seções */
-        cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    @media (max-width: 480px) {
+      .image-container {
+        flex: 1 1 100%;
       }
+    }
+  </style>
+</head>
 
-      .card {
-        background-color: #fff; /* Fundo branco para os cards */
-        border: 1px solid #ddd; /* Borda sutil */
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-      }
+<body>
+  <header>
+    <h1>Código de Trânsito Brasileiro</h1>
+    <nav>
+      <a href="#sobre">Sobre</a>
+      <a href="#provas">Provas Teóricas</a>
+      <a href="#galeria">Galeria</a>
+    </nav>
+  </header>
 
-      .article {
-        margin-bottom: 15px; /* Espaçamento entre artigos */
-      }
+  <button class="toggle-dashboard" onclick="toggleDashboard()">☰</button>
 
-      .article h4 {
-        font-size: 1.5em;
-        color: #4a90e2; /* Azul suave para os títulos dos artigos */
-      }
+  <div class="dashboard" id="dashboard">
+    <a href="#sobre">Sobre</a>
+    <a href="#provas">Provas Teóricas</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#">Meu Cadastro</a>
+  </div>
 
-      /* Estilo do modal */
-      .modal {
-        display: none; /* Escondido por padrão */
-        position: fixed;
-        z-index: 1000;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto; /* Permitir rolagem se necessário */
-        background-color: rgba(
-          0,
-          0,
-          0,
-          0.5
-        ); /* Fundo escuro com transparência */
-      }
+  <div class="container">
+    <section id="sobre">
+      <h2>Sobre o Site</h2>
+      <p>Este site foi criado para ajudar candidatos a se prepararem para as provas teóricas do DETRAN. Aqui, você
+        encontrará informações detalhadas sobre as leis de trânsito, dicas de estudo e recursos visuais que facilitarão
+        a compreensão dos temas abordados nas provas.</p>
+    </section>
 
-      .modal-content {
-        background-color: #fff;
-        margin: 15% auto; /* 15% do topo e centralizado */
-        padding: 20px;
-        border: 1px solid #888;
-        width: 80%; /* Largura do modal */
-        max-width: 600px; /* Largura máxima */
-        border-radius: 5px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-      }
+    <section id="provas">
+      <h2>Provas Teóricas do DETRAN</h2>
+      <p>As provas teóricas do DETRAN avaliam o conhecimento dos candidatos sobre as regras de trânsito, sinais e
+        legislação vigente. A prova é composta por questões de múltipla escolha.</p>
+      <p>Requisitos para aprovação:</p>
+      <ul>
+        <li>O candidato deve acertar pelo menos 70% das questões para ser aprovado.</li>
+        <li>A prova contém 30 questões, o que significa que é necessário acertar pelo menos 21 questões.</li>
+      </ul>
+      <p>Recomendamos o estudo das seguintes áreas:</p>
+      <ul>
+        <li>Legislação de Trânsito</li>
+        <li>Sinalização</li>
+        <li>Direção Defensiva</li>
+        <li>Primeiros Socorros</li>
+      </ul>
+    </section>
 
-      .close {
-        color: #aaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-      }
-
-      .close:hover,
-      .close:focus {
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
-      }
-
-      footer {
-        text-align: center;
-        padding: 20px;
-        background-color: #4a90e2;
-        color: #fff;
-        position: relative;
-        bottom: 0;
-        width: 100%;
-      }
-
-      footer p {
-        font-size: 0.9em;
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>Código de Trânsito Brasileiro</h1>
-      <nav>
-        <a href="#quiz">Quiz</a>
-        <a href="#leis">Ver Leis</a>
-      </nav>
-    </header>
-
-    <div class="container">
-      <div class="section">
-        <h2>Capítulo I - Das Disposições Preliminares</h2>
-        <div class="card">
-          <h3>Seção I - Das Disposições Gerais</h3>
-          <div class="article">
-            <h4>Art. 1º</h4>
-            <p>Artigo 1.</p>
-            <button
-              class="read-button"
-              onclick="openModal('O trânsito de qualquer natureza nas vias terrestres do território nacional, abertas à circulação, rege-se por este Código § 1º Considera-se trânsito a utilização das vias por pessoas, veículos e animais, isolados ou em grupos, conduzidos ou não, para fins de circulação, parada, estacionamento e operação de carga ou descarga.       § 2º O trânsito, em condições seguras, é um direito de todos e dever dos órgãos e entidades componentes do Sistema Nacional de Trânsito, a estes cabendo, no âmbito das respectivas competências, adotar as medidas destinadas a assegurar esse direito. § 3º Os órgãos e entidades componentes do Sistema Nacional de Trânsito respondem, no âmbito das respectivas competências, objetivamente, por danos causados aos cidadãos em virtude de ação, omissão ou erro na execução e manutenção de programas, projetos e serviços que garantam o exercício do direito do trânsito seguro. § 4º (VETADO)  § 5º Os órgãos e entidades de trânsito pertencentes ao Sistema Nacional de Trânsito darão prioridade em suas ações à defesa da vida, nela incluída a preservação da saúde e do meio-ambiente.                                                                                                           ')"
-            >
-              Ler
-            </button>
-          </div>
-          <div class="article">
-            <h4>Art. 2º</h4>
-            <p>Conteúdo do Art. 2º aqui.</p>
-            <button
-              class="read-button"
-              onclick="openModal('Conteúdo detalhado do Art. 2º aqui.')"
-            >
-              Ler
-            </button>
-          </div>
-          <div class="article">
-            <h4>Art. 3º</h4>
-            <p>Conteúdo do Art. 3º aqui.</p>
-            <button
-              class="read-button"
-              onclick="openModal('Conteúdo detalhado do Art. 3º aqui.')"
-            >
-              Ler
-            </button>
-          </div>
-          <div class="article">
-            <h4>Art. 4º</h4>
-            <p>Conteúdo do Art. 4º aqui.</p>
-            <button
-              class="read-button"
-              onclick="openModal('Conteúdo detalhado do Art. 4º aqui.')"
-            >
-              Ler
-            </button>
-          </div>
+    <section id="galeria">
+      <h2>Galeria de Imagens</h2>
+      <div class="image-gallery">
+        <div class="image-container">
+          <img src="https://www.infoescola.com/wp-content/uploads/2020/04/legislacao-de-transito-800x450.jpg"
+            alt="Legislação de Trânsito">
+          <p>Legislação de Trânsito: Conheça as principais leis que regem o trânsito no Brasil.</p>
+        </div>
+        <div class="image-container">
+          <img src="https://www.sindimotosp.org.br/wp-content/uploads/2020/11/sinalizacao.jpg" alt="Sinalização">
+          <p>Sinalização: Entenda os diferentes sinais de trânsito e suas funções.</p>
+        </div>
+        <div class="image-container">
+          <img src="https://www.avisosdeperigo.com.br/wp-content/uploads/2019/09/direcao-defensiva-1.jpg"
+            alt="Direção Defensiva">
+          <p>Direção Defensiva: Dicas e práticas para uma condução segura.</p>
+        </div>
+        <div class="image-container">
+          <img src="images.jpg" alt="Primeiros Socorros">
+          <p>Primeiros Socorros: Noções básicas que todo motorista deve saber.</p>
         </div>
       </div>
+    </section>
+  </div>
 
-      <!-- Capítulo II -->
-      <div class="section">
-        <h2>Capítulo II - Das Infrações</h2>
-        <div class="card">
-          <h3>Seção I - Disposições Gerais</h3>
-          <div class="article">
-            <h4>Art. 1º</h4>
-            <p>Conteúdo do Art. 1º aqui.</p>
-            <button
-              class="read-button"
-              onclick="openModal('Conteúdo detalhado do Art. 1º aqui.')"
-            >
-              Ler
-            </button>
-          </div>
-          <div class="article">
-            <h4>Art. 2º</h4>
-            <p>Conteúdo do Art. 2º aqui.</p>
-            <button
-              class="read-button"
-              onclick="openModal('Conteúdo detalhado do Art. 2º aqui.')"
-            >
-              Ler
-            </button>
-          </div>
-        </div>
-      </div>
+  <footer>
+    <p>&copy; 2024 Código de Trânsito Brasileiro. Todos os direitos reservados.</p>
+  </footer>
 
-      <!-- Capítulo III -->
-      <div class="section">
-        <h2>Capítulo III - Da Sinalização</h2>
-        <div class="card">
-          <h3>Seção I - Disposições Gerais</h3>
-          <div class="article">
-            <h4>Art. 1º</h4>
-            <p>Conteúdo do Art. 1º aqui.</p>
-            <button
-              class="read-button"
-              onclick="openModal('Conteúdo detalhado do Art. 1º aqui.')"
-            >
-              Ler
-            </button>
-          </div>
-        </div>
-      </div>
+  <script>
+    function toggleDashboard() {
+      const dashboard = document.getElementById("dashboard");
+      dashboard.classList.toggle("active");
+    }
+  </script>
+</body>
 
-      <!-- Continue adicionando os capítulos IV a X -->
-    </div>
-
-    <!-- Modal -->
-    <div id="myModal" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <h2>Conteúdo do Artigo</h2>
-        <p id="modalText"></p>
-      </div>
-    </div>
-
-    <footer>
-      <p>&copy; 2024 Código de Trânsito Brasileiro</p>
-    </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-      // Função para abrir o modal com o conteúdo do artigo
-      function openModal(content) {
-        document.getElementById("modalText").innerText = content; // Definir o texto do modal
-        document.getElementById("myModal").style.display = "block"; // Exibir o modal
-      }
-
-      // Função para fechar o modal
-      function closeModal() {
-        document.getElementById("myModal").style.display = "none"; // Esconder o modal
-      }
-
-      // Fechar o modal se o usuário clicar fora dele
-      window.onclick = function (event) {
-        const modal = document.getElementById("myModal");
-        if (event.target == modal) {
-          modal.style.display = "none";
-        }
-      };
-    </script>
-  </body>
 </html>

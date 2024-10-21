@@ -7,11 +7,23 @@
 }
 
 body {
-  background-image: url("download\ \(1\).jpg");
+  background-color: #001f3f; /* Azul noite */
+  position: relative; /* Para permitir que os filhos usem position absolute */
+}
+
+body::before {
+  content: "";
+  background-image: url("download\\(1\\).jpg"); /* Ajuste o caminho da imagem conforme necessário */
   background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed
-  
+  background-size: cover; /* Ajusta a imagem para cobrir todo o fundo */
+  background-position: center; /* Centraliza a imagem */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.5; /* Ajusta a opacidade para dar um efeito suave */
+  z-index: 0; /* Coloca a imagem atrás do conteúdo */
 }
 
 .container {
@@ -19,23 +31,25 @@ body {
   justify-content: center;
   width: 100%;
   margin-top: 100px;
+  position: relative; /* Garante que o conteúdo fique acima da imagem */
+  z-index: 1; /* Garante que o conteúdo fique acima da imagem */
 }
 
 .card {
-  background-color: #ffffff80;
+  background-color: #ffffff80; /* Fundo semi-transparente para a card */
   padding: 30px;
   border-radius: 4%;
   box-shadow: 3px 3px 1px 0px #00000060;
   width: 400px;
 }
 
-h1{
+h1 {
   text-align: center;
   margin-bottom: 20px;
-  color: #0d009c
+  color: #0d009c; /* Cor do título */
 }
 
-.label-float input{
+.label-float input {
   width: 100%;
   padding: 5px 5px;
   display: inline-block;
@@ -47,21 +61,20 @@ h1{
   font-size: 16px;
   transition: all .3s ease-out;
   border-radius: 0;
-  
 }
 
-.label-float{
+.label-float {
   position: relative;
   padding-top: 13px;
   margin-top: 5%;
   margin-bottom: 5%;
 }
 
-.label-float input:focus{
+.label-float input:focus {
   border-bottom: 2px solid #4038a0;
 }
 
-.label-float label{
+.label-float label {
   color: #0d009c;
   pointer-events: none;
   position: absolute;
@@ -72,13 +85,13 @@ h1{
 }
 
 .label-float input:focus + label,
-.label-float input:valid + label{
+.label-float input:valid + label {
   font-size: 13px;
   margin-top: 0;
-  color: #4038a0
+  color: #4038a0;
 }
 
-button{
+button {
   background-color: transparent;
   border-color: #0d009c;
   color: #0d009c;
@@ -92,17 +105,17 @@ button{
   transition: all .4s ease-out;
 }
 
-button:hover{
+button:hover {
   background-color: #0d009c;
   color: #fff;
 }
 
-.justify-center{
+.justify-center {
   display: flex;
   justify-content: center;
 }
 
-.fa-eye{
+.fa-eye {
   position: absolute;
   top: 15px;
   right: 10px;
@@ -110,7 +123,7 @@ button:hover{
   color: #0d009c;
 }
 
-#msgError{
+#msgError {
   text-align: center;
   color: #ff0000;
   background-color: #ffbbbb;
@@ -119,7 +132,7 @@ button:hover{
   display: none;
 }
 
-#msgSuccess{
+#msgSuccess {
   text-align: center;
   color: #00bb00;
   background-color: #bbffbe;
@@ -127,4 +140,3 @@ button:hover{
   border-radius: 4px;
   display: none;
 }
-

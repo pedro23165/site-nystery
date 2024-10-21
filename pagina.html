@@ -1,16 +1,295 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>gordo</title>
-  
-  
-    <h1>bora porraa</h1>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4.1.0/turn.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Link para o seu CSS -->
+    <title>Código de Trânsito</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
-    <a href="https://www.youtube.com/shorts/yBzEPx7pwOo">gozar</a>
-</head>
-<body>
-    
-</body>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto", sans-serif;
+      }
+
+      body {
+        background-color: #f9f9f9; /* Fundo claro */
+        color: #333; /* Texto escuro para boa legibilidade */
+      }
+
+      header {
+        background-color: #4a90e2; /* Azul suave */
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+      }
+
+      nav {
+        margin: 20px 0;
+      }
+
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      nav a:hover {
+        background-color: #357abd; /* Azul mais escuro ao passar o mouse */
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .section {
+        width: 100%;
+        margin: 20px 0;
+        padding: 20px;
+        background-color: #e9ecef; /* Fundo cinza claro para as seções */
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .section h2 {
+        font-size: 2em;
+        margin-bottom: 15px;
+        color: #4a90e2; /* Azul suave para os títulos das seções */
+        cursor: pointer; /* Muda o cursor para indicar que é clicável */
+      }
+
+      .card {
+        background-color: #fff; /* Fundo branco para os cards */
+        border: 1px solid #ddd; /* Borda sutil */
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+      }
+
+      .article {
+        margin-bottom: 15px; /* Espaçamento entre artigos */
+      }
+
+      .article h4 {
+        font-size: 1.5em;
+        color: #4a90e2; /* Azul suave para os títulos dos artigos */
+      }
+
+      /* Estilo do modal */
+      .modal {
+        display: none; /* Escondido por padrão */
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto; /* Permitir rolagem se necessário */
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.5
+        ); /* Fundo escuro com transparência */
+      }
+
+      .modal-content {
+        background-color: #fff;
+        margin: 15% auto; /* 15% do topo e centralizado */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%; /* Largura do modal */
+        max-width: 600px; /* Largura máxima */
+        border-radius: 5px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #4a90e2;
+        color: #fff;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+      }
+
+      footer p {
+        font-size: 0.9em;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Código de Trânsito Brasileiro</h1>
+      <nav>
+        <a href="#quiz">Quiz</a>
+        <a href="#leis">Ver Leis</a>
+      </nav>
+    </header>
+
+    <div class="container">
+      <div class="section">
+        <h2>Capítulo I - Das Disposições Preliminares</h2>
+        <div class="card">
+          <h3>Seção I - Das Disposições Gerais</h3>
+          <div class="article">
+            <h4>Art. 1º</h4>
+            <p>Artigo 1.</p>
+            <button
+              class="read-button"
+              onclick="openModal('O trânsito de qualquer natureza nas vias terrestres do território nacional, abertas à circulação, rege-se por este Código § 1º Considera-se trânsito a utilização das vias por pessoas, veículos e animais, isolados ou em grupos, conduzidos ou não, para fins de circulação, parada, estacionamento e operação de carga ou descarga.       § 2º O trânsito, em condições seguras, é um direito de todos e dever dos órgãos e entidades componentes do Sistema Nacional de Trânsito, a estes cabendo, no âmbito das respectivas competências, adotar as medidas destinadas a assegurar esse direito. § 3º Os órgãos e entidades componentes do Sistema Nacional de Trânsito respondem, no âmbito das respectivas competências, objetivamente, por danos causados aos cidadãos em virtude de ação, omissão ou erro na execução e manutenção de programas, projetos e serviços que garantam o exercício do direito do trânsito seguro. § 4º (VETADO)  § 5º Os órgãos e entidades de trânsito pertencentes ao Sistema Nacional de Trânsito darão prioridade em suas ações à defesa da vida, nela incluída a preservação da saúde e do meio-ambiente.                                                                                                           ')"
+            >
+              Ler
+            </button>
+          </div>
+          <div class="article">
+            <h4>Art. 2º</h4>
+            <p>Conteúdo do Art. 2º aqui.</p>
+            <button
+              class="read-button"
+              onclick="openModal('Conteúdo detalhado do Art. 2º aqui.')"
+            >
+              Ler
+            </button>
+          </div>
+          <div class="article">
+            <h4>Art. 3º</h4>
+            <p>Conteúdo do Art. 3º aqui.</p>
+            <button
+              class="read-button"
+              onclick="openModal('Conteúdo detalhado do Art. 3º aqui.')"
+            >
+              Ler
+            </button>
+          </div>
+          <div class="article">
+            <h4>Art. 4º</h4>
+            <p>Conteúdo do Art. 4º aqui.</p>
+            <button
+              class="read-button"
+              onclick="openModal('Conteúdo detalhado do Art. 4º aqui.')"
+            >
+              Ler
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Capítulo II -->
+      <div class="section">
+        <h2>Capítulo II - Das Infrações</h2>
+        <div class="card">
+          <h3>Seção I - Disposições Gerais</h3>
+          <div class="article">
+            <h4>Art. 1º</h4>
+            <p>Conteúdo do Art. 1º aqui.</p>
+            <button
+              class="read-button"
+              onclick="openModal('Conteúdo detalhado do Art. 1º aqui.')"
+            >
+              Ler
+            </button>
+          </div>
+          <div class="article">
+            <h4>Art. 2º</h4>
+            <p>Conteúdo do Art. 2º aqui.</p>
+            <button
+              class="read-button"
+              onclick="openModal('Conteúdo detalhado do Art. 2º aqui.')"
+            >
+              Ler
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Capítulo III -->
+      <div class="section">
+        <h2>Capítulo III - Da Sinalização</h2>
+        <div class="card">
+          <h3>Seção I - Disposições Gerais</h3>
+          <div class="article">
+            <h4>Art. 1º</h4>
+            <p>Conteúdo do Art. 1º aqui.</p>
+            <button
+              class="read-button"
+              onclick="openModal('Conteúdo detalhado do Art. 1º aqui.')"
+            >
+              Ler
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Continue adicionando os capítulos IV a X -->
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Conteúdo do Artigo</h2>
+        <p id="modalText"></p>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2024 Código de Trânsito Brasileiro</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      // Função para abrir o modal com o conteúdo do artigo
+      function openModal(content) {
+        document.getElementById("modalText").innerText = content; // Definir o texto do modal
+        document.getElementById("myModal").style.display = "block"; // Exibir o modal
+      }
+
+      // Função para fechar o modal
+      function closeModal() {
+        document.getElementById("myModal").style.display = "none"; // Esconder o modal
+      }
+
+      // Fechar o modal se o usuário clicar fora dele
+      window.onclick = function (event) {
+        const modal = document.getElementById("myModal");
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+    </script>
+  </body>
 </html>

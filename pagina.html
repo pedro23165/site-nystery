@@ -12,20 +12,25 @@
   <header>
     <h1>Código de Trânsito Brasileiro</h1>
     <nav>
-      <a href="#sobre">Sobre</a>
-      <a href="#provas">Provas Teóricas</a>
-      <a href="#galeria">Galeria</a>
+      <ul>
+        <li><a href="#">Sobre</a></li>
+        <li><a href="#">Provas Teóricas</a></li>
+        <li><a href="#">Galeria</a></li>
+      </ul>
     </nav>
   </header>
 
-  <button class="toggle-dashboard" onclick="toggleDashboard()">☰</button>
-
-  <div class="dashboard" id="dashboard">
-    <a href="#sobre">Sobre</a>
-    <a href="#provas">Provas Teóricas</a>
-    <a href="#galeria">Galeria</a>
-    <a href="#">Meu Cadastro</a>
-  </div>
+  <div>
+    <nav>
+      <ul> 
+        <li><img src="image/retangulos-de-menu.png" alt="Menu"> <a href="#">Menu</a></li> 
+        <li><img src="image/botao-de-informacoes.png" alt="Sobre"> <a href="#">Sobre</a></li>
+        <li><img src="image/prova-de-conceito.png" alt="Provas Teóricas"> <a href="#">Provas Teóricas</a></li>
+        <li><img src="image/galeria-de-imagens.png" alt="Galeria"> <a href="#">Galeria</a></li>
+        <li><img src="image/cadastro.png" alt="Meu Cadastro"> <a href="#">Meu Cadastro</a></li>
+      </ul>
+    </nav>
+  </div>  
 
   <div class="container">
     <section id="sobre">
@@ -36,7 +41,7 @@
     </section>
 
     <section id="provas">
-      <h2>Provas Teóricas do DETRAN</h2>
+      <h3>Provas Teóricas do DETRAN</h3>
       <p>As provas teóricas do DETRAN avaliam o conhecimento dos candidatos sobre as regras de trânsito, sinais e
         legislação vigente. A prova é composta por questões de múltipla escolha.</p>
       <p>Requisitos para aprovação:</p>
@@ -54,7 +59,7 @@
     </section>
 
     <section id="galeria">
-      <h2>Galeria de Imagens</h2>
+      <h4>Galeria de Imagens</h4>
       <div class="image-gallery">
         <div class="image-container">
           <img src="https://www.infoescola.com/wp-content/uploads/2020/04/legislacao-de-transito-800x450.jpg"
@@ -83,10 +88,10 @@
   </footer>
 
   <script>
-    function toggleDashboard() {
-      const dashboard = document.getElementById("dashboard");
-      dashboard.classList.toggle("active");
-    }
+     function toggleDashboard() {
+            const dashboard = document.getElementById('dashboard');
+            dashboard.classList.toggle('active');
+        }
   </script>
 </body>
 

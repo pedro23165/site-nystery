@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="leis.css">
+  <title>LEIS DE TRANSITO</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h1, h2, h3 {
+      color: #333;
+    }
+    section {
+      margin-bottom: 20px;
+    }
+    article {
+      margin-left: 20px;
+    }
+    .navigation {
+      text-align: center;
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      margin: 0 10px;
+      border: 1px solid #333;
+      background-color: #fff;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    .search-container {
+      text-align: right;
+      margin-bottom: 20px;
+    }
+    .search-container input {
+      padding: 10px;
+      width: 250px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .no-results {
+      color: red;
+      margin-top: 10px;
+      display: none; /* Inicialmente escondido */
+    }
+  </style>
+</head>
+<body>
+
+  <h1>LEIS DE TRANSITO</h1>
+
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Pesquisar artigo..." oninput="filterArticles()">
+  </div>
+
+  <div id="content">
+    <div class="no-results" id="noResultsMessage">Nenhum artigo encontrado.</div>
+    <section class="page" id="capitulo-i">
+      <h2>Capítulo I - Das Disposições Preliminares</h2>
+
+      <article id="secao-i">
+        <h3>Seção I - Das Disposições Gerais</h3>
+
+        <div class="article-content">
+          <h4>Art. 1º</h4>
+          <p>O trânsito de qualquer natureza nas vias terrestres do território nacional, abertas à circulação, rege-se por este Código.</p>
+          <p>§ 1º Considera-se trânsito a utilização das vias por pessoas, veículos e animais, isolados ou em grupos, conduzidos ou não, para fins de circulação, parada, estacionamento e operação de carga ou descarga.</p>
+          <p>§ 2º O trânsito, em condições seguras, é um direito de todos e dever dos órgãos e entidades componentes do Sistema Nacional de Trânsito, a estes cabendo, no âmbito das respectivas competências, adotar as medidas destinadas a assegurar esse direito.</p>
+          <p>§ 3º Os órgãos e entidades componentes do Sistema Nacional de Trânsito respondem, no âmbito das respectivas competências, objetivamente, por danos causados aos cidadãos em virtude de ação, omissão ou erro na execução e manutenção de programas, projetos e serviços que garantam o exercício do direito do trânsito seguro.</p>
+          <p>§ 4º (VETADO)</p>
+          <p>§ 5º Os órgãos e entidades de trânsito pertencentes ao Sistema Nacional de Trânsito darão prioridade em suas ações à defesa da vida, nela incluída a preservação da saúde e do meio-ambiente.</p>
+        </div>
+
+        <div class="article-content">
+          <h4>Art. 2º</h4>
+          <p>São vias terrestres urbanas e rurais as ruas, as avenidas, os logradouros, os caminhos, as passagens, as estradas e as rodovias, que terão seu uso regulamentado pelo órgão ou entidade com circunscrição sobre elas, de acordo com as peculiaridades locais e as circunstâncias especiais.</p>
+          <p>Parágrafo único. Para os efeitos deste Código, são consideradas vias terrestres as praias abertas à circulação pública, as vias internas pertencentes aos condomínios constituídos por unidades autônomas e as vias e áreas de estacionamento de estabelecimentos privados de uso coletivo. (Redação dada pela Lei nº 13.146, de 2015) (Vigência)</p>
+        </div>
+
+        <div class="article-content">
+          <h4>Art. 3º</h4>
+          <p>As disposições deste Código são aplicáveis a qualquer veículo, bem como aos proprietários, condutores dos veículos nacionais ou estrangeiros e às pessoas nele expressamente mencionadas.</p>
+        </div>
+
+        <div class="article-content">
+          <h4>Art. 4º</h4>
+          <p>Os conceitos e definições estabelecidos para os efeitos deste Código são os constantes do Anexo I.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="page" id="capitulo-ii" style="display: none;">
+      <h2>Capítulo II - Do Sistema Nacional de Trânsito</h2>
+
+      <article id="secao-i">
+        <h3>Seção I - Disposições Gerais</h3>
+
+        <div class="article-content">
+          <h4>Art. 5º</h4>
+          <p>O Sistema Nacional de Trânsito é o conjunto de órgãos e entidades da União, dos Estados, do Distrito Federal e dos Municípios que tem por finalidade o exercício das atividades de planejamento, administração, normatização, pesquisa, registro e licenciamento de veículos, formação, habilitação e reciclagem de condutores, educação, engenharia, operação do sistema viário, policiamento, fiscalização, julgamento de infrações e de recursos e aplicação de penalidades.</p>
+        </div>
+
+        <div class="article-content">
+          <h4>Art. 6º</h4>
+          <p>São objetivos básicos do Sistema Nacional de Trânsito:</p>
+          <p>I - estabelecer diretrizes da Política Nacional de Trânsito, com vistas à segurança, à fluidez, ao conforto, à defesa ambiental e à educação para o trânsito, e fiscalizar seu cumprimento;</p>
+          <p>II - fixar, mediante normas e procedimentos, a padronização de critérios técnicos, financeiros e administrativos para a execução das atividades de trânsito;</p>
+          <p>III - estabelecer a sistemática de fluxos permanentes de informações entre os seus diversos órgãos e entidades, a fim de facilitar o processo decisório e a integração do Sistema.</p>
+        </div>
+      </article>
+
+      <article id="secao-ii">
+        <h3>Seção II - Da Composição e da Competência do Sistema Nacional de Trânsito</h3>
+
+        <div class="article-content">
+          <h4>Art. 7º</h4>
+          <p>Compõem o Sistema Nacional de Trânsito os seguintes órgãos e entidades:</p>
+          <p>I - o Conselho Nacional de Trânsito - CONTRAN, coordenador do Sistema e órgão máximo normativo e consultivo;</p>
+          <p>II - os Conselhos Estaduais de Trânsito - CETRAN e o Conselho de Trânsito do Distrito Federal - CONTRANDIFE, órgãos normativos, consultivos e coordenadores;</p>
+          <p>III - os órgãos e entidades executivos de trânsito da União, dos Estados, do Distrito Federal e dos Municípios;</p>
+          <p>IV - os órgãos e entidades executivos rodoviários da União, dos Estados, do Distrito Federal e dos Municípios;</p>
+          <p>V - a Polícia Rodoviária Federal;</p>
+          <p>VI - as Polícias Militares dos Estados e do Distrito Federal; e</p>
+          <p>VII - as Juntas Administrativas de Recursos de Infrações - JARI.</p>
+        </div>
+
+        <div class="article-content">
+          <h4>Art. 7-Aº</h4>
+          <p>A autoridade portuária ou a entidade concessionária de porto organizado poderá celebrar convênios com os órgãos previstos no art. 7º, com a interveniência dos Municípios e Estados, juridicamente interessados, para o fim específico de facilitar a autuação por descumprimento da legislação de trânsito.</p>
+          <p>§ 1º O convênio valerá para toda a área física do porto organizado, inclusive, nas áreas dos terminais alfandegados, nas estações de transbordo, nas instalações portuárias públicas de pequeno porte e nos respectivos estacionamentos ou vias de trânsito internas.</p>
+          <p>§ 2º (VETADO)</p>
+          <p>§ 3º (VETADO)</p>
+        </div>
+
+       </article>
+    </section>
+        <section class="page" id="capitulo-iii" style="display: none;">
+          <h2>Capítulo III - Do Sistema Nacional de Trânsito</h2>
+        
+          <article id="secao-iii">
+            <h3>Seção I - Disposições Gerais</h3>
+        
+            <div class="article-content">
+              <h4>Art. 8º</h4>
+              <p>Os Estados, o Distrito Federal e os Municípios organizarão os respectivos órgãos e entidades executivos de trânsito e executivos rodoviários, estabelecendo os limites circunscricionais de suas atuações.</p>
+            </div>
+        
+            <div class="article-content">
+              <h4>Art. 9º</h4>
+              <p>O Presidente da República designará o ministério ou órgão da Presidência responsável pela coordenação máxima do Sistema Nacional de Trânsito, ao qual estará vinculado o CONTRAN e subordinado o órgão máximo executivo de trânsito da União.</p>
+            </div>
+        
+            <div class="article-content">
+              <h4>Art. 10</h4>
+              <p>O Contran, com sede no Distrito Federal, é composto dos Ministros de Estado responsáveis pelas seguintes áreas de competência:</p>
+              <p>II-A - (revogado);</p>
+              <p>III - ciência, tecnologia e inovações;</p>
+              <p>IV - educação;</p>
+              <p>V - defesa;</p>
+              <p>VI - meio ambiente;</p>
+              <p>VII - (revogado);</p>
+              <p>VIII - (VETADO)</p>
+              <p>IX - (VETADO)</p>
+              <p>X - (VETADO)</p>
+              <p>XI - (VETADO)</p>
+              <p>XII - (VETADO)</p>
+              <p>XIII - (VETADO)</p>
+              <p>XIV - (VETADO)</p>
+              <p>XV - (VETADO)</p>
+              <p>XVI - (VETADO)</p>
+              <p>XVII - (VETADO)</p>
+              <p>XVIII - (VETADO)</p>
+              <p>XIX - (VETADO)</p>
+              <p>XX - (revogado);</p>
+              <p>XXI - (VETADO)</p>
+              <p>XXII - saúde;</p>
+              <p>XXIII - justiça;</p>
+              <p>XXIV - relações exteriores;</p>
+              <p>XXV - (revogado);</p>
+              <p>XXVI - indústria e comércio;</p>
+              <p>XXVII - agropecuária;</p>
+              <p>XXVIII - transportes terrestres;</p>
+              <p>XXIX - segurança pública;</p>
+              <p>XXX - mobilidade urbana.</p>
+              <p>§ 1º (VETADO)</p>
+              <p>§ 2º (VETADO)</p>
+              <p>§ 3º (VETADO)</p>
+              <p>§ 3º-A. O Contran será presidido pelo Ministro de Estado ao qual estiver subordinado o órgão máximo executivo de trânsito da União.</p>
+              <p>§ 4º Os Ministros de Estado poderão fazer-se representar por servidores de nível hierárquico igual ou superior ao Cargo Comissionado Executivo (CCE) nível 17, ou por oficial-general, na hipótese de tratar-se de militar.</p>
+              <p>§ 5º Compete ao dirigente do órgão máximo executivo de trânsito da União atuar como Secretário-Executivo do Contran.</p>
+              <p>§ 6º O quórum de votação e de aprovação no Contran é o de maioria absoluta.</p>
+            </div>
+        
+            <div class="article-content">
+              <h4>Art. 10-A</h4>
+              <p>Poderão ser convidados a participar de reuniões do Contran, sem direito a voto, representantes de órgãos e entidades setoriais responsáveis ou impactados pelas propostas ou matérias em exame.</p>
+            </div>
+        
+            <div class="article-content">
+              <h4>Art. 11</h4>
+              <p>(VETADO)</p>
+            </div>
+        
+            <div class="article-content">
+              <h4>Art. 12</h4>
+              <p>Compete ao CONTRAN:</p>
+              <p>I - estabelecer as normas regulamentares referidas neste Código e as diretrizes da Política Nacional de Trânsito;</p>
+              <p>II - coordenar os órgãos do Sistema Nacional de Trânsito, objetivando a integração de suas atividades;</p>
+              <p>III - (VETADO)</p>
+              <p>IV - criar Câmaras Temáticas;</p>
+              <p>V - estabelecer seu regimento interno e as diretrizes para o funcionamento dos CETRAN e CONTRANDIFE;</p>
+              <p>VI - estabelecer as diretrizes do regimento das JARI;</p>
+              <p>VII - zelar pela uniformidade e cumprimento das normas contidas neste Código e nas resoluções complementares;</p>
+              <p>VIII - estabelecer e normatizar os procedimentos para o enquadramento das condutas expressamente referidas neste Código, para a fiscalização e a aplicação das medidas administrativas e das penalidades por infrações e para a arrecadação das multas aplicadas e o repasse dos valores arrecadados;</p>
+              <p>IX - responder às consultas que lhe forem formuladas, relativas à aplicação da legislação de trânsito;</p>
+              <p>X - normatizar os procedimentos sobre a aprendizagem, habilitação, expedição de documentos de condutores, e registro e licenciamento de veículos;</p>
+              <p>XI - aprovar, complementar ou alterar os dispositivos de sinalização e os dispositivos e equipamentos de trânsito;</p>
+              <p>XII - (revogado);</p>
+              <p>XIII - avocar, para análise e soluções, processos sobre conflitos de competência ou circunscrição, ou, quando necessário, unificar as decisões administrativas;</p>
+              <p>XIV - dirimir conflitos sobre circunscrição e competência de trânsito no âmbito da União, dos Estados e do Distrito Federal.</p>
+              <p>XV - normatizar o processo de formação do candidato à obtenção da Carteira Nacional de Habilitação, estabelecendo seu conteúdo didático-pedagógico, carga horária, avaliações, exames, execução e fiscalização.</p>
+              <p>§ 1º As propostas de normas regulamentares de que trata o inciso I do caput deste artigo serão submetidas a prévia consulta pública, por meio da rede mundial de computadores, pelo período mínimo de 30 (trinta) dias, antes do exame da matéria pelo Contran.</p>
+              <p>§ 2º As contribuições recebidas na consulta pública de que trata o § 1º deste artigo ficarão à disposição do público pelo prazo de 2 (dois) anos, contado da data de encerramento da consulta pública.</p>
+              <p>§ 3º Em caso de urgência e de relevante interesse público, o presidente do Contran poderá editar deliberação, ad referendum do Plenário, para fins do disposto no inciso I do caput deste artigo.</p>
+              <p>§ 4º A deliberação de que trata o § 3º deste artigo:</p>
+              <p>I - na hipótese de não ser aprovada pelo Plenário do Contran no prazo de 120 (cento e vinte) dias, perderá sua eficácia, com manutenção dos efeitos dela decorrentes; e</p>
+              <p>II - não está sujeita ao disposto nos §§ 1º e 2º deste artigo, vedada sua reedição.</p>
+              <p>§ 5º Norma do Contran poderá dispor sobre o uso de sinalização horizontal ou vertical que utilize técnicas de estímulos comportamentais para a redução de sinistros de trânsito.</p>
+            </div>
+        
+            <div class="article-content">
+              <h4>Art. 13</h4>
+              <p>As Câmaras Temáticas, órgãos técnicos vinculados ao CONTRAN, são integradas por especialistas e têm como objetivo estudar e oferecer sugestões e embasamento técnico sobre assuntos específicos para decisões daquele colegiado.</p>
+              <p>§ 1º Cada Câmara é constituída por especialistas representantes de órgãos e entidades executivos da União, dos Estados, ou do Distrito Federal e dos Municípios, em igual número, pertencentes ao Sistema Nacional de Trânsito, além de especialistas representantes dos diversos segmentos da sociedade relacionados com o trânsito, todos indicados segundo regimento específico definido pelo CONTRAN e designados pelo ministro ou dirigente coordenador máximo do Sistema Nacional de Trânsito.</p>
+              <p>§ 2º Os segmentos da sociedade, relacionados no parágrafo anterior, serão representados por pessoa jurídica e devem atender aos requisitos estabelecidos pelo CONTRAN.</p>
+              <p>§ 3º A coordenação das Câmaras Temáticas será exercida por representantes do órgão máximo executivo de trânsito da União ou dos Ministérios representados no Contran, conforme definido no ato de criação de cada Câmara Temática.</p>
+              <p>§ 4º  (VETADO)</p>
+              <p>I -  (VETADO)</p>
+              <p>II -  (VETADO)</p>
+              <p>III -  (VETADO)</p>
+              <p>IV - (VETADO)</p>
+            </div>
+        
+            <div class="article-content">
+              <h4>Art. 14</h4>
+              <p>Compete aos Conselhos Estaduais de Trânsito - CETRAN e ao Conselho de Trânsito do Distrito Federal - CONTRANDIFE:</p>
+              <p>I - cumprir e fazer cumprir a legislação e as normas de trânsito, no âmbito das respectivas atribuições;</p>
+              <p>II - elaborar normas no âmbito das respectivas competências;</p>
+              <p>III - responder a consultas relativas à aplicação da legislação e dos procedimentos normativos de trânsito;</p>
+              <p>IV - estimular e orientar a execução de campanhas educativas de trânsito;</p>
+              <p>V - julgar os recursos interpostos contra decisões</p>
+              <p>a das JARI;</p>
+              <p>b dos órgãos e entidades executivos estaduais, nos casos de inaptidão permanente constatados nos exames de aptidão física, mental ou psicológica;</p>
+              <p>VI - indicar um representante para compor a comissão examinadora de candidatos portadores de deficiência física à habilitação para conduzir veículos automotores;</p>
+              <p>VII - (VETADO);</p>
+              <p>VIII - acompanhar e coordenar as atividades de administração, educação, engenharia, fiscalização, policiamento ostensivo de trânsito, formação de condutores, registro e licenciamento de veículos, articulando os órgãos do Sistema no Estado, reportando-se ao CONTRAN;</p>
+              <p>IX - dirimir conflitos sobre circunscrição e competência de trânsito no âmbito dos Municípios;</p>
+              <p>X - informar o CONTRAN sobre o cumprimento das exigências definidas nos §§ 1º e 2º do art. 333.</p>
+              <p>XI - designar, em caso de recursos deferidos e na hipótese de reavaliação dos exames, junta especial de saúde para examinar os candidatos à habilitação para conduzir veículos automotores. (Incluído pela Lei nº 9.602, de 1998)</p>
+              <p>Parágrafo único. Dos casos previstos no inciso V, julgados pelo órgão, não cabe recurso na esfera administrativa.</p>
+            </div>
+        
+            <div class="article-content">
+              <h4>Art. 15</h4>
+              <p>Os presidentes dos CETRAN e do CONTRANDIFE são nomeados pelos Governadores dos Estados e do Distrito Federal, respectivamente, e deverão ter reconhecida experiência em matéria de trânsito.</p>
+              <p>§ 1º Os membros dos CETRAN e do CONTRANDIFE são nomeados pelos Governadores dos Estados e do Distrito Federal, respectivamente.</p>
+              <p>§ 2º Os membros do CETRAN e do CONTRANDIFE deverão ser pessoas de reconhecida experiência em trânsito.</p>
+              <p>§ 3º O mandato dos membros do CETRAN e do CONTRANDIFE é de dois anos, admitida a recondução.</p>
+            </div>
+          </article>
+        </section>
+        
+
+        
+      </article>
+    </section>
+  </div>
+
+  <div class="navigation">
+    <button id="prevBtn" onclick="changePage(-1)">Anterior</button>
+    <button id="nextBtn" onclick="changePage(1)">Próximo</button>
+  </div>
+
+  <script>
+    let currentPage = 0;
+const pages = document.querySelectorAll('.page');
+
+// Função para alterar a página
+function changePage(direction) {
+  pages[currentPage].style.display = 'none'; // Esconde a página atual
+  currentPage += direction; // Muda a página atual
+  
+  // Verifica os limites antes de atualizar a exibição
+  if (currentPage < 0) currentPage = 0;
+  if (currentPage >= pages.length) currentPage = pages.length - 1;
+  
+  pages[currentPage].style.display = 'block'; // Mostra a nova página
+  
+  // Atualiza os botões de navegação
+  document.getElementById('prevBtn').disabled = currentPage === 0;
+  document.getElementById('nextBtn').disabled = currentPage === pages.length - 1;
+  
+  // Esconde a mensagem de 'no results' ao navegar
+  document.getElementById('noResultsMessage').style.display = 'none';
+}
+
+// Função de filtro de artigos
+function filterArticles() {
+  const input = document.getElementById('searchInput').value.toLowerCase();
+  const articles = document.querySelectorAll('.article-content');
+  let hasResults = false;
+
+  articles.forEach(article => {
+    const text = article.innerText.toLowerCase();
+    const isVisible = text.includes(input);
+    article.style.display = isVisible ? 'block' : 'none'; // Exibe ou oculta conforme a pesquisa
+    if (isVisible) {
+      hasResults = true;
+    }
+  });
+
+  // Mostra ou esconde a mensagem de resultados
+  document.getElementById('noResultsMessage').style.display = hasResults ? 'none' : 'block';
+}
+
+// Inicializa a navegação
+document.addEventListener('DOMContentLoaded', () => {
+  pages.forEach((page, index) => {
+    page.style.display = index === 0 ? 'block' : 'none'; // Apenas a primeira página visível
+  });
+  changePage(0);
+});
+
+  </script>
+
+</body>
+</html>

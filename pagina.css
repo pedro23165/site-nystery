@@ -47,7 +47,7 @@ div nav ul {
     float: left;
     width: 250px;
     height: 450px; 
-    background: #4A90E2;
+    background: #bcc1c699;
     padding: 10px;
     list-style-type: none;
     border-radius: 0px 5px 5px 0px;
@@ -73,7 +73,7 @@ nav {
 }
 
 nav a {
-    color: #fff;
+    color: #000000;
     text-decoration: none;
     padding: 10px 15px;
     border-radius: 5px;
@@ -102,10 +102,8 @@ h1 {
 
 section {
     margin-bottom: 20px;
-  }
-section h2{
-
 }
+
 
 .mind-map {
     display: flex;
@@ -141,14 +139,14 @@ section h2{
 
 footer {
     text-align: center;
-    padding: 20px;
+    padding: 40px;
     background-color: #4A90E2;
     color: #fff;
     position: relative;
-    height: 200;
     width: 100%;
     transition: background-color 0.3s ease;
     border: none; /* Remove qualquer borda */
+    margin-top: 50px;
 }
 
 footer:hover {

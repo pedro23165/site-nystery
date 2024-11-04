@@ -31,6 +31,7 @@
       </ul>
     </nav>
   </div>  
+
   <div class="wrapper">
     <div class="container">
       <section id="provas">
@@ -43,50 +44,46 @@
             <li>Direção defensiva</li>
             <li>Primeiros socorros</li>
         </ul>
-    </section>
-        <button class="button">Button</button>
+      </section>
+      <button class="button">Button</button>
     </div>
 
     <div class="container-galeria">
       <section id="galeria">
-        <h3>galeria de imagens</h3>
-          <p><strong>Esta galeria contém 100 placas de trânsito</strong></p>
-          <p><strong>placas abordadas nesta galeria:</strong></p>
-            <ul>
-              <li>informação</li>
-              <li>advertência</li>  
-              <li>Proibição</li>
-            </ul>
-    </section>
-        <button class="button">Button</button>
+        <h3>Galeria de Imagens</h3>
+        <p><strong>Esta galeria contém 100 placas de trânsito</strong></p>
+        <p><strong>Placas abordadas nesta galeria:</strong></p>
+        <ul>
+          <li>Informação</li>
+          <li>Advertência</li>  
+          <li>Proibição</li>
+        </ul>
+      </section>
+      <button class="button">Button</button>
     </div>
 
     <div class="container-leis">
-      <section id="Leis">
+      <section id="leis">
         <h3>Leis</h3>
-          <p><strong>Esta galeria contém 100 placas de trânsito</strong></p>
-          <p><strong>placas abordadas nesta galeria:</strong></p>
-            <ul>
-              <li>informação</li>
-              <li>advertência</li>  
-              <li>Proibição</li>
-            </ul>
-    </section>
-        <button class="button">Button</button>
+        <p><strong>Esta seção contém informações sobre as leis de trânsito</strong></p>
+        <ul>
+          <li>Informação</li>
+          <li>Advertência</li>  
+          <li>Proibição</li>
+        </ul>
+      </section>
+      <button class="button" onclick="redirecionarLeis()">Ver Leis</button>
     </div>
-</div>
-
-</section>
+  </div>
 
   <footer>
     <p>&copy; 2024 Código de Trânsito Brasileiro. Todos os direitos reservados.</p>
   </footer>
 
   <script>
-     function toggleDashboard() {
-            const dashboard = document.getElementById('dashboard');
-            dashboard.classList.toggle('active');
-        }
+    function redirecionarLeis() {
+      window.location.href = 'leis.html'; // Redireciona para leis.html seu buceta aaaaaa
+    }
   </script>
 </body>
 

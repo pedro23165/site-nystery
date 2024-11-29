@@ -89,20 +89,17 @@ h1 {
     margin: 0;
     font-size: 24px;
     margin-bottom: 10px;
-    animation: fadeIn 1s; /* Animação de entrada */
+    animation: fadeIn 1s; 
 }
 
-/* Contêiner principal que envolve as três caixas */
 .wrapper {
     display: flex;
-    justify-content: space-around; /* Espaço uniforme entre os contêineres */
-    align-items: flex-start; /* Alinha no topo dos contêineres */
-    gap: 10px; /* Espaçamento entre os contêineres */
+    justify-content: space-around; 
+    align-items: flex-start; 
     margin-left: auto;
     margin-right: auto;
 }
 
-/* Estilos comuns para os contêineres individuais */
 .container, .container-galeria, .container-leis {
     display: flex;
     flex-direction: column;
@@ -113,16 +110,8 @@ h1 {
     height: 450px;
     width: 400px;
     color: #e9ecef;
-    text-align: center;
 }
 
-/* Lista com margens */
-.container ul li, .container-galeria ul li, .container-leis ul li {
-    margin-left: 15px;
-    margin-right: auto;
-}
-
-/* Estilo do botão */
 .button {
     background-color: #bcc1c699;
     border: none;

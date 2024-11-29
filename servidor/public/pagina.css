@@ -8,66 +8,70 @@
 }
 
 body {
-    background-color: #f9f9f9; /* Fundo claro */
+    background-color: #ffffff; /* Fundo branco */
     color: #333; /* Texto escuro para boa legibilidade */
     transition: background-color 0.3s ease;
 }
 
 header {
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 10px 20px;
-    background-color: #4A90E2;
+    background-color: #333; /* Cor de fundo escura */
     color: white;
-    }
-    
+    border-radius: 5px; /* Bordas arredondadas */
+}
+
 header h1 {
     margin: 0;
     font-size: 24px;
-    }
-    
+}
+
 header ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex; 
-    }
-    
+    display: flex;
+}
+
 header ul li {
     margin-left: 15px;
-    }
-    
+}
+
 header ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
 }
+
 div nav ul {
     float: left;
     width: 250px;
-    height: 450px; 
-    background: #bcc1c699;
+    height: 450px;
+    background: #e0e0e0; /* Fundo cinza claro */
     padding: 10px;
     list-style-type: none;
-    border-radius: 0px 5px 5px 0px;
+    border-radius: 0px 5px 5px 0px; /* Bordas arredondadas */
 }
 
-div nav ul li{
-    display: flex; /* Usa flexbox para alinhar ícones e texto */
-    align-items: center; /* Alinha verticalmente */
-    margin: 10px 0; /* Espaçamento entre os itens */
+div nav ul li {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
 }
-div nav img{
+
+div nav img {
     height: 25px;
     width: 25px;
     margin-top: 5px;
 }
 
 nav a:hover {
-    background-color: #357ABD; /* Azul mais escuro ao passar o mouse */
-    transform: scale(1.05); /* Aumenta ligeiramente ao passar o mouse */
+    background-color: #757575; /* Cor cinza mais escuro ao passar o mouse */
+    transform: scale(1.05);
 }
+
 nav {
     margin: 20px 0;
 }
@@ -77,136 +81,129 @@ nav a {
     text-decoration: none;
     padding: 10px 15px;
     border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.2s ease;   
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-nav img{
+nav img {
     width: 50px;
     height: 50px;
-    margin-right: 10px; 
+    margin-right: 10px;
 }
+
 h1 {
     margin: 0;
     font-size: 24px;
     margin-bottom: 10px;
-    animation: fadeIn 1s; /* Animação de entrada */
+    animation: fadeIn 1s;
 }
 
-/* Contêiner principal que envolve as três caixas */
 .wrapper {
     display: flex;
-    justify-content: space-around; /* Espaço uniforme entre os contêineres */
-    align-items: flex-start; /* Alinha no topo dos contêineres */
-    gap: 10px; /* Espaçamento entre os contêineres */
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 10px;
     margin-left: auto;
     margin-right: auto;
 }
 
-/* Estilos comuns para os contêineres individuais */
 .container, .container-galeria, .container-leis {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #488bcd;
-    border-radius: 5px;
+    background-color: #b0b0b0; /* Cor de fundo cinza */
+    border-radius: 5px; /* Bordas arredondadas */
     padding: 55px;
     height: 450px;
     width: 400px;
-    color: #e9ecef;
+    color: #333; /* Cor do texto escuro */
     text-align: center;
 }
 
-/* Lista com margens */
 .container ul li, .container-galeria ul li, .container-leis ul li {
     margin-left: 15px;
     margin-right: auto;
 }
 
-/* Estilo do botão */
 .button {
-    background-color: #bcc1c699;
+    background-color: #e0e0e0; /* Cor de fundo cinza claro */
     border: none;
-    color: white;
+    color: #333; /* Texto escuro */
     padding: 45px;
     text-decoration: none;
     cursor: pointer;
     height: 20px;
     width: 200px;
     margin-top: 20px;
-    border-radius: 5px;
+    border-radius: 5px; /* Bordas arredondadas */
     padding-top: 25px;
 }
 
-
-
 .mind-map {
     display: flex;
-    flex-direction: row; /* Coloca os tópicos lado a lado */
-    flex-wrap: wrap; /* Permite que os tópicos se movam para a linha seguinte se não houver espaço */
-    justify-content: space-between; /* Espaço entre os tópicos */
-    width: 100%; /* Permite que a mente mapa ocupe a largura total */
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .topic {
-    background-color: #e9ecef;
-    border-radius: 5px;
+    background-color: #f0f0f0; /* Fundo cinza claro */
+    border-radius: 5px; /* Bordas arredondadas */
     padding: 15px;
-    margin: 10px; /* Margem em torno de cada tópico */
-    width: calc(30% - 20px); /* Largura dos tópicos, ajustando para as margens */
+    margin: 10px;
+    width: calc(30% - 20px);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s; /* Transição para hover */
+    transition: transform 0.2s;
 }
 
 .topic:hover {
-    transform: scale(1.02); /* Leve aumento ao passar o mouse */
+    transform: scale(1.02);
 }
 
 .topic h2 {
     margin-bottom: 10px;
-    color: #4A90E2;
+    color: #333; /* Cor de título escuro */
 }
 
 .subtopic {
     margin-top: 10px;
-    padding-left: 20px; /* Indentação para subtemas */
+    padding-left: 20px;
 }
 
 footer {
     text-align: center;
     padding: 40px;
-    background-color: #4A90E2;
+    background-color: #333; /* Cor de fundo escura */
     color: #fff;
     position: relative;
     width: 100%;
     transition: background-color 0.3s ease;
-    border: none; /* Remove qualquer borda */
+    border: none;
     margin-top: 450px;
 }
 
 footer:hover {
-    background-color: #357ABD; /* Azul mais escuro ao passar o mouse */
+    background-color: #757575; /* Cor cinza mais escuro ao passar o mouse */
 }
 
 footer p {
     font-size: 0.9em;
 }
 
-/* Modal */
 .modal {
-    display: none; /* Esconde o modal inicialmente */
+    display: none;
     position: fixed;
-    z-index: 1002; /* Acima do dashboard */
+    z-index: 1002;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgb(0, 0, 0); /* Cor de fundo */
-    background-color: rgba(0, 0, 0, 0.4); /* Fundo semi-transparente */
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal-content {
-    background-color: #fefefe;
+    background-color: #fff;
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
@@ -220,14 +217,12 @@ footer p {
     font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.close:hover, .close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
 }
 
-/* Animação de fade in */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -241,41 +236,41 @@ footer p {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-  }
+}
 
-  .image-container {
+.image-container {
     flex: 1 1 calc(33% - 20px);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
+    border-radius: 5px; /* Bordas arredondadas */
     overflow: hidden;
     transition: transform 0.3s;
-  }
+}
 
-  .image-container:hover {
+.image-container:hover {
     transform: scale(1.05);
-  }
+}
 
-  .image-container img {
-    width: 30%;
+.image-container img {
+    width: 100%; /* Imagens ocupam a largura total */
     height: auto;
-  }
+}
 
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
     .dashboard {
-      width: 100%;
+        width: 100%;
     }
 
     .container {
-      margin-left: 0;
+        margin-left: 0;
     }
 
     .image-container {
-      flex: 1 1 calc(50% - 20px);
+        flex: 1 1 calc(50% - 20px);
     }
-  }
+}
 
-  @media (max-width: 480px) {
+@media (max-width: 480px) {
     .image-container {
-      flex: 1 1 100%;
+        flex: 1 1 100%;
     }
-  }
+}

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Cadastro</title>
+    <link rel="stylesheet" href="cadastro.css">
+</head>
+<body>
+    <div class="overlay">
+        <div class="container cadastro">
+            <div class="close-button" onclick="window.location.href='login.html'">✖</div>
+            <div class="logo">🚦</div>
+            <h2>Criar sua conta</h2>
+
+            <form id="registrationForm">
+                <div class="input-group">
+                    <input type="text" id="name" placeholder="Nome" required>
+                    <span class="helper-text">Qual é o seu nome?</span>
+                </div>
+
+                <div class="input-group">
+                    <input type="tel" id="phone" placeholder="Celular" required>
+                    <span class="alt-option"><a href="#">Usar o e-mail</a></span>
+                </div>
+
+                <div class="input-group">
+                    <label>Data de Nascimento</label>
+                    <div class="birthdate-group">
+                        <select id="month" required>
+                            <option value="">Mês</option>
+                            <option value="01">Janeiro</option>
+                            <option value="02">Fevereiro</option>
+                            <option value="03">Março</option>
+                            <option value="04">Abril</option>
+                            <option value="05">Maio</option>
+                            <option value="06">Junho</option>
+                            <option value="07">Julho</option>
+                            <option value="08">Agosto</option>
+                            <option value="09">Setembro</option>
+                            <option value="10">Outubro</option>
+                            <option value="11">Novembro</option>
+                            <option value="12">Dezembro</option>
+                        </select>
+                        <select id="day" required>
+                            <option value="">Dia</option>
+                            <script>
+                                for (let i = 1; i <= 31; i++) {
+                                    document.write(`<option value="${i < 10 ? '0' + i : i}">${i}</option>`);
+                                }
+                            </script>
+                        </select>
+                        <select id="year" required>
+                            <option value="">Ano</option>
+                            <script>
+                                const currentYear = new Date().getFullYear();
+                                for (let i = currentYear; i >= 1900; i--) {
+                                    document.write(`<option value="${i}">${i}</option>`);
+                                }
+                            </script>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Senha" required>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" id="confirmPassword" placeholder="Confirme a Senha" required>
+                </div>
+
+                <button type="submit" class="btn-next">Avançar</button>
+            </form>
+
+            <p class="terms">
+                Ao se inscrever, você concorda com nossos <a href="#">Termos</a>, com a <a href="#">Política de Privacidade</a> e com o <a href="#">Uso de Cookies</a>.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
+
+        document.getElementById("registrationForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Captura os dados do formulário
+            const name = document.getElementById("name").value.trim();
+            const phone = document.getElementById("phone").value.trim();
+            const month = document.getElementById("month").value;
+            const day = document.getElementById("day").value;
+            const year = document.getElementById("year").value;
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
+
+            // Verifica se o usuário já existe pelo número de telefone ou nome
+            if (existingUsers.find(user => user.phone === phone)) {
+                alert("Usuário já existe. Por favor, tente outro número.");
+                return;
+            }
+
+            if (existingUsers.find(user => user.name.toLowerCase() === name.toLowerCase())) {
+                alert("Já existe um usuário cadastrado com esse nome.");
+                return;
+            }
+
+            // Verifica se as senhas correspondem
+            if (password !== confirmPassword) {
+                alert("As senhas não correspondem. Tente novamente.");
+                return;
+            }
+
+            // Verifica se a idade é maior de 16 anos
+            const birthdate = new Date(`${year}-${month}-${day}`);
+            const age = new Date().getFullYear() - birthdate.getFullYear();
+            const isAdult = age > 16 || (age === 16 && new Date() >= birthdate); // Considera 16 anos completos
+
+            if (!isAdult) {
+                alert("Você deve ter 16 anos ou mais para se cadastrar.");
+                return;
+            }
+
+            // Salva os dados no Local Storage
+            const userData = { name, phone, password, birthdate: `${day}/${month}/${year}` };
+            existingUsers.push(userData);
+            localStorage.setItem("users", JSON.stringify(existingUsers));
+
+            // Mostra a janela de confirmação de cookies
+            showCookiesDialog();
+        });
+
+        function showCookiesDialog() {
+            const overlay = document.querySelector('.overlay');
+            overlay.innerHTML = `
+                <div class="container">
+                    <h2>Obrigado pela sua inscrição!</h2>
+                    <p>Você aceita nossos Cookies?</p>
+                    <form id="cookiesForm">
+                        <label>
+                            <input type="checkbox" id="cookieConsent" required>
+                            Aceito os Cookies e as regras do aplicativo.
+                        </label><br>
+                        <label>
+                            <input type="checkbox" id="dataProcessing" required>
+                            Aceito o processamento de meus dados.
+                        </label><br>
+                        <button type="button" class="btn-confirm" onclick="confirmCookies()">Sim</button>
+                        <button type="button" class="btn-cancel" onclick="cancelCookies()">Não</button>
+                    </form>
+                </div>
+            `;
+        }
+
+        function confirmCookies() {
+            const cookieConsent = document.getElementById("cookieConsent").checked;
+            const dataProcessing = document.getElementById("dataProcessing").checked;
+
+            if (cookieConsent && dataProcessing) {
+                showNotificationDialog();
+            } else {
+                alert("Você deve aceitar as regras do aplicativo e o processamento de dados.");
+            }
+        }
+
+        function cancelCookies() {
+            alert("Você não aceitou os cookies.");
+            window.location.href = 'login.html';
+        }
+
+        function showNotificationDialog() {
+            const overlay = document.querySelector('.overlay');
+            overlay.innerHTML = `
+                <div class="container">
+                    <h2>Obrigado por aceitar os cookies!</h2>
+                    <p>Deseja receber notificações?</p>
+                    <button class="btn-notification" onclick="acceptNotifications()">Sim</button>
+                    <button class="btn-notification" onclick="rejectNotifications()">Não</button>
+                </div>
+            `;
+        }
+
+        function acceptNotifications() {
+            alert("Você se inscreveu para receber notificações.");
+            showThankYouMessage();
+        }
+
+        function rejectNotifications() {
+            alert("Você optou por não receber notificações.");
+            showThankYouMessage();
+        }
+
+        function showThankYouMessage() {
+            const overlay = document.querySelector('.overlay');
+            overlay.innerHTML = `
+                <div class="container">
+                    <h2>Obrigado!</h2>
+                    <p>Agradecemos por sua participação.</p>
+                    <button class="btn-start" onclick="redirectToLogin()">Ir para Login</button>
+                </div>
+            `;
+        }
+
+        function redirectToLogin() {
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>

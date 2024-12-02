@@ -239,20 +239,24 @@ footer p {
 }
 
 .image-container {
-    flex: 1 1 calc(33% - 20px);
+    flex: 1 1 calc(33% - 20px); /* Tamanho responsivo das imagens */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 5px; /* Bordas arredondadas */
     overflow: hidden;
     transition: transform 0.3s;
-}
-
-.image-container:hover {
-    transform: scale(1.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .image-container img {
     width: 100%; /* Imagens ocupam a largura total */
     height: auto;
+    object-fit: cover; /* Garante que a imagem preencha o container sem distorção */
+}
+
+.image-container:hover {
+    transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
@@ -265,12 +269,12 @@ footer p {
     }
 
     .image-container {
-        flex: 1 1 calc(50% - 20px);
+        flex: 1 1 calc(50% - 20px); /* 50% largura para telas menores */
     }
 }
 
 @media (max-width: 480px) {
     .image-container {
-        flex: 1 1 100%;
+        flex: 1 1 100%; /* Imagens ocupam 100% da largura em telas muito pequenas */
     }
 }

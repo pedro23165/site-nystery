@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Link para o arquivo CSS externo -->
   <link rel="stylesheet" href="pagina.css">
   <title>Código de Trânsito - Mapa Mental</title>
 </head>
@@ -15,22 +16,22 @@
       <ul>
         <li><a href="#">Sobre</a></li>
         <li><a href="#">Provas Teóricas</a></li>
-        <li><a href="#">Galeria</a></li>
+        <li><a href="#">Apostila de Estudo</a></li>
       </ul>
     </nav>
   </header>
 
   <div>
     <nav>
-      <ul> 
-        <li><img src="image/retangulos-de-menu.png" alt=""> <a href="#">Menu</a></li> 
+      <ul>
+        <li><img src="image/retangulos-de-menu.png" alt=""> <a href="#">Menu</a></li>
         <li><img src="image/botao-de-informacoes.png" alt=""> <a href="#">Sobre</a></li>
         <li><img src="image/prova-de-conceito.png" alt=""> <a href="#">Provas Teóricas</a></li>
-        <li><img src="image/galeria-de-imagens.png" alt=""> <a href="#">Galeria</a></li>
+        <li><img src="image/galeria-de-imagens.png" alt=""> <a href="#">Apostila de Estudo</a></li>
         <li><img src="image/cadastro.png" alt=""> <a href="#">Meu Cadastro</a></li>
       </ul>
     </nav>
-  </div>  
+  </div>
 
   <div class="wrapper">
     <div class="container">
@@ -48,18 +49,21 @@
       <button class="button">Button</button>
     </div>
 
-    <div class="container-galeria">
-      <section id="galeria">
-        <h3>Galeria de Imagens</h3>
-        <p><strong>Esta galeria contém 100 placas de trânsito</strong></p>
-        <p><strong>Placas abordadas nesta galeria:</strong></p>
+    <div class="container-apostila">
+      <section id="apostila">
+        <h3>Apostila de Estudo</h3>
+        <p><strong>Esta apostila contém os principais conteúdos de estudo para a prova de trânsito.</strong></p>
+        <p><strong>Conteúdos abordados nesta apostila:</strong></p>
         <ul>
-          <li>Informação</li>
-          <li>Advertência</li>  
-          <li>Proibição</li>
+          <li><a href="#" onclick="abrirApostila('legislacao')">Legislação de Trânsito</a></li>
+          <li><a href="#" onclick="abrirApostila('sinalizacao')">Placas e Sinalização</a></li>
+          <li><a href="#" onclick="abrirApostila('direcao')">Direção Defensiva</a></li>
+          <li><a href="#" onclick="abrirApostila('socorros')">Primeiros Socorros</a></li>
         </ul>
       </section>
-      <button class="button">Button</button>
+      
+      <!-- Botão para abrir o PDF em tela flutuante -->
+      <button class="button" id="openModalBtn">Ver Apostila</button>
     </div>
 
     <div class="container-leis">
@@ -68,7 +72,7 @@
         <p><strong>Esta seção contém informações sobre as leis de trânsito</strong></p>
         <ul>
           <li>Informação</li>
-          <li>Advertência</li>  
+          <li>Advertência</li>
           <li>Proibição</li>
         </ul>
       </section>
@@ -80,11 +84,73 @@
     <p>&copy; 2024 Código de Trânsito Brasileiro. Todos os direitos reservados.</p>
   </footer>
 
+  <!-- Modal -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <!-- Incluir o PDF dentro do modal -->
+      <iframe id="modalIframe" src="" width="100%" height="500px"></iframe>
+    </div>
+  </div>
+
   <script>
+    // Obter o modal
+    var modal = document.getElementById("myModal");
+
+    // Obter o botão que abre o modal
+    var btn = document.getElementById("openModalBtn");
+
+    // Obter o elemento <span> que fecha o modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // Quando o usuário clicar no botão, abre o modal
+    btn.onclick = function () {
+      modal.style.display = "block";
+    }
+
+    // Quando o usuário clicar no <span> (x), fecha o modal
+    span.onclick = function () {
+      modal.style.display = "none";
+    }
+
+    // Quando o usuário clicar fora do modal, fecha o modal
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+
+    // Função para abrir a apostila no modal
+    function abrirApostila(topico) {
+      var iframe = document.getElementById("modalIframe");
+      var url = '';
+
+      switch(topico) {
+        case 'legislacao':
+          url = 'legislacao.pdf'; // Substitua com o caminho real do arquivo PDF
+          break;
+        case 'sinalizacão':
+          url = 'sinalização.pdf'; // Substitua com o caminho real do arquivo PDF
+          break;
+        case 'direcao':
+          url = 'direcao_defensiva.pdf'; // Substitua com o caminho real do arquivo PDF
+          break;
+        case 'socorros':
+          url = 'socorro.pdf'; // Substitua com o caminho real do arquivo PDF
+          break;
+        default:
+          url = '';
+      }
+
+      iframe.src = url; // Define o conteúdo do iframe
+      modal.style.display = "block"; // Abre o modal
+    }
+
     function redirecionarLeis() {
-      window.location.href = 'leis.html'; // Redireciona para leis.html seu buceta aaaaaa
+      window.location.href = 'leis.html'; // Redireciona para leis.html
     }
   </script>
+
 </body>
 
 </html>

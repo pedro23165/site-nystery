@@ -189,6 +189,7 @@ footer p {
     font-size: 0.9em; 
 }
 
+/* Modal Styles */
 .modal { 
     display: none; 
     position: fixed; 
@@ -207,6 +208,8 @@ footer p {
     padding: 20px; 
     border: 1px solid #888; 
     width: 80%; 
+    position: absolute;
+    cursor: move;
 }
 
 .close { 
@@ -278,7 +281,6 @@ footer p {
     } 
 }
 
-
 .container-apostila { 
     display: flex; 
     flex-direction: column; 
@@ -291,21 +293,21 @@ footer p {
     color: #e0e0e0; /* Texto claro */
     text-align: center; 
     border:0px solid #444; /* Adiciona borda visível */
-    gap: 1px; /* Aproxima as opções dentro do contêiner */
+    gap: 55px; /* Aproxima as opções dentro do contêiner */
 }
 
 /* Estilo das opções dentro do contêiner, se for necessário ajustar */
 .container-apostila .option { 
     width: 100%; /* Ajusta a largura das opções para preencher o contêiner */
-    margin-bottom: 5px; /* Aproxima mais as opções entre si */
-    padding: 10px;
+    margin-bottom: 25px; /* Aproxima mais as opções entre si */
+    padding: 5px;
     background-color: #444; /* Fundo escuro das opções */
     border-radius: 5px; /* Bordas arredondadas nas opções */
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease; 
 }
 
-.container-apostila .option:hover {
-    background-color: #555; 
+/* Estilo do hover das opções */
+.container-apostila .option:hover { 
+    background-color: #666; /* Cor de fundo ao passar o mouse */
 }
-
 

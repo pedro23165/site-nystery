@@ -1,14 +1,68 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Link para o arquivo CSS externo -->
   <link rel="stylesheet" href="pagina.css">
-  <title>Código de Trânsito - Mapa Mental</title>
-</head>
+  <title>Página Inicial</title>
 
+  <style>
+    /* Estilo para o modal */
+    .modal {
+      display: none; /* Inicialmente oculto */
+      position: fixed; /* Fixa o modal na tela */
+      top: 0;
+      left: 0;
+      width: 100%; /* Largura 100% da tela */
+      height: 100%; /* Altura 100% da tela */
+      background-color: rgba(0, 0, 0, 0.6); /* Fundo escuro e transparente */
+      z-index: 9999; /* Garante que o modal fique acima de outros conteúdos */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Estilo do conteúdo dentro do modal */
+    .modal-content {
+      position: absolute;
+      width: 80%; /* Largura do modal */
+      height: 80%; /* Altura do modal */
+      background-color: white; /* Fundo do modal */
+      cursor: move; /* Indica que pode ser movido */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+    }
+
+    /* Estilo para o iframe */
+    #modalIframe {
+      width: 100%;
+      height: 100%;
+      border: none; /* Remove a borda do iframe */
+    }
+
+    /* Estilo para o botão de fechar */
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 10000; /* Garante que o botão de fechar fique acima do conteúdo */
+    }
+
+    /* Estilo para o botão de fechar quando o mouse passa por cima */
+    .close:hover,
+    .close:focus {
+      color: #f44336; /* Altera a cor para vermelho */
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
 <body>
   <header>
     <h1>Código de Trânsito Brasileiro</h1>
@@ -40,30 +94,34 @@
         <p>O candidato deve acertar pelo menos 70% das questões para ser aprovado.</p>
         <p>Recomendamos o estudo das seguintes áreas:</p>
         <ul>
-            <li>Legislação</li>
-            <li>Sinalização</li>
-            <li>Direção defensiva</li>
-            <li>Primeiros socorros</li>
+          <li>Legislação</li>
+          <li>Sinalização</li>
+          <li>Direção defensiva</li>
+          <li>Primeiros socorros</li>
         </ul>
       </section>
-      <button class="button">Button</button>
     </div>
 
     <div class="container-apostila">
       <section id="apostila">
-        <h3>Apostila de Estudo</h3>
-        <p><strong>Esta apostila contém os principais conteúdos de estudo para a prova de trânsito.</strong></p>
-        <p><strong>Conteúdos abordados nesta apostila:</strong></p>
-        <ul>
-          <li><a href="#" onclick="abrirApostila('legislacao')">Legislação de Trânsito</a></li>
-          <li><a href="#" onclick="abrirApostila('sinalizacao')">Placas e Sinalização</a></li>
-          <li><a href="#" onclick="abrirApostila('direcao')">Direção Defensiva</a></li>
-          <li><a href="#" onclick="abrirApostila('socorros')">Primeiros Socorros</a></li>
-        </ul>
+        <h3>Apostilas de Estudo</h3>
+        <div class="topic-box">
+          <h4></h4>
+          <button class="button" onclick="selecionarApostila('legislacao')">Apostila de Legislação</button>
+        </div>
+        <div class="topic-box">
+          <h4></h4>
+          <button class="button" onclick="selecionarApostila('sinalizacao')">Apostila de Sinalização</button>
+        </div>
+        <div class="topic-box">
+          <h4></h4>
+          <button class="button" onclick="selecionarApostila('direcao')">Apostila de Direção Defensiva</button>
+        </div>
+        <div class="topic-box">
+          <h4></h4>
+          <button class="button" onclick="selecionarApostila('socorros')">Apostila de Primeiros Socorros</button>
+        </div>
       </section>
-      
-      <!-- Botão para abrir o PDF em tela flutuante -->
-      <button class="button" id="openModalBtn">Ver Apostila</button>
     </div>
 
     <div class="container-leis">
@@ -86,10 +144,10 @@
 
   <!-- Modal -->
   <div id="myModal" class="modal">
-    <div class="modal-content">
+    <div class="modal-content" id="modalContent">
       <span class="close">&times;</span>
       <!-- Incluir o PDF dentro do modal -->
-      <iframe id="modalIframe" src="" width="100%" height="500px"></iframe>
+      <iframe id="modalIframe" src="" width="100%" height="100%"></iframe>
     </div>
   </div>
 
@@ -97,46 +155,45 @@
     // Obter o modal
     var modal = document.getElementById("myModal");
 
-    // Obter o botão que abre o modal
-    var btn = document.getElementById("openModalBtn");
-
     // Obter o elemento <span> que fecha o modal
     var span = document.getElementsByClassName("close")[0];
 
-    // Quando o usuário clicar no botão, abre o modal
-    btn.onclick = function () {
-      modal.style.display = "block";
+    // Função para selecionar a apostila ao clicar no botão
+    function selecionarApostila(topico) {
+      // Adiciona a classe 'selected' para mostrar a animação e a alteração visual
+      var buttons = document.querySelectorAll('.topic-box button');
+      buttons.forEach(function(button) {
+        button.classList.remove('selected'); // Remove a classe 'selected' de todos os botões
+      });
+
+      var selectedButton = document.querySelector('button[onclick="selecionarApostila(\'' + topico + '\')"]');
+      selectedButton.classList.add('selected'); // Adiciona a classe 'selected' ao botão clicado
+
+      // Armazena a seleção para abrir no modal quando clicar no botão
+      localStorage.setItem('selectedApostila', topico);
+
+      // Chama a função que abre o modal
+      abrirModal();
     }
 
-    // Quando o usuário clicar no <span> (x), fecha o modal
-    span.onclick = function () {
-      modal.style.display = "none";
-    }
-
-    // Quando o usuário clicar fora do modal, fecha o modal
-    window.onclick = function (event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    }
-
-    // Função para abrir a apostila no modal
-    function abrirApostila(topico) {
+    // Função para abrir a apostila no modal quando o botão for pressionado
+    function abrirModal() {
+      var topicoSelecionado = localStorage.getItem('selectedApostila');
       var iframe = document.getElementById("modalIframe");
       var url = '';
 
-      switch(topico) {
+      switch(topicoSelecionado) {
         case 'legislacao':
           url = 'legislacao.pdf'; // Substitua com o caminho real do arquivo PDF
           break;
-        case 'sinalizacão':
-          url = 'sinalização.pdf'; // Substitua com o caminho real do arquivo PDF
+        case 'sinalizacao':
+          url = 'manual.pdf'; // Substitua com o caminho real do arquivo PDF
           break;
         case 'direcao':
-          url = 'direcao_defensiva.pdf'; // Substitua com o caminho real do arquivo PDF
+          url = 'direcao.pdf'; // Substitua com o caminho real do arquivo PDF
           break;
         case 'socorros':
-          url = 'socorro.pdf'; // Substitua com o caminho real do arquivo PDF
+          url = 'socorros.pdf'; // Substitua com o caminho real do arquivo PDF
           break;
         default:
           url = '';
@@ -144,13 +201,43 @@
 
       iframe.src = url; // Define o conteúdo do iframe
       modal.style.display = "block"; // Abre o modal
+      resetModalPosition(); // Reseta a posição do modal ao abrir
     }
 
-    function redirecionarLeis() {
-      window.location.href = 'leis.html'; // Redireciona para leis.html
+    // Função para resetar a posição do modal ao abrir
+    function resetModalPosition() {
+      var modalContent = document.getElementById("modalContent");
+      modalContent.style.left = "50%";
+      modalContent.style.top = "50%";
+      modalContent.style.transform = "translate(-50%, -50%)"; // Centraliza o modal
     }
+
+    // Quando o usuário clicar no <span> (x), fecha o modal
+    span.onclick = function () {
+      modal.style.display = "none";
+    }
+
+    // Arrastar o modal
+    var modalContent = document.getElementById("modalContent");
+    var offsetX, offsetY;
+
+    modalContent.onmousedown = function(event) {
+      // Calcula a diferença entre a posição do mouse e a posição do modal
+      offsetX = event.clientX - modalContent.getBoundingClientRect().left;
+      offsetY = event.clientY - modalContent.getBoundingClientRect().top;
+
+      document.onmousemove = function(event) {
+        // Move o modal com o mouse
+        modalContent.style.left = event.clientX - offsetX + 'px';
+        modalContent.style.top = event.clientY - offsetY + 'px';
+      };
+
+      document.onmouseup = function() {
+        // Desliga o movimento do mouse quando soltar
+        document.onmousemove = null;
+        document.onmouseup = null;
+      };
+    };
   </script>
-
 </body>
-
 </html>

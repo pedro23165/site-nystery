@@ -217,27 +217,17 @@
       modal.style.display = "none";
     }
 
-    // Arrastar o modal
-    var modalContent = document.getElementById("modalContent");
-    var offsetX, offsetY;
+    // Quando o usuário clicar fora do modal, fecha-o
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
 
-    modalContent.onmousedown = function(event) {
-      // Calcula a diferença entre a posição do mouse e a posição do modal
-      offsetX = event.clientX - modalContent.getBoundingClientRect().left;
-      offsetY = event.clientY - modalContent.getBoundingClientRect().top;
-
-      document.onmousemove = function(event) {
-        // Move o modal com o mouse
-        modalContent.style.left = event.clientX - offsetX + 'px';
-        modalContent.style.top = event.clientY - offsetY + 'px';
-      };
-
-      document.onmouseup = function() {
-        // Desliga o movimento do mouse quando soltar
-        document.onmousemove = null;
-        document.onmouseup = null;
-      };
-    };
+    // Função para redirecionar para a página de leis
+    function redirecionarLeis() {
+      window.location.href = 'leis.html'; // Redireciona para a página de leis
+    }
   </script>
 </body>
 </html>

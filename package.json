@@ -1,5 +1,17 @@
 {
   "dependencies": {
+    "express": "^4.21.1",
     "path": "^0.12.7"
-  }
+  },
+  "name": "site-nystery",
+  "version": "1.0.0",
+  "main": "server6.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {},
+  "description": ""
 }

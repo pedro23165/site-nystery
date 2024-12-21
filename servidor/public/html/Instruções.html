@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/leis.css" />
+    <title>Instruções</title>
+  </head>
+  <body>
+    <h1>Instruções Reciclagem</h1>
+
+    <div class="search-container">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Pesquisar Instruções..."
+        oninput="filterArticles()"
+      />
+    </div>
+
+    <div id="content">
+      <div class="no-results" id="noResultsMessage">
+        Nenhum artigo encontrado.
+      </div>
+      <section class="page" id="capitulo-i">
+        <h2>Capítulo I - Das Disposições Preliminares</h2>
+      </section>
+
+      <section class="page" id="capitulo-ii" style="display: none">
+        <h2>Capítulo II - Do Sistema Nacional de Trânsito</h2>
+      </section>
+      <section class="page" id="capitulo-iii" style="display: none">
+        <h2>Capítulo III - Do Sistema Nacional de Trânsito</h2>
+      </section>
+    </div>
+
+    <div class="navigation">
+      <button id="prevBtn" onclick="changePage(-1)">Anterior</button>
+      <button id="nextBtn" onclick="changePage(1)">Próximo</button>
+    </div>
+
+    <script>
+      let currentPage = 0;
+      const pages = document.querySelectorAll(".page");
+
+      // Função para alterar a página
+      function changePage(direction) {
+        pages[currentPage].style.display = "none"; // Esconde a página atual
+        currentPage += direction; // Muda a página atual
+
+        // Verifica os limites antes de atualizar a exibição
+        if (currentPage < 0) currentPage = 0;
+        if (currentPage >= pages.length) currentPage = pages.length - 1;
+
+        pages[currentPage].style.display = "block"; // Mostra a nova página
+
+        // Atualiza os botões de navegação
+        document.getElementById("prevBtn").disabled = currentPage === 0;
+        document.getElementById("nextBtn").disabled =
+          currentPage === pages.length - 1;
+
+        // Esconde a mensagem de 'no results' ao navegar
+        document.getElementById("noResultsMessage").style.display = "none";
+      }
+
+      // Função de filtro de artigos
+      function filterArticles() {
+        const input = document
+          .getElementById("searchInput")
+          .value.toLowerCase();
+        const articles = document.querySelectorAll(".article-content");
+        let hasResults = false;
+
+        articles.forEach((article) => {
+          const text = article.innerText.toLowerCase();
+          const isVisible = text.includes(input);
+          article.style.display = isVisible ? "block" : "none"; // Exibe ou oculta conforme a pesquisa
+          if (isVisible) {
+            hasResults = true;
+          }
+        });
+
+        // Mostra ou esconde a mensagem de resultados
+        document.getElementById("noResultsMessage").style.display = hasResults
+          ? "none"
+          : "block";
+      }
+
+      // Inicializa a navegação
+      document.addEventListener("DOMContentLoaded", () => {
+        pages.forEach((page, index) => {
+          page.style.display = index === 0 ? "block" : "none"; // Apenas a primeira página visível
+        });
+        changePage(0);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/Calendário.css">
+</head>
+
+</html>
+<body>
+<div class="calendar-container">
+    <div class="calendar-header">
+        <button id="prevMonth">◀</button>
+        <h2 id="currentMonth"></h2>
+        <button id="nextMonth">▶</button>
+    </div>
+    <div class="calendar-grid" id="calendar"></div>
+</div>
+
+<div class="overlay" id="overlay"></div>
+<div class="event-form" id="eventForm">
+    <h3>Adicionar Evento</h3>
+    <p id="selectedDate"></p>
+    <input type="text" id="eventTitle" placeholder="Título do evento">
+    <button onclick="saveEvent()">Salvar</button>
+    <button onclick="closeEventForm()">Cancelar</button>
+</div>
+
+<script>
+let currentDate = new Date();
+let events = {};
+
+function updateCalendar() {
+    const calendar = document.getElementById('calendar');
+    const currentMonthDisplay = document.getElementById('currentMonth');
+    
+    // Clear previous calendar
+    calendar.innerHTML = '';
+    
+    // Set current month display
+    currentMonthDisplay.textContent = new Intl.DateTimeFormat('pt-BR', {
+        month: 'long',
+        year: 'numeric'
+    }).format(currentDate);
+    
+    // Add weekday headers
+    const weekdays = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
+    weekdays.forEach(day => {
+        const dayElement = document.createElement('div');
+        dayElement.className = 'calendar-day weekday';
+        dayElement.textContent = day;
+        calendar.appendChild(dayElement);
+    });
+    
+    // Get first day of month and total days
+    const firstDay = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
+    const lastDay = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0);
+    
+    // Add padding for first week
+    for (let i = 0; i < firstDay.getDay(); i++) {
+        const paddingElement = document.createElement('div');
+        paddingElement.className = 'calendar-day';
+        calendar.appendChild(paddingElement);
+    }
+    
+    // Add days
+    for (let day = 1; day <= lastDay.getDate(); day++) {
+        const dayElement = document.createElement('div');
+        dayElement.className = 'calendar-day date';
+        dayElement.textContent = day;
+        
+        // Check if day has events
+        const dateKey = `${currentDate.getFullYear()}-${currentDate.getMonth() + 1}-${day}`;
+        if (events[dateKey]) {
+            const marker = document.createElement('div');
+            marker.className = 'event-marker';
+            dayElement.appendChild(marker);
+        }
+        
+        // Check if day is today
+        const today = new Date();
+        if (day === today.getDate() && 
+            currentDate.getMonth() === today.getMonth() && 
+            currentDate.getFullYear() === today.getFullYear()) {
+            dayElement.classList.add('today');
+        }
+        
+        dayElement.addEventListener('click', () => selectDate(day));
+        calendar.appendChild(dayElement);
+    }
+}
+
+function selectDate(day) {
+    // Remove previous selection
+    const selected = document.querySelector('.selected');
+    if (selected) selected.classList.remove('selected');
+    
+    // Add new selection
+    event.target.classList.add('selected');
+    
+    // Show event form
+    const dateKey = `${currentDate.getFullYear()}-${currentDate.getMonth() + 1}-${day}`;
+    document.getElementById('selectedDate').textContent = 
+        `${day} de ${new Intl.DateTimeFormat('pt-BR', { month: 'long' }).format(currentDate)} de ${currentDate.getFullYear()}`;
+    
+    document.getElementById('eventForm').classList.add('active');
+    document.getElementById('overlay').classList.add('active');
+}
+
+function saveEvent() {
+    const selected = document.querySelector('.selected');
+    const day = selected.textContent;
+    const dateKey = `${currentDate.getFullYear()}-${currentDate.getMonth() + 1}-${day}`;
+    const eventTitle = document.getElementById('eventTitle').value;
+    
+    if (eventTitle) {
+        events[dateKey] = eventTitle;
+        closeEventForm();
+        updateCalendar();
+    }
+}
+
+function closeEventForm() {
+    document.getElementById('eventForm').classList.remove('active');
+    document.getElementById('overlay').classList.remove('active');
+    document.getElementById('eventTitle').value = '';
+}
+
+document.getElementById('prevMonth').addEventListener('click', () => {
+    currentDate = new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1);
+    updateCalendar();
+});
+
+document.getElementById('nextMonth').addEventListener('click', () => {
+    currentDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1);
+    updateCalendar();
+});
+
+// Initialize calendar
+updateCalendar();
+</script></body></html>

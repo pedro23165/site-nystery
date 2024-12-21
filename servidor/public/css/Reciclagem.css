@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #12310d;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  padding: 30px;
+  background: linear-gradient(135deg, #12310d, #2a6a0d);
+  color: white;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.recipe-card {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.recipe-card:hover {
+  transform: translateY(-5px);
+}
+
+.recipe-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+.recipe-title {
+  color: #2e7d32;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+}
+
+.recipe-description {
+  color: #555;
+  line-height: 1.6;
+}
+
+.materials {
+  margin: 15px 0;
+  padding: 10px;
+  background: #f1f8e9;
+  border-radius: 8px;
+}
+
+.materials h3 {
+  color: #2e7d32;
+  margin-bottom: 8px;
+}
+
+.materials ul {
+  list-style-position: inside;
+  color: #555;
+}
+
+.steps {
+  color: #555;
+}
+
+.steps h3 {
+  color: #2e7d32;
+  margin-bottom: 8px;
+}
+
+.steps ol {
+  padding-left: 20px;
+  line-height: 1.6;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.recipe-card {
+  animation: fadeIn 0.5s ease forwards;
+}

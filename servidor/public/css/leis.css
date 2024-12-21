@@ -1,0 +1,101 @@
+body {
+  font-family: 'Georgia', serif;
+  line-height: 1.6;
+  margin: 20px;
+  background-color: #121212; /* Fundo escuro */
+  color: #e0e0e0; /* Texto claro */
+}
+
+h1 {
+  font-size: 2.5em;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffffff; /* Título branco */
+}
+
+h2 {
+  font-size: 2em;
+  border-bottom: 2px solid #444; /* Linha de separação mais suave */
+  padding-bottom: 10px;
+  margin: 30px 0 20px;
+  padding-top: 40px;
+  color: #ffffff; /* Títulos em branco */
+}
+
+h3 {
+  font-size: 1.5em;
+  margin: 20px 0 10px;
+  border-bottom: 1px solid #444; /* Linha de separação mais suave */
+  padding-bottom: 5px;
+  color: #e0e0e0; /* Texto mais claro */
+}
+
+h4 {
+  font-size: 1.2em;
+  margin: 15px 0 5px;
+  font-weight: bold;
+  color: #e0e0e0; /* Texto mais claro */
+}
+
+p {
+  margin: 10px 0;
+  text-indent: 2em;
+  color: #e0e0e0; /* Texto claro */
+}
+
+section {
+  margin-bottom: 60px;
+  padding: 20px;
+  background-color: #1e1e1e; /* Fundo mais escuro para se destacar */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra mais suave */
+}
+
+article {
+  margin-left: 20px;
+}
+
+div {
+  margin-bottom: 20px;
+}
+
+.navigation {
+  text-align: center;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1em;
+  margin: 0 10px;
+  border: 1px solid #444; /* Borda mais suave */
+  background-color: #333; /* Cor de fundo escura */
+  color: #e0e0e0; /* Texto claro */
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #555; /* Cor de fundo mais clara ao passar o mouse */
+  transform: scale(1.05); /* Leve aumento de tamanho */
+}
+
+button:disabled {
+  background-color: #777; /* Cor para botões desabilitados */
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  body {
+    margin: 10px;
+  }
+  
+  h1 {
+    font-size: 2em;
+  }
+
+  h2, h3, h4 {
+    font-size: 1.5em;
+  }
+}

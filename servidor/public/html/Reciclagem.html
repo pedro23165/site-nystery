@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/Reciclagem.css">
+</head>
+
+</html>
+    </head>
+    <body>
+        <header>
+            <h1>🌱 Receitas de Reciclagem Criativa</h1>
+            <p>Transforme materiais recicláveis em objetos úteis e decorativos!</p>
+        </header>
+    
+        <div class="container">
+            <div class="recipe-card">
+                <svg class="recipe-icon" viewBox="0 0 24 24">
+                    <path fill="#4caf50" d="M19,5V19H5V5H19M19,3H5C3.9,3 3,3.9 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.9 20.1,3 19,3M12,17H14V7H12V17Z"/>
+                </svg>
+                <h2 class="recipe-title">Porta-lápis de Garrafa PET</h2>
+                <div class="materials">
+                    <h3>Materiais Necessários:</h3>
+                    <ul>
+                        <li>Garrafa PET limpa</li>
+                        <li>Tesoura</li>
+                        <li>Tinta acrílica</li>
+                        <li>Pincel</li>
+                    </ul>
+                </div>
+                <div class="steps">
+                    <h3>Passo a Passo:</h3>
+                    <ol>
+                        <li>Corte a garrafa PET ao meio</li>
+                        <li>Lixe levemente a superfície</li>
+                        <li>Pinte com as cores desejadas</li>
+                        <li>Deixe secar por 24 horas</li>
+                    </ol>
+                </div>
+            </div>
+    
+            <div class="recipe-card">
+                <svg class="recipe-icon" viewBox="0 0 24 24">
+                    <path fill="#4caf50" d="M12,5.5A3.5,3.5 0 0,1 15.5,9A3.5,3.5 0 0,1 12,12.5A3.5,3.5 0 0,1 8.5,9A3.5,3.5 0 0,1 12,5.5M5,8C5.56,8 6.08,8.15 6.53,8.42C6.38,9.85 6.8,11.27 7.66,12.38C7.16,13.34 6.16,14 5,14A3,3 0 0,1 2,11A3,3 0 0,1 5,8M19,8A3,3 0 0,1 22,11A3,3 0 0,1 19,14C17.84,14 16.84,13.34 16.34,12.38C17.2,11.27 17.62,9.85 17.47,8.42C17.92,8.15 18.44,8 19,8M5.5,18.25C5.5,16.18 8.41,14.5 12,14.5C15.59,14.5 18.5,16.18 18.5,18.25V20H5.5V18.25M0,20V18.5C0,17.11 1.89,15.94 4.45,15.6C3.86,16.28 3.5,17.22 3.5,18.25V20H0M24,20H20.5V18.25C20.5,17.22 20.14,16.28 19.55,15.6C22.11,15.94 24,17.11 24,18.5V20Z"/>
+                </svg>
+                <h2 class="recipe-title">Vaso Decorativo de Jornal</h2>
+                <div class="materials">
+                    <h3>Materiais Necessários:</h3>
+                    <ul>
+                        <li>Jornais velhos</li>
+                        <li>Cola branca</li>
+                        <li>Balão</li>
+                        <li>Verniz</li>
+                    </ul>
+                </div>
+                <div class="steps">
+                    <h3>Passo a Passo:</h3>
+                    <ol>
+                        <li>Encha o balão no tamanho desejado</li>
+                        <li>Cole tiras de jornal com cola diluída</li>
+                        <li>Faça várias camadas</li>
+                        <li>Deixe secar e aplique verniz</li>
+                    </ol>
+                </div>
+            </div>
+    
+            <div class="recipe-card">
+                <svg class="recipe-icon" viewBox="0 0 24 24">
+                    <path fill="#4caf50" d="M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M19,5V19H5V5H19Z"/>
+                </svg>
+                <h2 class="recipe-title">Organizador de Caixas de Papelão</h2>
+                <div class="materials">
+                    <h3>Materiais Necessários:</h3>
+                    <ul>
+                        <li>Caixas de papelão</li>
+                        <li>Papel decorativo ou tecido</li>
+                        <li>Cola</li>
+                        <li>Tesoura</li>
+                    </ul>
+                </div>
+                <div class="steps">
+                    <h3>Passo a Passo:</h3>
+                    <ol>
+                        <li>Limpe as caixas</li>
+                        <li>Corte o papel ou tecido</li>
+                        <li>Cole revestindo toda a caixa</li>
+                        <li>Decore conforme sua preferência</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const cards = document.querySelectorAll('.recipe-card');
+        
+        cards.forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.2}s`;
+            
+            card.addEventListener('click', function() {
+                this.style.transform = 'scale(1.02)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 200);
+            });
+        });
+    });
+    </script>
+    </body></html>

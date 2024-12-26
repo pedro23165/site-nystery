@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro voluntário</title>
+    <link rel="stylesheet" href="../css/CadastroVolutário.css">
+</head> 
+<body>
+<header class="header">
+  <svg class="leaf-icon" width="50" height="50" viewBox="0 0 24 24" fill="white">
+    <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"/>
+  </svg>
+  <h1>EcoVoluntários</h1>
+</header>
+
+<div class="container">
+  <h2 style="color: var(--dark); margin-bottom: 2rem; text-align: center;">
+    Cadastro de Voluntário
+  </h2>
+  
+  <form id="volunteerForm">
+    <div class="form-group">
+      <label for="name">Nome Completo</label>
+      <input type="text" id="name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">E-mail</label>
+      <input type="email" id="email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Telefone</label>
+      <input type="tel" id="phone" required>
+    </div>
+
+    <div class="form-group">
+      <label for="area">Área de Interesse</label>
+      <select id="area" required>
+        <option value="">Selecione uma área</option>
+        <option value="reflorestamento">Reflorestamento</option>
+        <option value="limpeza">Limpeza de Praias/Rios</option>
+        <option value="educacao">Educação Ambiental</option>
+        <option value="reciclagem">Reciclagem</option>
+        <option value="protecao">Proteção da Fauna</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="availability">Disponibilidade</label>
+      <select id="availability" required>
+        <option value="">Selecione sua disponibilidade</option>
+        <option value="weekends">Fins de Semana</option>
+        <option value="morning">Manhãs</option>
+        <option value="afternoon">Tardes</option>
+        <option value="flexible">Flexível</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="experience">Experiência Prévia (opcional)</label>
+      <textarea id="experience" rows="4"></textarea>
+    </div>
+
+    <button type="submit">Cadastrar</button>
+  </form>
+
+  <div id="successMessage" class="success-message">
+    Cadastro realizado com sucesso! Em breve entraremos em contato.
+  </div>
+</div>
+
+<script>
+document.getElementById('volunteerForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  // Simulação de envio do formulário
+  const successMessage = document.getElementById('successMessage');
+  successMessage.style.display = 'block';
+  
+  // Limpa o formulário
+  this.reset();
+  
+  // Esconde a mensagem depois de 5 segundos
+  setTimeout(() => {
+    successMessage.style.display = 'none';
+  }, 5000);
+});
+
+// Máscara para telefone
+document.getElementById('phone').addEventListener('input', function(e) {
+  let value = e.target.value.replace(/\D/g, '');
+  if (value.length > 11) value = value.slice(0, 11);
+  
+  if (value.length > 2) {
+    value = '(' + value.slice(0,2) + ')' + value.slice(2);
+  }
+  if (value.length > 9) {
+    value = value.slice(0,9) + '-' + value.slice(9);
+  }
+  
+  e.target.value = value;
+});
+</script>
+</body>
+</html

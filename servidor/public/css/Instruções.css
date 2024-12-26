@@ -1,8 +1,8 @@
 body {
-  font-family: 'Georgia', serif;
+  font-family: "Georgia", serif;
   line-height: 1.6;
   margin: 20px;
-  background-color: #121212; /* Fundo escuro */
+  background-color: #12310d; /* Fundo escuro */
   color: #e0e0e0; /* Texto claro */
 }
 
@@ -15,7 +15,7 @@ h1 {
 
 h2 {
   font-size: 2em;
-  border-bottom: 2px solid #444; /* Linha de separação mais suave */
+  border-bottom: 2px solid #ffffff; /* Linha de separação mais suave */
   padding-bottom: 10px;
   margin: 30px 0 20px;
   padding-top: 40px;
@@ -25,7 +25,7 @@ h2 {
 h3 {
   font-size: 1.5em;
   margin: 20px 0 10px;
-  border-bottom: 1px solid #444; /* Linha de separação mais suave */
+  border-bottom: 1px solid #ffffff; /* Linha de separação mais suave */
   padding-bottom: 5px;
   color: #e0e0e0; /* Texto mais claro */
 }
@@ -46,7 +46,7 @@ p {
 section {
   margin-bottom: 60px;
   padding: 20px;
-  background-color: #1e1e1e; /* Fundo mais escuro para se destacar */
+  background-color: #20441b; /* Fundo mais escuro para se destacar */
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra mais suave */
 }
@@ -90,12 +90,14 @@ button:disabled {
   body {
     margin: 10px;
   }
-  
+
   h1 {
     font-size: 2em;
   }
 
-  h2, h3, h4 {
+  h2,
+  h3,
+  h4 {
     font-size: 1.5em;
   }
 }

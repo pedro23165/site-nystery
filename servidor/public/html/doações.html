@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doações</title>
+    <link rel="stylesheet" href="../css/doações.css">
+</head>
+<body>
+    
+</body>
+</html>
+  </head>
+  <body>
+    <header class="header">
+      <h1>Doações para o Meio Ambiente <span class="leaf">🌱</span></h1>
+      <p>Juntos podemos fazer a diferença para um planeta mais verde</p>
+    </header>
+  
+    <div class="container">
+      <div class="eco-impact">
+        <h2>Seu Impacto Ambiental</h2>
+        <div class="impact-grid">
+          <div class="impact-item">
+            <span class="icon">🌳</span>
+            <div>
+              <h3>Plantio de Árvores</h3>
+              <p>Cada R$ 10 = 1 árvore plantada</p>
+              <p>Contribui para a redução do CO₂</p>
+            </div>
+          </div>
+          <div class="impact-item">
+            <span class="icon">🦋</span>
+            <div>
+              <h3>Preservação</h3>
+              <p>Proteção de habitat natural</p>
+              <p>Conservação da biodiversidade</p>
+            </div>
+          </div>
+          <div class="impact-item">
+            <span class="icon">💧</span>
+            <div>
+              <h3>Água Limpa</h3>
+              <p>Preservação de nascentes</p>
+              <p>Garantia de recursos hídricos</p>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="impact-stats">
+        <h2>Meta de arrecadação: R$ 10.000</h2>
+        <div class="progress-container">
+          <div class="progress-bar"></div>
+        </div>
+        <p>R$ 6.000 arrecadados de R$ 10.000</p>
+      </div>
+  
+      <div class="donation-options">
+        <div class="donation-card" onclick="selectAmount(30)">
+          <h3>Doação Verde</h3>
+          <div class="amount">R$ 30</div>
+          <p>Plante 3 árvores!</p>
+          <div class="eco-benefit">Sequestra até 150kg de CO₂ por ano</div>
+        </div>
+  
+        <div class="donation-card" onclick="selectAmount(50)">
+          <h3>Doação Floresta</h3>
+          <div class="amount">R$ 50</div>
+          <p>Proteja 100m² de floresta</p>
+          <div class="eco-benefit">Preserva habitat de espécies nativas</div>
+        </div>
+  
+        <div class="donation-card" onclick="selectAmount(100)">
+          <h3>Doação Ecossistema</h3>
+          <div class="amount">R$ 100</div>
+          <p>Preserve uma nascente</p>
+          <div class="eco-benefit">Garante água limpa para comunidades</div>
+        </div>
+      </div>
+  
+      <div class="custom-amount">
+        <h3>Ou escolha um valor personalizado:</h3>
+        <input type="number" id="customAmount" min="1" step="1" placeholder="Digite o valor">
+        <p>Cada R$ 10 = 1 árvore plantada + proteção ambiental</p>
+      </div>
+  
+      <div class="eco-details">
+        <h3>Benefícios da sua doação:</h3>
+        <ul>
+          <li>Reflorestamento de áreas degradadas</li>
+          <li>Proteção de espécies ameaçadas</li>
+          <li>Conservação de recursos hídricos</li>
+          <li>Educação ambiental para comunidades</li>
+          <li>Desenvolvimento sustentável</li>
+        </ul>
+      </div>
+  
+      <div style="text-align: center; margin-top: 2rem;">
+        <button class="donate-btn" onclick="processDonation()">Doar Agora</button>
+      </div>
+    </div>
+  
+    <script>
+      let selectedAmount = 0;
+  
+      function selectAmount(amount) {
+        selectedAmount = amount;
+        document.querySelectorAll('.donation-card').forEach(card => {
+          card.style.borderColor = '#e0e0e0';
+        });
+        event.currentTarget.style.borderColor = '#4CAF50';
+        document.getElementById('customAmount').value = '';
+      }
+  
+      function processDonation() {
+        const customAmount = document.getElementById('customAmount').value;
+        const finalAmount = customAmount || selectedAmount;
+  
+        if (finalAmount <= 0 || !finalAmount) {
+          alert('Por favor, selecione um valor ou digite um valor personalizado.');
+          return;
+        }
+  
+        const trees = Math.floor(finalAmount / 10);
+        const co2 = trees * 50;
+  
+        alert(`Obrigado pela sua doação de R$ ${finalAmount}! 
+        \nSeu impacto ambiental:
+        \n🌳 ${trees} árvores serão plantadas
+        \n♻️ ${co2}kg de CO₂ sequestrados por ano
+        \n💚 Proteção de habitat natural`);
+      }
+  
+      // Animação da barra de progresso
+      window.addEventListener('load', () => {
+        document.querySelector('.progress-bar').style.width = '60%';
+      });
+    </script>
+  </body>
+  </html>

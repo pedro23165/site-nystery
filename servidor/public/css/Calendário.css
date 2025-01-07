@@ -1,126 +1,182 @@
 :root {
-  --primary-color: #3498db;
-  --secondary-color: #2980b9;
-  --hover-color: #e74c3c;
+  --primary-color: #2f6a4e;  /* Verde mais suave */
+  --secondary-color: #8dc0a9; /* Verde mais suave e menos saturado */
+  --highlight-color: #f39c12;  /* Cor laranja suave para destacar */
+  --text-color: #333; /* Cor de texto padrão mais suave */
+  --background-color: #435f56; /* Fundo neutro e suave */
+  --overlay-bg-color: rgba(0, 0, 0, 0.8); /* Cor do fundo do overlay */
 }
 
 body {
   font-family: Arial, sans-serif;
+  background-image: url(../image/photo-1632195670211-9e46e8c772c7.avif); /* Imagem de fundo */
+  background-repeat: no-repeat; /* Impede a repetição da imagem */
+  background-size: cover; /* Faz a imagem ocupar todo o espaço disponível */
+  background-position: center center; /* Centraliza a imagem no fundo */
+  color: var(--text-color); /* Cor de texto padrão */
+  margin: 0;
+  padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  margin: 0;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
 
-.calendar-container {
-  background: white;
+.environmental-events-container {
+  background: rgb(77, 128, 94);
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  max-width: 800px;
   width: 100%;
+  max-width: 800px;
+  animation: fadeIn 1s ease-in-out; /* Animação de entrada */
 }
 
-.calendar-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+h1 {
+  text-align: center;
+  color: var(--primary-color);
   margin-bottom: 20px;
+  font-size: 1.8em;
+  animation: fadeIn 1.5s ease-in-out; /* Animação de fade-in */
 }
 
-.calendar-header button {
-  background: var(--primary-color);
-  border: none;
-  color: white;
-  padding: 8px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.calendar-header button:hover {
-  background: var(--secondary-color);
-}
-
-.calendar-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 5px;
-}
-
-.calendar-day {
-  aspect-ratio: 1;
+.environmental-events-list {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.environmental-event-box {
+  background: var(--secondary-color);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  border-radius: 5px;
-  transition: all 0.3s;
-  position: relative;
+  transition: all 0.3s ease;
+  transform: scale(1); /* Padrão */
+  animation: slideIn 0.5s ease-in-out; /* Animação de entrada */
 }
 
-.weekday {
-  font-weight: bold;
+.environmental-event-box:hover {
   background: var(--primary-color);
-  color: white;
+  color: rgb(114, 173, 129);
+  transform: scale(1.05); /* Aumenta ligeiramente ao passar o mouse */
 }
 
-.date {
-  border: 1px solid #eee;
+.environmental-event-box h3 {
+  margin-top: 0;
+  color: rgb(5, 73, 16);
+  font-size: 1.3em;
 }
 
-.date:hover {
-  background: #f0f0f0;
+.environmental-event-box p {
+  margin: 10px 0;
+  color: var(--text-color);
+  font-size: 1.1em;
 }
 
-.selected {
-  background: var(--hover-color) !important;
-  color: white;
+.environmental-event-box p strong {
+  color: var(--primary-color);
 }
 
-.date.today {
-  border: 2px solid var(--primary-color);
-}
-
-.event-marker {
-  position: absolute;
-  bottom: 2px;
-  width: 4px;
-  height: 4px;
-  background: var(--hover-color);
-  border-radius: 50%;
-}
-
-.event-form {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-}
-
-.event-form.active {
-  display: block;
-}
-
+/* Overlay para mostrar os detalhes do evento */
 .overlay {
-  display: none;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 999;
+  background: var(--overlay-bg-color);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Garante que o overlay fique acima de outros conteúdos */
+  animation: fadeInOverlay 0.5s ease-in-out; /* Animação para o overlay aparecer */
 }
 
-.overlay.active {
-  display: block;
+.event-details {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px; /* Define o tamanho máximo da janela */
+  max-height: 70%;
+  overflow-y: auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  animation: slideInDetails 0.5s ease-out; /* Animação de deslizamento da janela */
+}
+
+.event-details h3,
+.event-details p {
+  color: var(--text-color); /* Cor de texto mais suave */
+}
+
+.event-details p {
+  font-size: 1.2em;
+  margin: 15px 0;
+}
+
+.event-details p strong {
+  color: var(--primary-color); /* Deixa o título forte em verde */
+}
+
+.close-overlay {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.close-overlay:hover {
+  background: var(--highlight-color); /* Cor mais suave para o hover */
+}
+
+/* Animações */
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInOverlay {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInDetails {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }

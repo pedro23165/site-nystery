@@ -3,29 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Relatório anual</title>
+    <title>Relatório Anual</title>
     <link rel="stylesheet" href="../css/Relatório.css">
 </head>
 <body>
-    
-</body>
-</html>
-  </head>
-  <body>
     <header class="header">
-      <h1>Relatórios Anuais Ecológicos</h1>
-      <p>Acompanhe nosso impacto ambiental ao longo dos anos</p>
+        <h1>Relatórios Anuais Ecológicos</h1>
+        <p>Acompanhe nosso impacto ambiental ao longo dos anos</p>
     </header>
-  
+
     <div class="container">
+      <!-- Relatório de 2024 -->
+      <div class="year-section">
+        <div class="year-header">
+          <h2>Relatório 2024</h2>
+          <!-- Link para baixar o PDF do relatório 2024 -->
+          <a href="../pdfs/relatorio_ambiental_2024.pdf" class="download-btn" download>
+            Baixar Relatório Completo
+          </a>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <h3>Árvores Plantadas</h3>
+            <div class="stat-value">20.000</div>
+            <p>+30% em relação a 2023</p>
+          </div>
+          <div class="stat-card">
+            <h3>CO₂ Neutralizado</h3>
+            <div class="stat-value">1.000t</div>
+            <p>Equivalente a 220 carros/ano</p>
+          </div>
+          <div class="stat-card">
+            <h3>Área Preservada</h3>
+            <div class="stat-value">1.500ha</div>
+            <p>+25% em relação a 2023</p>
+          </div>
+        </div>
+
+        <div class="highlights">
+          <h3>Destaques do Ano</h3>
+          <ul>
+            <li>Expansão do programa de reflorestamento em 3 estados</li>
+            <li>Lançamento de um app para monitoramento ambiental em tempo real</li>
+            <li>Certificação de 5 unidades com práticas sustentáveis</li>
+            <li>Implementação de mais de 100 pontos de coleta de lixo eletrônico</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Relatório de 2023 -->
       <div class="year-section">
         <div class="year-header">
           <h2>Relatório 2023</h2>
-          <button class="download-btn" onclick="downloadReport(2023)">
+          <!-- Link para baixar o PDF do relatório 2023 -->
+          <a href="../pdfs/relatorioonu.pdf" class="download-btn" download>
             Baixar Relatório Completo
-          </button>
+          </a>
         </div>
-  
+
         <div class="stats-grid">
           <div class="stat-card">
             <h3>Árvores Plantadas</h3>
@@ -43,7 +79,7 @@
             <p>+15% em relação a 2022</p>
           </div>
         </div>
-  
+
         <div class="highlights">
           <h3>Destaques do Ano</h3>
           <ul>
@@ -54,15 +90,17 @@
           </ul>
         </div>
       </div>
-  
+
+      <!-- Relatório de 2022 -->
       <div class="year-section">
         <div class="year-header">
           <h2>Relatório 2022</h2>
-          <button class="download-btn" onclick="downloadReport(2022)">
+          <!-- Link para baixar o PDF do relatório 2022 -->
+          <a href="../pdfs/ONU_Brasil_Relatorio_Anual_2022.pdf" class="download-btn" download>
             Baixar Relatório Completo
-          </button>
+          </a>
         </div>
-  
+
         <div class="stats-grid">
           <div class="stat-card">
             <h3>Árvores Plantadas</h3>
@@ -80,7 +118,7 @@
             <p>+10% em relação a 2021</p>
           </div>
         </div>
-  
+
         <div class="highlights">
           <h3>Destaques do Ano</h3>
           <ul>
@@ -92,12 +130,8 @@
         </div>
       </div>
     </div>
-  
+
     <script>
-      function downloadReport(year) {
-        alert(`O relatório completo de ${year} será baixado em PDF.\nEste é apenas um exemplo de funcionalidade.`);
-      }
-  
       // Animate progress bars on scroll
       function animateOnScroll() {
         const yearSections = document.querySelectorAll('.year-section');
@@ -120,5 +154,5 @@
   
       window.addEventListener('load', animateOnScroll);
     </script>
-  </body>
-  </html>
+</body>
+</html>

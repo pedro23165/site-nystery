@@ -3,140 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calendário Ambiental</title>
     <link rel="stylesheet" href="../css/Calendário.css">
 </head>
-
-</html>
 <body>
-<div class="calendar-container">
-    <div class="calendar-header">
-        <button id="prevMonth">◀</button>
-        <h2 id="currentMonth"></h2>
-        <button id="nextMonth">▶</button>
+    <div class="environmental-events-container">
+        <h1>Datas Ambientais Importantes</h1>
+        <div id="environmentalEventsList" class="environmental-events-list"></div>
     </div>
-    <div class="calendar-grid" id="calendar"></div>
-</div>
 
-<div class="overlay" id="overlay"></div>
-<div class="event-form" id="eventForm">
-    <h3>Adicionar Evento</h3>
-    <p id="selectedDate"></p>
-    <input type="text" id="eventTitle" placeholder="Título do evento">
-    <button onclick="saveEvent()">Salvar</button>
-    <button onclick="closeEventForm()">Cancelar</button>
-</div>
+    <!-- Caixa de detalhes do evento -->
+    <div class="overlay" id="overlay">
+        <div class="event-details" id="eventDetails"></div>
+        <button id="closeOverlay" class="close-overlay">Fechar</button>
+    </div>
 
-<script>
-let currentDate = new Date();
-let events = {};
+    <script>
+        // Lista de eventos ambientais com objetivos e como foi criado
+        const environmentalDates = [
+            { 
+                date: '2025-04-22', 
+                title: 'Dia da Terra', 
+                description: 'Comemora-se o Dia da Terra, para aumentar a conscientização sobre questões ambientais.',
+                creation: 'Criado em 1970, o Dia da Terra foi idealizado por um senador dos Estados Unidos, Gaylord Nelson, com o objetivo de aumentar a conscientização sobre os problemas ambientais e promover a preservação do meio ambiente.',
+                objectives: 'O principal objetivo é promover a educação ambiental, o engajamento da população em questões ecológicas e a preservação do nosso planeta.'
+            },
+            { 
+                date: '2025-09-21', 
+                title: 'Dia da Árvore', 
+                description: 'Dia dedicado à importância das árvores e da preservação da natureza.',
+                creation: 'O Dia da Árvore é celebrado desde 1855, quando foi criado nos Estados Unidos. A data foi escolhida para promover a conservação das florestas e o plantio de árvores.',
+                objectives: 'Fazer com que as pessoas se conscientizem da importância das árvores para o ecossistema, para o clima e para a biodiversidade.'
+            },
+            { 
+                date: '2025-06-05', 
+                title: 'Dia Mundial do Meio Ambiente', 
+                description: 'O Dia Mundial do Meio Ambiente tem como objetivo sensibilizar a população sobre a preservação ambiental.',
+                creation: 'Foi criado pela Assembleia Geral da ONU em 1972, durante a Conferência de Estocolmo sobre o Meio Ambiente Humano, visando promover a conscientização global sobre o meio ambiente.',
+                objectives: 'Encorajar ações que ajudem a preservar o meio ambiente e promover a sustentabilidade no mundo inteiro.'
+            },
+            { 
+                date: '2025-03-22', 
+                title: 'Dia Mundial da Água', 
+                description: 'Faz parte da campanha para conscientizar a população sobre o uso sustentável da água potável.',
+                creation: 'Criado pela ONU em 1993, esse dia tem como foco promover a gestão sustentável da água e conscientizar sobre a escassez de água em algumas regiões do mundo.',
+                objectives: 'Incentivar o uso responsável da água e a reflexão sobre os desafios da escassez hídrica.'
+            },
+            { 
+                date: '2025-05-22', 
+                title: 'Dia da Biodiversidade', 
+                description: 'Este dia visa aumentar a conscientização sobre a perda da biodiversidade e incentivar a ação para sua proteção.',
+                creation: 'Criado pela ONU em 1993, este dia surgiu para promover a conservação das espécies e os ecossistemas.',
+                objectives: 'Promover a importância da biodiversidade, da conservação de habitats naturais e das espécies ameaçadas de extinção.'
+            },
+            { 
+                date: '2025-02-02', 
+                title: 'Dia Mundial das Zonas Úmidas', 
+                description: 'Dia para aumentar a conscientização sobre a importância das zonas úmidas e sua preservação.',
+                creation: 'Criado em 1971 pela Convenção de Ramsar, esse dia visa destacar as zonas úmidas e sua biodiversidade.',
+                objectives: 'Proteger e conservar as zonas úmidas, que são ecossistemas cruciais para a saúde dos rios, lagos e oceanos.'
+            },
+            { 
+                date: '2025-03-21', 
+                title: 'Dia Internacional da Floresta', 
+                description: 'Dia para comemorar a importância das florestas e da arborização urbana.',
+                creation: 'Criado pela ONU em 2012, o Dia Internacional da Floresta visa chamar atenção para a necessidade de preservação das florestas.',
+                objectives: 'Promover o plantio de árvores e a conservação de florestas, além de combater o desmatamento e a degradação ambiental.'
+            },
+            { 
+                date: '2025-05-17', 
+                title: 'Dia Internacional contra a Desertificação', 
+                description: 'O Dia Internacional contra a Desertificação visa combater o avanço da desertificação e a degradação da terra.',
+                creation: 'Instituído pela ONU em 1994, esse dia visa aumentar a conscientização sobre os desafios da desertificação.',
+                objectives: 'Promover ações de combate à desertificação, incentivando práticas agrícolas sustentáveis e políticas públicas para a recuperação da terra.'
+            },
+            { 
+                date: '2025-12-05', 
+                title: 'Dia Mundial do Solo', 
+                description: 'Comemora o Dia Mundial do Solo, para promover a conscientização sobre a importância do solo e a sua conservação.',
+                creation: 'Criado pela ONU em 2014, este dia visa alertar para a degradação do solo e as consequências dessa perda.',
+                objectives: 'Promover práticas agrícolas e urbanas que ajudem a proteger e recuperar os solos em todo o mundo.'
+            },
+            { 
+                date: '2025-10-16', 
+                title: 'Dia Mundial da Alimentação', 
+                description: 'Foca na conscientização sobre a segurança alimentar e a erradicação da fome no mundo.',
+                creation: 'Instituído pela FAO em 1945, este dia visa aumentar a conscientização sobre a importância de uma alimentação saudável e sustentável.',
+                objectives: 'Combater a fome no mundo, promover a segurança alimentar e incentivar práticas agrícolas sustentáveis.'
+            },
+            { 
+                date: '2025-11-21', 
+                title: 'Dia Mundial da Pesca', 
+                description: 'Faz parte da comemoração da pesca sustentável e do uso responsável dos oceanos.',
+                creation: 'Instituído pela ONU em 1997, esse dia destaca a importância da pesca sustentável e a preservação dos recursos marinhos.',
+                objectives: 'Garantir que os oceanos e os ecossistemas marinhos sejam preservados para as futuras gerações, incentivando práticas pesqueiras responsáveis.'
+            }
+        ];
 
-function updateCalendar() {
-    const calendar = document.getElementById('calendar');
-    const currentMonthDisplay = document.getElementById('currentMonth');
-    
-    // Clear previous calendar
-    calendar.innerHTML = '';
-    
-    // Set current month display
-    currentMonthDisplay.textContent = new Intl.DateTimeFormat('pt-BR', {
-        month: 'long',
-        year: 'numeric'
-    }).format(currentDate);
-    
-    // Add weekday headers
-    const weekdays = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
-    weekdays.forEach(day => {
-        const dayElement = document.createElement('div');
-        dayElement.className = 'calendar-day weekday';
-        dayElement.textContent = day;
-        calendar.appendChild(dayElement);
-    });
-    
-    // Get first day of month and total days
-    const firstDay = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
-    const lastDay = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0);
-    
-    // Add padding for first week
-    for (let i = 0; i < firstDay.getDay(); i++) {
-        const paddingElement = document.createElement('div');
-        paddingElement.className = 'calendar-day';
-        calendar.appendChild(paddingElement);
-    }
-    
-    // Add days
-    for (let day = 1; day <= lastDay.getDate(); day++) {
-        const dayElement = document.createElement('div');
-        dayElement.className = 'calendar-day date';
-        dayElement.textContent = day;
-        
-        // Check if day has events
-        const dateKey = `${currentDate.getFullYear()}-${currentDate.getMonth() + 1}-${day}`;
-        if (events[dateKey]) {
-            const marker = document.createElement('div');
-            marker.className = 'event-marker';
-            dayElement.appendChild(marker);
+        // Função para exibir os eventos ambientais
+        function displayEnvironmentalEvents() {
+            const eventsList = document.getElementById('environmentalEventsList');
+            eventsList.innerHTML = ''; // Limpa a lista antes de adicionar novos eventos
+
+            environmentalDates.forEach(event => {
+                const eventElement = document.createElement('div');
+                eventElement.className = 'environmental-event-box';
+
+                eventElement.innerHTML = `
+                    <h3>${event.title}</h3>
+                    <p><strong>Data:</strong> ${new Date(event.date).toLocaleDateString('pt-BR')}</p>
+                `;
+
+                // Adiciona evento de clique para mostrar mais detalhes
+                eventElement.addEventListener('click', () => showEventDetails(event));
+
+                eventsList.appendChild(eventElement);
+            });
         }
-        
-        // Check if day is today
-        const today = new Date();
-        if (day === today.getDate() && 
-            currentDate.getMonth() === today.getMonth() && 
-            currentDate.getFullYear() === today.getFullYear()) {
-            dayElement.classList.add('today');
+
+        // Função para exibir detalhes do evento
+        function showEventDetails(event) {
+            const eventDetails = document.getElementById('eventDetails');
+            eventDetails.innerHTML = `
+                <h3>${event.title}</h3>
+                <p><strong>Data:</strong> ${new Date(event.date).toLocaleDateString('pt-BR')}</p>
+                <p><strong>Como foi criado:</strong> ${event.creation}</p>
+                <p><strong>Objetivos:</strong> ${event.objectives}</p>
+                <p>${event.description}</p>
+            `;
+            document.getElementById('overlay').style.display = 'flex'; // Exibe a caixa de detalhes
         }
-        
-        dayElement.addEventListener('click', () => selectDate(day));
-        calendar.appendChild(dayElement);
-    }
-}
 
-function selectDate(day) {
-    // Remove previous selection
-    const selected = document.querySelector('.selected');
-    if (selected) selected.classList.remove('selected');
-    
-    // Add new selection
-    event.target.classList.add('selected');
-    
-    // Show event form
-    const dateKey = `${currentDate.getFullYear()}-${currentDate.getMonth() + 1}-${day}`;
-    document.getElementById('selectedDate').textContent = 
-        `${day} de ${new Intl.DateTimeFormat('pt-BR', { month: 'long' }).format(currentDate)} de ${currentDate.getFullYear()}`;
-    
-    document.getElementById('eventForm').classList.add('active');
-    document.getElementById('overlay').classList.add('active');
-}
+        // Função para fechar o overlay (caixa de detalhes)
+        document.getElementById('closeOverlay').addEventListener('click', () => {
+            document.getElementById('overlay').style.display = 'none'; // Fecha a caixa de detalhes
+        });
 
-function saveEvent() {
-    const selected = document.querySelector('.selected');
-    const day = selected.textContent;
-    const dateKey = `${currentDate.getFullYear()}-${currentDate.getMonth() + 1}-${day}`;
-    const eventTitle = document.getElementById('eventTitle').value;
-    
-    if (eventTitle) {
-        events[dateKey] = eventTitle;
-        closeEventForm();
-        updateCalendar();
-    }
-}
-
-function closeEventForm() {
-    document.getElementById('eventForm').classList.remove('active');
-    document.getElementById('overlay').classList.remove('active');
-    document.getElementById('eventTitle').value = '';
-}
-
-document.getElementById('prevMonth').addEventListener('click', () => {
-    currentDate = new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1);
-    updateCalendar();
-});
-
-document.getElementById('nextMonth').addEventListener('click', () => {
-    currentDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1);
-    updateCalendar();
-});
-
-// Initialize calendar
-updateCalendar();
-</script></body></html>
+        // Inicializa a exibição dos eventos ambientais
+        displayEnvironmentalEvents();
+    </script>
+</body>
+</html>

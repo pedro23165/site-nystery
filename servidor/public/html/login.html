@@ -9,7 +9,7 @@
   <body>
     <div class="container animated">
       <div class="logo"></div>
-      <h2>Provas do Detran Agora</h2>
+      <h2>Cycloroot</h2>
       <h3>Inscreva-se hoje</h3>
 
       <button class="btn btn-google">
@@ -41,6 +41,9 @@
         Já tem uma conta?
         <button id="showLoginButton" class="btn btn-next">Entrar</button>
       </p>
+
+      <!-- Botão de modo visitante -->
+      <button id="guestModeButton" class="btn btn-next">Entrar como Visitante</button>
     </div>
 
     <div class="overlay" id="loginOverlay" style="display: none">
@@ -114,10 +117,21 @@
             return;
           }
 
+          // Salva as informações do usuário no localStorage
+          localStorage.setItem("username", user.name);
+          localStorage.setItem("isLoggedIn", "true");
+
           alert("Login bem-sucedido!");
           // Redireciona para a página principal após o login
           window.location.href = "pagina.html"; // Substitua por sua página principal
         });
+
+      // Função para ativar o modo visitante
+      document.getElementById("guestModeButton").addEventListener("click", function () {
+        localStorage.setItem("isGuest", "true");
+        // Redireciona para a página principal como visitante
+        window.location.href = "pagina.html"; // Substitua por sua página princiPAL
+      });
     </script>
   </body>
 </html>

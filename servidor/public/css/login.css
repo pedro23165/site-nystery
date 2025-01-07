@@ -1,26 +1,33 @@
+body {
+  font-family: Arial, sans-serif;
+  background-image: url(../image/photo-1632195670211-9e46e8c772c7.avif); /* Imagem de fundo */
+  background-repeat: no-repeat; /* Impede a repetição da imagem */
+  background-size: cover; /* Faz a imagem ocupar todo o espaço disponível */
+  background-position: center center; /* Centraliza a imagem no fundo */
+  color: #fff; /* Cor de texto padrão */
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background-color: #12310d;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  padding-left: 40px; /* Ajuste para afastar o conteúdo do canto */
-}
-
 .container {
   text-align: center;
   width: 320px;
   max-width: 100%;
-  padding: 20px;
+  padding: 10px 20px; /* Reduzido o padding superior */
   position: relative;
+  border: 2px solid rgba(18, 56, 14, 0.5); /* Borda verde escuro com transparência */
+  background-color: rgba(18, 56, 14, 0.8); /* Fundo verde escuro com transparência */
+  border-radius: 15px; /* Bordas arredondadas */
 }
 
 .logo {
@@ -36,7 +43,7 @@ h2 {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 5px;
-  margin-top: 80px;
+  margin-top: 30px; /* Reduzi o espaço acima do título */
 }
 
 h3 {
@@ -49,14 +56,17 @@ h3 {
   width: 100%;
   padding: 12px;
   font-size: 16px;
-  border: none;
-  border-radius: 50px;
+  border: none; /* Remove a borda */
+  background-color: #12310d; /* Fundo verde escuro sólido */
+  color: #fff;
+  border-radius: 50px; /* Bordas arredondadas */
   margin-bottom: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   font-weight: bold;
+  text-decoration: none; /* Remover sublinhado */
 }
 
 .btn img {
@@ -69,17 +79,17 @@ h3 {
 .btn-google {
   background-color: #fff;
   color: #000;
-  border: 1px solid #ccc;
+  border: none; /* Remove a borda */
 }
 
 .btn-apple {
   background-color: #000;
   color: #fff;
-  border: 1px solid #ccc;
+  border: none; /* Remove a borda */
 }
 
 .btn-create-account {
-  background-color: #1da1f2;
+  background-color: #28a745; /* Fundo verde */
   color: #fff;
   border: none;
 }
@@ -105,8 +115,8 @@ p {
 
 .terms a,
 .already-account a {
-  color: #1da1f2;
-  text-decoration: none;
+  color: #28a745; /* Verde nos links */
+  text-decoration: none; /* Remover sublinhado */
 }
 
 .terms a:hover,
@@ -139,15 +149,16 @@ p {
 }
 
 .container.login {
-  background-color: #12310d;
+  background-color: rgba(18, 56, 14, 0.8); /* Fundo verde escuro com transparência */
   color: #ffffff;
-  padding: 30px;
+  padding: 10px 20px; /* Reduzido o padding superior */
   width: 100%;
   max-width: 350px;
-  border-radius: 15px;
+  border-radius: 15px; /* Bordas arredondadas */
   text-align: center;
   position: relative;
   animation: slideDown 0.5s ease-out;
+  border: 2px solid rgba(18, 56, 14, 0.5); /* Borda verde escuro com transparência */
 }
 
 @keyframes slideDown {
@@ -182,7 +193,7 @@ p {
   font-size: 14px;
   color: #000000;
   background-color: #ffffff;
-  border: 1px solid #666;
+  border: none; /* Remove a borda */
   border-radius: 5px;
   outline: none;
 }
@@ -195,8 +206,9 @@ p {
   width: 100%;
   border-radius: 20px;
   cursor: pointer;
-  border: none;
+  border: none; /* Remove a borda */
   margin-top: 10px;
+  text-decoration: none; /* Remover sublinhado */
 }
 
 .terms {
@@ -207,6 +219,6 @@ p {
 }
 
 .terms a {
-  color: #1da1f2;
-  text-decoration: none;
+  color: #28a745; /* Verde nos links */
+  text-decoration: none; /* Remover sublinhado */
 }

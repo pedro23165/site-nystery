@@ -9,6 +9,21 @@ body {
   background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
   min-height: 100vh;
   line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  animation: fadeIn 1.5s ease-out;
+}
+
+/* Animação de Fade In para o corpo */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .header {
@@ -16,16 +31,46 @@ body {
   color: white;
   padding: 2rem;
   text-align: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  transform: translateY(-30px);
+  animation: slideDown 0.5s ease-out;
+  position: relative;
+}
+
+/* Animação para o cabeçalho */
+@keyframes slideDown {
+  from {
+    transform: translateY(-30px);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
 .container {
   max-width: 1200px;
-  margin: 2rem auto;
+  margin: 0 auto;
   padding: 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
+  width: 100%;
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Animação de Fade In e subida para o container */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .contact-form,
@@ -33,7 +78,15 @@ body {
   background: white;
   border-radius: 10px;
   padding: 2rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito de Hover nos formulários */
+.contact-form:hover,
+.contact-info:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 .form-group {
@@ -45,6 +98,7 @@ label {
   margin-bottom: 0.5rem;
   color: #2e7d32;
   font-weight: bold;
+  font-size: 1.1rem;
 }
 
 input,
@@ -55,6 +109,15 @@ select {
   border: 1px solid #ddd;
   border-radius: 5px;
   font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+/* Foco nos campos de input e textarea */
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #4caf50;
+  outline: none;
 }
 
 textarea {
@@ -69,13 +132,15 @@ textarea {
   padding: 1rem 2rem;
   border-radius: 5px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
   width: 100%;
   font-size: 1.1rem;
 }
 
+/* Efeito Hover no botão de envio */
 .submit-btn:hover {
   background: #45a049;
+  transform: translateY(-3px);
 }
 
 .contact-info {
@@ -95,6 +160,12 @@ textarea {
   width: 24px;
   height: 24px;
   fill: #2e7d32;
+  transition: transform 0.3s ease;
+}
+
+/* Animação de aumento nos ícones */
+.info-icon:hover {
+  transform: scale(1.2);
 }
 
 .social-links {
@@ -111,11 +182,13 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
+/* Efeito de Hover nos botões sociais */
 .social-btn:hover {
   transform: translateY(-3px);
+  background-color: #45a049;
 }
 
 @media (max-width: 768px) {
@@ -124,6 +197,7 @@ textarea {
   }
 }
 
+/* Mensagem de sucesso */
 .success-message {
   display: none;
   background: #4caf50;
@@ -132,4 +206,17 @@ textarea {
   border-radius: 5px;
   margin-top: 1rem;
   text-align: center;
+  animation: slideIn 0.5s ease-out;
+}
+
+/* Animação da mensagem de sucesso */
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }

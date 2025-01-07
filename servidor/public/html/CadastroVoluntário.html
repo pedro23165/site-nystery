@@ -3,9 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro voluntário</title>
+    <title>Cadastro Voluntário</title>
     <link rel="stylesheet" href="../css/CadastroVolutário.css">
-</head> 
+    <style>
+        /* Estilo básico da tela de carregamento */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none; /* Inicialmente escondido */
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        .loading-message {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 1.5rem;
+            color: #333;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Mensagens de sucesso e aprovação */
+        .success-message, .approval-message, .error-message {
+            background-color: #4CAF50;  /* Verde para sucesso */
+            color: white;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        .error-message {
+            background-color: #f44336; /* Vermelho para erro */
+        }
+
+        .approval-message {
+            background-color: #2196F3;  /* Azul para aprovação */
+        }
+    </style>
+</head>
 <body>
 <header class="header">
   <svg class="leaf-icon" width="50" height="50" viewBox="0 0 24 24" fill="white">
@@ -22,22 +66,22 @@
   <form id="volunteerForm">
     <div class="form-group">
       <label for="name">Nome Completo</label>
-      <input type="text" id="name" required>
+      <input type="text" id="name" name="name" required>
     </div>
 
     <div class="form-group">
       <label for="email">E-mail</label>
-      <input type="email" id="email" required>
+      <input type="email" id="email" name="email" required>
     </div>
 
     <div class="form-group">
       <label for="phone">Telefone</label>
-      <input type="tel" id="phone" required>
+      <input type="tel" id="phone" name="phone" required>
     </div>
 
     <div class="form-group">
       <label for="area">Área de Interesse</label>
-      <select id="area" required>
+      <select id="area" name="area" required>
         <option value="">Selecione uma área</option>
         <option value="reflorestamento">Reflorestamento</option>
         <option value="limpeza">Limpeza de Praias/Rios</option>
@@ -49,7 +93,7 @@
 
     <div class="form-group">
       <label for="availability">Disponibilidade</label>
-      <select id="availability" required>
+      <select id="availability" name="availability" required>
         <option value="">Selecione sua disponibilidade</option>
         <option value="weekends">Fins de Semana</option>
         <option value="morning">Manhãs</option>
@@ -60,48 +104,86 @@
 
     <div class="form-group">
       <label for="experience">Experiência Prévia (opcional)</label>
-      <textarea id="experience" rows="4"></textarea>
+      <textarea id="experience" name="experience" rows="4"></textarea>
     </div>
 
-    <button type="submit">Cadastrar</button>
+    <button type="submit">Enviar</button>
   </form>
 
-  <div id="successMessage" class="success-message">
-    Cadastro realizado com sucesso! Em breve entraremos em contato.
+  <!-- Mensagem de sucesso -->
+  <div id="successMessage" class="success-message" style="display:none;">
+    Cadastro realizado com sucesso! Seu cadastro será aprovado em até 5 minutos.
+  </div>
+
+  <!-- Mensagem de erro -->
+  <div id="errorMessage" class="error-message" style="display:none;">
+    Ocorreu um erro ao enviar o cadastro. Tente novamente mais tarde.
+  </div>
+
+  <!-- Mensagem de aprovação -->
+  <div id="approvalMessage" class="approval-message" style="display:none;">
+    Seu cadastro foi aprovado! Obrigado por se tornar um EcoVoluntário.
   </div>
 </div>
 
+<!-- Tela de Carregamento -->
+<div id="loadingOverlay" class="loading-overlay">
+    <div class="loading-message">Processando cadastro... Aguarde</div>
+</div>
+
 <script>
+// Lida com o envio do formulário
 document.getElementById('volunteerForm').addEventListener('submit', function(e) {
   e.preventDefault();
   
-  // Simulação de envio do formulário
-  const successMessage = document.getElementById('successMessage');
-  successMessage.style.display = 'block';
+  const form = this;
+  const formData = new FormData(form);
+  const loadingOverlay = document.getElementById('loadingOverlay');
   
-  // Limpa o formulário
-  this.reset();
-  
-  // Esconde a mensagem depois de 5 segundos
+  // Exibe a tela de carregamento
+  loadingOverlay.style.display = 'flex';
+
+  // Esconde qualquer mensagem de sucesso ou erro ao enviar novamente
+  document.getElementById('successMessage').style.display = 'none';
+  document.getElementById('approvalMessage').style.display = 'none';
+  document.getElementById('errorMessage').style.display = 'none';
+
+  // Simula o processamento de 5 segundos (tempo de "carregamento")
   setTimeout(() => {
-    successMessage.style.display = 'none';
-  }, 5000);
+    // Esconde a tela de carregamento
+    loadingOverlay.style.display = 'none';
+
+    // Exibe a mensagem de sucesso após o processamento
+    const successMessage = document.getElementById('successMessage');
+    successMessage.style.display = 'block';
+
+    // Simula a aprovação do cadastro após 5 segundos
+    setTimeout(() => {
+      const approvalMessage = document.getElementById('approvalMessage');
+      approvalMessage.style.display = 'block';
+      successMessage.style.display = 'none';
+    }, 5000); // Exibe a mensagem de aprovação após 5 segundos
+
+    // Limpa o formulário
+    form.reset();
+  }, 5000); // Simula um processamento de 5 segundos
+
 });
 
 // Máscara para telefone
 document.getElementById('phone').addEventListener('input', function(e) {
-  let value = e.target.value.replace(/\D/g, '');
-  if (value.length > 11) value = value.slice(0, 11);
+  let value = e.target.value.replace(/\D/g, ''); // Remove qualquer caracter não numérico
+  if (value.length > 11) value = value.slice(0, 11); // Limita a 11 dígitos
   
   if (value.length > 2) {
-    value = '(' + value.slice(0,2) + ')' + value.slice(2);
+    value = '(' + value.slice(0, 2) + ')' + value.slice(2); // Formata como (XX)XXXX-XXXX
   }
   if (value.length > 9) {
-    value = value.slice(0,9) + '-' + value.slice(9);
+    value = value.slice(0, 9) + '-' + value.slice(9);
   }
   
   e.target.value = value;
 });
 </script>
 </body>
-</html
+</html>

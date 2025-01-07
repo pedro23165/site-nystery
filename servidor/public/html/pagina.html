@@ -23,10 +23,8 @@
       <nav>
         <ul>
           <li><a href="../html/Sobre.html">Sobre</a></li>
-          <li><a href="../html/cadastro.html">Cadastro Usuário</a></li>
-          <li>
-            <a href="../html/CadastroVoluntário.html">Cadastro voluntário</a>
-          </li>
+          <li><a href="../html/cadastro.html" id="cadastroLink">Cadastro Usuário</a></li>
+          <li><a href="../html/CadastroVoluntário.html">Cadastro voluntário</a></li>
         </ul>
       </nav>
     </header>
@@ -36,22 +34,21 @@
       <div>
         <nav>
           <ul>
-            <li>
+            <!-- Link de login visível apenas quando não está logado -->
+            <li id="loginLink">
               <a href="../html/login.html"><strong>Login</strong></a>
             </li>
-            <li>
-              <a href="../html/doações.html"><strong>Doações</strong></a>
+
+            <!-- Exibe o nome do usuário e o link de logout quando logado -->
+            <li id="userInfo" style="display: none;">
+              <span>Bem-vindo, <span id="usernameDisplay"></span>!</span>
+              <!-- O botão "Sair" agora está ao lado do link "Cadastro Voluntário" -->
+              <a href="#" id="logoutButton" onclick="logout()">Sair</a>
             </li>
-            <li>
-              <a href="../html/Relatório.html"
-                ><strong>Relatórios anuais</strong>
-              </a>
-            </li>
-            <li>
-              <a href="../html/faleconosco.html"
-                ><strong>Fale conosco</strong>
-              </a>
-            </li>
+
+            <li><a href="../html/doações.html"><strong>Doações</strong></a></li>
+            <li><a href="../html/Relatório.html"><strong>Relatórios anuais</strong></a></li>
+            <li><a href="../html/faleconosco.html"><strong>Fale conosco</strong></a></li>
           </ul>
         </nav>
       </div>
@@ -61,47 +58,75 @@
       <div class="box">
         <h3>Instruções Ecológicas</h3>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          São orientações para promover práticas sustentáveis e preservar o meio ambiente...
         </p>
-        <button class="button" onclick="redirecionarInstruções()">
-          Acessar
-        </button>
+        <button class="button" onclick="redirecionarInstruções()">Acessar</button>
       </div>
       <div class="box">
         <h3>Reciclagem Criativa</h3>
         <p>
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-          nisi ut aliquip ex ea commodo consequat.
+          Reciclagem Criativa é o processo de transformar materiais descartados...
         </p>
-        <button class="button" onclick="redirecionarReciclagem()">
-          Acessar
-        </button>
+        <button class="button" onclick="redirecionarReciclagem()">Acessar</button>
       </div>
       <div class="box">
-        <h3>Calendário Ecológico</h3>
+        <h3>Calendário ambiental</h3>
         <p>
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-          dolore eu fugiat nulla pariatur.
+          O Calendário Ambiental é uma ferramenta que destaca datas importantes...
         </p>
-        <button class="button" onclick="redirecionarCalendário()">
-          Acessar
-        </button>
+        <button class="button" onclick="redirecionarCalendário()">Acessar</button>
       </div>
     </main>
 
     <footer>
       <p>&copy; 2024 Cycloroot. Todos os direitos reservados.</p>
     </footer>
+
     <script>
+      // Função para verificar se o usuário está logado
+      window.onload = function() {
+        const isLoggedIn = localStorage.getItem('isLoggedIn');
+        const username = localStorage.getItem('username');
+
+        if (isLoggedIn === 'true' && username) {
+          // Exibe o nome do usuário e oculta o link de login
+          document.getElementById('usernameDisplay').textContent = username;
+          document.getElementById('loginLink').style.display = 'none';
+          document.getElementById('userInfo').style.display = 'block';
+
+          // Esconde o link de cadastro de usuário
+          document.getElementById('cadastroLink').style.display = 'none';
+        } else {
+          // Caso não esteja logado, exibe o link de login e esconde as informações do usuário
+          document.getElementById('loginLink').style.display = 'block';
+          document.getElementById('userInfo').style.display = 'none';
+
+          // Exibe o link de cadastro de usuário
+          document.getElementById('cadastroLink').style.display = 'block';
+        }
+      };
+
+      // Função para fazer logout
+      function logout() {
+        // Remove dados do usuário do localStorage
+        localStorage.removeItem('username');
+        localStorage.removeItem('isLoggedIn');
+
+        // Redireciona para a tela de login
+        window.location.href = "../html/login.html"; // Redireciona para a página de login
+      }
+
+      // Funções de redirecionamento
       function redirecionarInstruções() {
-        window.location.href = "Instruções.html"; // Redireciona
+        window.location.href = "Instruções.html"; // Redireciona para Instruções
       }
+
       function redirecionarReciclagem() {
-        window.location.href = "Reciclagem.html"; // Redireciona
+        window.location.href = "Reciclagem.html"; // Redireciona para Reciclagem Criativa
       }
+
       function redirecionarCalendário() {
-        window.location.href = "Calendário.html"; // Redireciona
+        window.location.href = "Calendário.html"; // Redireciona para CALENDARIO
       }
     </script>
   </body>

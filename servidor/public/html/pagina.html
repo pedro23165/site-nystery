@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/pagina.css" />
+    <title>Página Inicial</title>
+  </head>
+  <body>
+    <header>
+      <svg
+        class="leaf-icon"
+        width="30"
+        height="30"
+        viewBox="0 0 24 24"
+        fill="white"
+      >
+        <path
+          d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"
+        />
+      </svg>
+      <h1>Cycloroot</h1>
+      <nav>
+        <ul>
+          <li><a href="../html/Sobre.html">Sobre</a></li>
+          <li><a href="../html/cadastro.html" id="cadastroLink">Cadastro Usuário</a></li>
+          <li><a href="../html/CadastroVoluntário.html">Cadastro voluntário</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <aside class="sidebar">
+      <h2>Menu</h2>
+      <div>
+        <nav>
+          <ul>
+            <!-- Link de login visível apenas quando não está logado -->
+            <li id="loginLink">
+              <a href="../html/login.html"><strong>Login</strong></a>
+            </li>
+
+            <!-- Exibe o nome do usuário e o link de logout quando logado -->
+            <li id="userInfo" style="display: none;">
+              <span>Bem-vindo, <span id="usernameDisplay"></span>!</span>
+              <!-- O botão "Sair" agora está ao lado do link "Cadastro Voluntário" -->
+              <a href="#" id="logoutButton" onclick="logout()">Sair</a>
+            </li>
+
+            <li><a href="../html/doações.html"><strong>Doações</strong></a></li>
+            <li><a href="../html/Relatório.html"><strong>Relatórios anuais</strong></a></li>
+            <li><a href="../html/faleconosco.html"><strong>Fale conosco</strong></a></li>
+          </ul>
+        </nav>
+      </div>
+    </aside>
+
+    <main>
+      <div class="box">
+        <h3>Instruções Ecológicas</h3>
+        <p>
+          São orientações para promover práticas sustentáveis e preservar o meio ambiente...
+        </p>
+        <button class="button" onclick="redirecionarInstruções()">Acessar</button>
+      </div>
+      <div class="box">
+        <h3>Reciclagem Criativa</h3>
+        <p>
+          Reciclagem Criativa é o processo de transformar materiais descartados...
+        </p>
+        <button class="button" onclick="redirecionarReciclagem()">Acessar</button>
+      </div>
+      <div class="box">
+        <h3>Calendário ambiental</h3>
+        <p>
+          O Calendário Ambiental é uma ferramenta que destaca datas importantes...
+        </p>
+        <button class="button" onclick="redirecionarCalendário()">Acessar</button>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Cycloroot. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+      // Função para verificar se o usuário está logado
+      window.onload = function() {
+        const isLoggedIn = localStorage.getItem('isLoggedIn');
+        const username = localStorage.getItem('username');
+
+        if (isLoggedIn === 'true' && username) {
+          // Exibe o nome do usuário e oculta o link de login
+          document.getElementById('usernameDisplay').textContent = username;
+          document.getElementById('loginLink').style.display = 'none';
+          document.getElementById('userInfo').style.display = 'block';
+
+          // Esconde o link de cadastro de usuário
+          document.getElementById('cadastroLink').style.display = 'none';
+        } else {
+          // Caso não esteja logado, exibe o link de login e esconde as informações do usuário
+          document.getElementById('loginLink').style.display = 'block';
+          document.getElementById('userInfo').style.display = 'none';
+
+          // Exibe o link de cadastro de usuário
+          document.getElementById('cadastroLink').style.display = 'block';
+        }
+      };
+
+      // Função para fazer logout
+      function logout() {
+        // Remove dados do usuário do localStorage
+        localStorage.removeItem('username');
+        localStorage.removeItem('isLoggedIn');
+
+        // Redireciona para a tela de login
+        window.location.href = "../html/login.html"; // Redireciona para a página de login
+      }
+
+      // Funções de redirecionamento
+      function redirecionarInstruções() {
+        window.location.href = "Instruções.html"; // Redireciona para Instruções
+      }
+
+      function redirecionarReciclagem() {
+        window.location.href = "Reciclagem.html"; // Redireciona para Reciclagem Criativa
+      }
+
+      function redirecionarCalendário() {
+        window.location.href = "Calendário.html"; // Redireciona para CALENDARIO
+      }
+    </script>
+  </body>
+</html>

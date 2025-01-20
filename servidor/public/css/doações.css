@@ -1,0 +1,315 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #c1e1c1 0%, #a1d1a1 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #4d4d4d;
+  animation: fadeIn 1.5s ease-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.header {
+  background: #ffffff;
+  width: 100%;
+  padding: 2.5rem 1rem;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  border-bottom: 4px solid #4caf50;
+  animation: slideInDown 1s ease-out;
+}
+
+@keyframes slideInDown {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.container {
+  flex: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #f4f4f4;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  animation: zoomIn 1.5s ease-out;
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.eco-impact {
+  background: #eaf0e3;
+  padding: 2rem;
+  border-radius: 12px;
+  margin: 2rem 0;
+  flex-grow: 1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.impact-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: #ffffff;
+  border-radius: 10px;
+  height: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeInLeft 1s ease-out;
+}
+
+@keyframes fadeInLeft {
+  0% {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.icon {
+  font-size: 3rem;
+  color: #4caf50;
+  animation: iconPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes iconPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.donation-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+  flex-grow: 1;
+}
+
+.donation-card {
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  text-align: center;
+  border: 2px solid #e0e0e0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  animation: bounceIn 1s ease-out;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.5);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.donation-card:hover {
+  transform: translateY(-5px);
+  border-color: #4caf50;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.donation-card .eco-benefit {
+  font-size: 1rem;
+  color: #4caf50;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.amount {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #4caf50;
+  margin: 1.5rem 0;
+  animation: fadeInUp 1s ease-out;
+}
+
+.custom-amount {
+  margin: 2rem 0;
+  text-align: center;
+  flex-grow: 1;
+}
+
+input[type="number"] {
+  padding: 1rem;
+  font-size: 1.2rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 350px;
+  margin: 1.5rem 0;
+  transition: border-color 0.3s ease;
+  animation: fadeInUp 1s ease-out;
+}
+
+input[type="number"]:focus {
+  border-color: #4caf50;
+}
+
+.donate-btn {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 1.2rem 3rem;
+  font-size: 1.2rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 350px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 1s ease-out;
+}
+
+.donate-btn:hover {
+  background: #45a049;
+  transform: scale(1.05);
+}
+
+.leaf {
+  color: #4caf50;
+  animation: swing 2s infinite, leafAnimation 4s ease-in-out;
+  display: inline-block;
+  font-size: 1.5rem;
+}
+
+@keyframes swing {
+  0%,
+  100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes leafAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.progress-container {
+  margin: 2rem 0;
+  background: #e0e0e0;
+  border-radius: 15px;
+  height: 25px;
+  width: 100%;
+  animation: fadeInUp 1s ease-out;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #4caf50, #45a049);
+  border-radius: 15px;
+  width: 0%;
+  transition: width 1s ease-in-out;
+}
+
+h1,
+h2,
+h3 {
+  color: #2e7d32;
+  animation: fadeInUp 1s ease-out;
+}
+
+.impact-stats {
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 1.1rem;
+}
+
+.eco-details {
+  background: #f0f0f0;
+  padding: 2rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.eco-details ul {
+  list-style-position: inside;
+  margin-top: 1rem;
+}
+
+.eco-details li {
+  margin: 0.5rem 0;
+  animation: fadeInUp 1s ease-out;
+}

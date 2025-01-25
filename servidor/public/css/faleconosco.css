@@ -2,32 +2,24 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 body {
-  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
   min-height: 100vh;
   line-height: 1.6;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  animation: fadeIn 1.5s ease-out;
-}
-
-/* Animação de Fade In para o corpo */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  background-image: url(../image/photo-1632195670211-9e46e8c772c7.avif);
+  background-repeat: no-repeat; /* Impede a repetição da imagem */
+  background-size: cover; /* Faz a imagem ocupar todo o espaço disponível */
+  background-position: center center; /* Centraliza a imagem no fundo */
 }
 
 .header {
-  background: #2e7d32;
+  background: #12310d;
   color: white;
   padding: 2rem;
   text-align: center;
@@ -40,6 +32,9 @@ body {
   position: relative;
 }
 
+.header p{
+  font-size: 20px;
+}
 /* Animação para o cabeçalho */
 @keyframes slideDown {
   from {
@@ -75,7 +70,8 @@ body {
 
 .contact-form,
 .contact-info {
-  background: white;
+  color: white;
+  background: #236925;
   border-radius: 10px;
   padding: 2rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -96,7 +92,7 @@ body {
 label {
   display: block;
   margin-bottom: 0.5rem;
-  color: #2e7d32;
+  color: #fafafa;
   font-weight: bold;
   font-size: 1.1rem;
 }

@@ -34,18 +34,6 @@
       <div>
         <nav>
           <ul>
-            <!-- Link de login visível apenas quando não está logado -->
-            <li id="loginLink">
-              <a href="../html/login.html"><strong>Login</strong></a>
-            </li>
-
-            <!-- Exibe o nome do usuário e o link de logout quando logado -->
-            <li id="userInfo" style="display: none;">
-              <span>Bem-vindo, <span id="usernameDisplay"></span>!</span>
-              <!-- O botão "Sair" agora está ao lado do link "Cadastro Voluntário" -->
-              <a href="#" id="logoutButton" onclick="logout()">Sair</a>
-            </li>
-
             <li><a href="../html/doações.html"><strong>Doações</strong></a></li>
             <li><a href="../html/Relatório.html"><strong>Relatórios anuais</strong></a></li>
             <li><a href="../html/faleconosco.html"><strong>Fale conosco</strong></a></li>
@@ -83,39 +71,6 @@
     </footer>
 
     <script>
-      // Função para verificar se o usuário está logado
-      window.onload = function() {
-        const isLoggedIn = localStorage.getItem('isLoggedIn');
-        const username = localStorage.getItem('username');
-
-        if (isLoggedIn === 'true' && username) {
-          // Exibe o nome do usuário e oculta o link de login
-          document.getElementById('usernameDisplay').textContent = username;
-          document.getElementById('loginLink').style.display = 'none';
-          document.getElementById('userInfo').style.display = 'block';
-
-          // Esconde o link de cadastro de usuário
-          document.getElementById('cadastroLink').style.display = 'none';
-        } else {
-          // Caso não esteja logado, exibe o link de login e esconde as informações do usuário
-          document.getElementById('loginLink').style.display = 'block';
-          document.getElementById('userInfo').style.display = 'none';
-
-          // Exibe o link de cadastro de usuário
-          document.getElementById('cadastroLink').style.display = 'block';
-        }
-      };
-
-      // Função para fazer logout
-      function logout() {
-        // Remove dados do usuário do localStorage
-        localStorage.removeItem('username');
-        localStorage.removeItem('isLoggedIn');
-
-        // Redireciona para a tela de login
-        window.location.href = "../html/login.html"; // Redireciona para a página de login
-      }
-
       // Funções de redirecionamento
       function redirecionarInstruções() {
         window.location.href = "Instruções.html"; // Redireciona para Instruções

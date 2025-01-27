@@ -6,7 +6,10 @@
 }
 
 body {
-  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  background-image: url(../image/photo-1632195670211-9e46e8c772c7.avif);
+  background-repeat: no-repeat; /* Impede a repetição da imagem */
+  background-size: cover; /* Faz a imagem ocupar todo o espaço disponível */
+  background-position: center center; /* Centraliza a imagem no fundo */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -25,12 +28,11 @@ body {
 }
 
 .header {
-  background: #2e7d32;
+  background: linear-gradient(135deg, #12310d, #2a6a0d);
   color: white;
   padding: 3rem 1.5rem;
   text-align: center;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  border-bottom: 4px solid #4caf50;
   animation: slideInHeader 1s ease-out;
 }
 
@@ -74,6 +76,10 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   animation: fadeInSection 0.7s ease-out;
+}
+.highlights ul li{
+  padding-left: 30px;
+  margin-top: 5px;
 }
 
 @keyframes fadeInSection {
@@ -228,4 +234,11 @@ body {
 
 .year-section {
   animation: fadeIn 0.5s ease-out;
+}
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #2a6a0d;
+  color: white;
+  margin-top: auto; /* Garante que o rodapé fique no final da página */
 }

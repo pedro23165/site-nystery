@@ -149,7 +149,7 @@ p {
 }
 
 .container.login {
-  background-color: rgba(18, 56, 14, 0.8); /* Fundo verde escuro com transparência */
+  background-color: #12310d;
   color: #ffffff;
   padding: 10px 20px; /* Reduzido o padding superior */
   width: 100%;

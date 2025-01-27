@@ -1,16 +1,22 @@
 body {
-  font-family: "Georgia", serif;
-  line-height: 1.6;
-  margin: 20px;
-  background-color: #12310d; /* Fundo escuro */
-  color: #e0e0e0; /* Texto claro */
+  height: 100%;
+  margin: 0;
+  background-image: url(../image/photo-1632195670211-9e46e8c772c7.avif);
+  background-repeat: no-repeat; /* Impede a repetição da imagem */
+  background-size: cover; /* Faz a imagem ocupar todo o espaço disponível */
+  background-position: center center; /* Centraliza a imagem no fundo */
+  color: #ffffff; /* Texto claro */
 }
 
-h1 {
-  font-size: 2.5em;
+header {
   text-align: center;
-  margin-bottom: 20px;
-  color: #ffffff; /* Título branco */
+  padding: 30px;
+  background: linear-gradient(135deg, #12310d, #2a6a0d);
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0; /* Impede que o cabeçalho encolha */
+  margin-bottom: 30px;
 }
 
 h2 {

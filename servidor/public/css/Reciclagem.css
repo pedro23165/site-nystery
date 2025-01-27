@@ -5,9 +5,14 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+html, body {
+  height: 100%; /* Garante que o corpo ocupa toda a altura da janela */
+}
+
 body {
+  display: flex;
+  flex-direction: column;
   background-color: #12310d;
-  padding: 20px;
 }
 
 header {
@@ -16,8 +21,17 @@ header {
   background: linear-gradient(135deg, #12310d, #2a6a0d);
   color: white;
   border-radius: 10px;
-  margin-bottom: 30px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0; /* Impede que o cabeçalho encolha */
+  margin-bottom: 30px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #2a6a0d;
+  color: white;
+  margin-top: auto; /* Garante que o rodapé fique no final da página */
 }
 
 .container {
@@ -26,6 +40,8 @@ header {
   gap: 20px;
   max-width: 1200px;
   margin: 0 auto;
+  flex-grow: 1; /* Faz com que o conteúdo principal ocupe o espaço restante */
+  padding-bottom: 20px;
 }
 
 .recipe-card {
@@ -90,12 +106,12 @@ header {
 
 @keyframes fadeIn {
   from {
-    opacity: 0;
-    transform: translateY(20px);
+      opacity: 0;
+      transform: translateY(20px);
   }
   to {
-    opacity: 1;
-    transform: translateY(0);
+      opacity: 1;
+      transform: translateY(0);
   }
 }
 

@@ -6,13 +6,19 @@
 }
 
 body {
-  background: #12310d;
+  background-image: url(../image/photo-1632195670211-9e46e8c772c7.avif);
+  background-repeat: no-repeat; /* Impede a repetição da imagem */
+  background-size: cover; /* Faz a imagem ocupar todo o espaço disponível */
+  background-position: center center; /* Centraliza a imagem no fundo */
 }
 
 .container {
-  max-width: 1200px;
+  width: 500px;
+  height: 500px;
+  border-radius: 10px;
   margin: 0 auto;
   padding: 20px;
+  background-color: white;
 }
 
 header {

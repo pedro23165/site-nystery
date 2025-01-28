@@ -173,3 +173,16 @@ label {
   display: block;
   margin: 10px 0;
 }
+
+footer {
+  grid-area: footer;
+  background-color: #16480f;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  height: 100px;
+}

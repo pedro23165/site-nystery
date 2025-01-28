@@ -1,182 +1,86 @@
-:root {
-  --primary-color: #2f6a4e;  /* Verde mais suave */
-  --secondary-color: #8dc0a9; /* Verde mais suave e menos saturado */
-  --highlight-color: #f39c12;  /* Cor laranja suave para destacar */
-  --text-color: #333; /* Cor de texto padrão mais suave */
-  --background-color: #435f56; /* Fundo neutro e suave */
-  --overlay-bg-color: rgba(0, 0, 0, 0.8); /* Cor do fundo do overlay */
-}
-
 body {
-  font-family: Arial, sans-serif;
-  background-image: url(../image/photo-1632195670211-9e46e8c772c7.avif); /* Imagem de fundo */
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-image: url(../image/Gemini_Generated_Image_5hnrhk5hnrhk5hnr.jpg);
   background-repeat: no-repeat; /* Impede a repetição da imagem */
   background-size: cover; /* Faz a imagem ocupar todo o espaço disponível */
   background-position: center center; /* Centraliza a imagem no fundo */
-  color: var(--text-color); /* Cor de texto padrão */
-  margin: 0;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
 }
 
-.environmental-events-container {
-  background: rgb(77, 128, 94);
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  width: 100%;
-  max-width: 800px;
-  animation: fadeIn 1s ease-in-out; /* Animação de entrada */
-}
-
-h1 {
+header {
+  background: linear-gradient(135deg, #12310d, #2a6a0d);
   text-align: center;
-  color: var(--primary-color);
-  margin-bottom: 20px;
-  font-size: 1.8em;
-  animation: fadeIn 1.5s ease-in-out; /* Animação de fade-in */
-}
-
-.environmental-events-list {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.environmental-event-box {
-  background: var(--secondary-color);
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  transform: scale(1); /* Padrão */
-  animation: slideIn 0.5s ease-in-out; /* Animação de entrada */
-}
-
-.environmental-event-box:hover {
-  background: var(--primary-color);
-  color: rgb(114, 173, 129);
-  transform: scale(1.05); /* Aumenta ligeiramente ao passar o mouse */
-}
-
-.environmental-event-box h3 {
-  margin-top: 0;
-  color: rgb(5, 73, 16);
-  font-size: 1.3em;
-}
-
-.environmental-event-box p {
-  margin: 10px 0;
-  color: var(--text-color);
-  font-size: 1.1em;
-}
-
-.environmental-event-box p strong {
-  color: var(--primary-color);
-}
-
-/* Overlay para mostrar os detalhes do evento */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: var(--overlay-bg-color);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999; /* Garante que o overlay fique acima de outros conteúdos */
-  animation: fadeInOverlay 0.5s ease-in-out; /* Animação para o overlay aparecer */
-}
-
-.event-details {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  width: 100%;
-  max-width: 500px; /* Define o tamanho máximo da janela */
-  max-height: 70%;
-  overflow-y: auto;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  position: relative;
-  animation: slideInDetails 0.5s ease-out; /* Animação de deslizamento da janela */
-}
-
-.event-details h3,
-.event-details p {
-  color: var(--text-color); /* Cor de texto mais suave */
-}
-
-.event-details p {
-  font-size: 1.2em;
-  margin: 15px 0;
-}
-
-.event-details p strong {
-  color: var(--primary-color); /* Deixa o título forte em verde */
-}
-
-.close-overlay {
-  background-color: var(--primary-color);
+  padding: 1rem;
   color: white;
-  padding: 8px 15px;
-  border: none;
+  display: flex;
+  align-items: center;
+}
+header svg{
+  width: 24px; /* Ajusta o tamanho do SVG */
+    height: 24px; /* Ajusta o tamanho do SVG */
+    margin-left: 600px;
+}
+
+header h1 {
+  margin-bottom: 0.5rem;
+  margin-right: auto;
+  margin-left: 0px;
+}
+
+main {
+  max-width: 1200px;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+.event-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+  transform: scale(1.05);
+}
+
+.event-card h2 {
+  color: #2E7D32;
+  margin-bottom: 0.5rem;
+  border-bottom: 2px solid #81C784;
+  padding-bottom: 0.5rem;
+}
+
+.event-card .date {
+  font-weight: bold;
+  color: #4CAF50;
+  margin-bottom: 0.5rem;
+}
+
+.event-card .description {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.event-card .details {
+  background-color: #E8F5E9;
+  padding: 1rem;
   border-radius: 5px;
-  cursor: pointer;
-  margin-top: 10px;
-  transition: background 0.3s;
-  position: absolute;
-  right: 10px;
-  top: 10px;
+  font-size: 0.9rem;
 }
 
-.close-overlay:hover {
-  background: var(--highlight-color); /* Cor mais suave para o hover */
-}
-
-/* Animações */
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeInOverlay {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes slideIn {
-  0% {
-    transform: translateX(-20px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideInDetails {
-  0% {
-    transform: translateY(-20px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
+footer {
+  background: linear-gradient(135deg, #12310d, #2a6a0d);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }

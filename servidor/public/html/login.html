@@ -82,6 +82,32 @@
     </div>
 
     <script>
+      document.getElementById("loginForm").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const phone = document.getElementById("loginPhone").value.trim();
+    const password = document.getElementById("loginPassword").value;
+
+    const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
+    const user = existingUsers.find((user) => user.phone === phone);
+
+    if (!user) {
+        alert("Usuário não encontrado!");
+        return;
+    }
+
+    if (user.password !== password) {
+        alert("Senha incorreta!");
+        return;
+    }
+
+    localStorage.setItem("username", user.name);
+    localStorage.setItem("isLoggedIn", "true");
+
+    alert("Login bem-sucedido!");
+    window.location.href = "pagina.html"; // Redireciona para a página principal
+});
+
       document
         .getElementById("showLoginButton")
         .addEventListener("click", function () {

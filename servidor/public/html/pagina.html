@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/pagina.css" />
     <title>Página Inicial</title>
+ 
   </head>
   <body>
-    <header>
-      <svg
+      <header>
+        <svg
         class="leaf-icon"
         width="30"
         height="30"
@@ -19,15 +20,25 @@
           d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"
         />
       </svg>
-      <h1>Cycloroot</h1>
-      <nav>
-        <ul>
-          <li><a href="../html/Sobre.html">Sobre</a></li>
-          <li><a href="../html/cadastro.html" id="cadastroLink">Cadastro Usuário</a></li>
-          <li><a href="../html/CadastroVoluntário.html">Cadastro voluntário</a></li>
-        </ul>
-      </nav>
+        <h1>Cycloroot</h1>
+        <nav>
+          <ul id="menuPrincipal" style="margin-left: 800px;">
+                    <li id="cadastroLinks">
+                    <a href="cadastro.html">Cadastro Usuário</a>
+                    <a href="cadastroVoluntario.html">Cadastro Voluntário</a>
+                    <a href="login.html">Login</a>
+                </li>
+                <li id="usuarioLogado" style="display: block;margin-left: 360px;">
+                  <span id="nomeUsuario">Olá, aaaa</span>
+                    <span id="nomeUsuario"></span>
+                    <button onclick="logout()" style="margin-bottom: 20px;margin-left: 10px;">Sair</button>
+                </li>
+            </ul>
+        </nav>
     </header>
+  
+  
+  
 
     <aside class="sidebar">
       <h2>Menu</h2>
@@ -37,6 +48,7 @@
             <li><a href="../html/doações.html"><strong>Doações</strong></a></li>
             <li><a href="../html/Relatório.html"><strong>Relatórios anuais</strong></a></li>
             <li><a href="../html/faleconosco.html"><strong>Fale conosco</strong></a></li>
+            <li><a href="../Sobre.html"><strong>Sobre</strong></a></li>
           </ul>
         </nav>
       </div>
@@ -71,6 +83,38 @@
     </footer>
 
     <script>
+      document.addEventListener("DOMContentLoaded", () => {
+    verificarLogin();
+});
+
+// Função para verificar se há um usuário logado e substituir os botões de cadastro
+function verificarLogin() {
+    const nomeUsuario = localStorage.getItem("username");
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+    const cadastroLinks = document.getElementById("cadastroLinks");
+    const usuarioLogado = document.getElementById("usuarioLogado");
+    const nomeUsuarioSpan = document.getElementById("nomeUsuario");
+
+    if (isLoggedIn === "true" && nomeUsuario) {
+        if (cadastroLinks) cadastroLinks.style.display = "none"; // Esconde os botões de cadastro
+        if (usuarioLogado) {
+            usuarioLogado.style.display = "block"; // Exibe o nome do usuário
+            nomeUsuarioSpan.innerText = `Olá, ${nomeUsuario}`;
+        }
+    } else {
+        if (cadastroLinks) cadastroLinks.style.display = "block"; // Mostra os botões de cadastro
+        if (usuarioLogado) usuarioLogado.style.display = "none"; // Oculta o usuário logado
+    }
+}
+
+// Função de logout
+function logout() {
+    localStorage.removeItem("username");
+    localStorage.removeItem("isLoggedIn");
+    window.location.reload();
+}
+
       // Funções de redirecionamento
       function redirecionarInstruções() {
         window.location.href = "Instruções.html"; // Redireciona para Instruções

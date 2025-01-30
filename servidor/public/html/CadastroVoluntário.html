@@ -47,6 +47,8 @@
       </select>
     </div>
 
+    
+
     <div class="form-group">
       <label for="availability">Disponibilidade</label>
       <select id="availability" name="availability" required>
@@ -126,6 +128,7 @@ document.getElementById('volunteerForm').addEventListener('submit', function(e) 
 
 });
 
+
 // Máscara para telefone
 document.getElementById('phone').addEventListener('input', function(e) {
   let value = e.target.value.replace(/\D/g, ''); // Remove qualquer caracter não numérico
@@ -137,6 +140,7 @@ document.getElementById('phone').addEventListener('input', function(e) {
   if (value.length > 9) {
     value = value.slice(0, 9) + '-' + value.slice(9);
   }
+  
   
   e.target.value = value;
 });

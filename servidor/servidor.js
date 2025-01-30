@@ -24,7 +24,7 @@ function criarServidor() {
         { caminho: '/faleconosco', arquivo: 'html/faleconosco.html' },
         { caminho: '/doacoes', arquivo: 'html/doacoes.html' },
         { caminho: '/calendario', arquivo: 'html/calendario.html' },
-        { caminho: '/cadastrovoluntario', arquivo: 'html/cadastrovoluntario.html' },
+        { caminho: '/cadastrovoluntario', arquivo: 'html/CadastroVoluntário.html' },
     ];
 
     // Configuração de cada rota para servir os arquivos HTML

@@ -465,6 +465,27 @@
       <button id="prevBtn" onclick="changePage(-1)">Anterior</button>
       <button id="nextBtn" onclick="changePage(1)">Próximo</button>
     </div>
+    <footer>
+      <p>&copy; 2024 Cycloroot. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- SCRIPT DE ANIMAÇÃO ADICIONADO AQUI -->
+  <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          const cards = document.querySelectorAll('.recipe-card');
+          
+          cards.forEach((card, index) => {
+              card.style.animationDelay = `${index * 0.2}s`;
+              
+              card.addEventListener('click', function() {
+                  this.style.transform = 'scale(1.02)';
+                  setTimeout(() => {
+                      this.style.transform = 'scale(1)';
+                  }, 200);
+              });
+          });
+      });
+  </script>
 
     <script>
       let currentPage = 0;
@@ -513,12 +534,21 @@
           : "block";
       }
 
+
+      
+
       // Inicializa a navegação
       document.addEventListener("DOMContentLoaded", () => {
         pages.forEach((page, index) => {
           page.style.display = index === 0 ? "block" : "none"; // Apenas a primeira página visível
         });
         changePage(0);
+
+        
+
+
+
+        
       });
     </script>
   </body>

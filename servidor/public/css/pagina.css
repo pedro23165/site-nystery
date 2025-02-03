@@ -23,7 +23,7 @@ body {
 }
 
 .leaf-icon {
-  animation: float 3s ease-in-out infinite;
+  animation: float 2s ease-in-out infinite;
 }
 
 @keyframes float {
@@ -32,7 +32,7 @@ body {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
   }
 }
 

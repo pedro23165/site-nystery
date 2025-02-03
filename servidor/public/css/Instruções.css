@@ -98,6 +98,35 @@ button:hover {
   text-decoration: none;
   transition: transform 0.3s ease;
 }
+/* ... todo o código anterior permanece igual ... */
+
+button:disabled {
+  background-color: #777;
+  cursor: not-allowed;
+}
+
+/* CSS DO FOOTER ADICIONADO AQUI */
+footer {
+  background-color: rgba(18, 49, 13, 0.9); /* Verde escuro com transparência */
+  padding: 25px 0;
+  text-align: center;
+  margin-top: 40px;
+  border-top: 2px solid #2a6a0d;
+  backdrop-filter: blur(5px); /* Efeito de vidro fosco */
+}
+
+footer p {
+  color: #e0e0e0;
+  margin: 0;
+  font-size: 0.9em;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 600px) {
+  body {
+    margin: 10px;
+  }
+/* ... o restante do media query permanece igual ... */
 
 .back-arrow:hover {
   transform: scale(1.1);

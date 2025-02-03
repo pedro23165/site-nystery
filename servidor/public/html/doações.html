@@ -1,141 +1,159 @@
-<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doações</title>
     <link rel="stylesheet" href="../css/doações.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    
-</body>
-</html>
-  </head>
-  <body>
+  <button class="menu-icon" onclick="returnToHomePage()">
+    <i class="fas fa-arrow-left"></i>
+</button>
     <header class="header">
-      <h1>Doações para o Meio Ambiente <span class="leaf">🌱</span></h1>
-      <p>Juntos podemos fazer a diferença para um planeta mais verde</p>
+        <div class="header-container">
+            <div class="header-text">
+                <h1>Doações para o Meio Ambiente <span class="leaf">🌱</span></h1>
+                <p>Juntos podemos fazer a diferença para um planeta mais verde</p>
+            </div>
+        </div>
     </header>
-  
+
     <div class="container">
-      <div class="eco-impact">
-        <h2>Seu Impacto Ambiental</h2>
-        <div class="impact-grid">
-          <div class="impact-item">
-            <span class="icon">🌳</span>
-            <div>
-              <h3>Plantio de Árvores</h3>
-              <p>Cada R$ 10 = 1 árvore plantada</p>
-              <p>Contribui para a redução do CO₂</p>
+        <div class="eco-impact">
+            <h2>Seu Impacto Ambiental</h2>
+            <div class="impact-grid">
+                <div class="impact-item grow-on-hover">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="green" width="48px" height="48px">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                        <circle cx="12" cy="12" r="5" fill="green"/>
+                    </svg>
+                    <p>Árvores Plantadas</p>
+                    <span class="count">250</span>
+                </div>
+                <div class="impact-item grow-on-hover">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="blue" width="48px" height="48px">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                        <circle cx="12" cy="12" r="5" fill="blue"/>
+                    </svg>
+                    <p>CO2 Reduzido</p>
+                    <span class="count">500 ton</span>
+                </div>
             </div>
-          </div>
-          <div class="impact-item">
-            <span class="icon">🦋</span>
-            <div>
-              <h3>Preservação</h3>
-              <p>Proteção de habitat natural</p>
-              <p>Conservação da biodiversidade</p>
+        </div>
+
+        <div class="impact-stats">
+            <h2>Estatísticas de Impacto</h2>
+            <div class="progress-container">
+                <div class="progress-label">Meta de Doações</div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 0%;"></div>
+                </div>
+                <div class="progress-info">
+                    <span>R$ 50.000</span>
+                    <span>Arrecadados: R$ 30.000</span>
+                </div>
             </div>
-          </div>
-          <div class="impact-item">
-            <span class="icon">💧</span>
-            <div>
-              <h3>Água Limpa</h3>
-              <p>Preservação de nascentes</p>
-              <p>Garantia de recursos hídricos</p>
+        </div>
+
+        <div class="donation-options">
+            <h2>Escolha seu Valor de Doação</h2>
+            <div class="amount-buttons">
+                <button class="pulse-on-hover" onclick="selectAmount(50)">R$ 50</button>
+                <button class="pulse-on-hover" onclick="selectAmount(100)">R$ 100</button>
+                <button class="pulse-on-hover" onclick="selectAmount(200)">R$ 200</button>
+                <button class="pulse-on-hover" onclick="selectAmount(500)">R$ 500</button>
             </div>
-          </div>
         </div>
-      </div>
-  
-      <div class="impact-stats">
-        <h2>Meta de arrecadação: R$ 10.000</h2>
-        <div class="progress-container">
-          <div class="progress-bar"></div>
+
+        <div class="custom-amount">
+            <h2>Valor Personalizado</h2>
+            <input type="number" id="customAmountInput" placeholder="Digite seu valor" class="input-focus">
+            <button class="pulse-on-hover" onclick="selectCustomAmount()">Confirmar</button>
         </div>
-        <p>R$ 6.000 arrecadados de R$ 10.000</p>
-      </div>
-  
-      <div class="donation-options">
-        <div class="donation-card" onclick="selectAmount(30)">
-          <h3>Doação Verde</h3>
-          <div class="amount">R$ 30</div>
-          <p>Plante 3 árvores!</p>
-          <div class="eco-benefit">Sequestra até 150kg de CO₂ por ano</div>
+
+        <div class="eco-details">
+            <h2>Detalhes do Projeto</h2>
+            <p>Cada doação contribui diretamente para projetos de reflorestamento e preservação ambiental.</p>
         </div>
-  
-        <div class="donation-card" onclick="selectAmount(50)">
-          <h3>Doação Floresta</h3>
-          <div class="amount">R$ 50</div>
-          <p>Proteja 100m² de floresta</p>
-          <div class="eco-benefit">Preserva habitat de espécies nativas</div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+            <button class="donate-btn pulse-on-hover" onclick="processDonation()">Doar Agora</button>
         </div>
-  
-        <div class="donation-card" onclick="selectAmount(100)">
-          <h3>Doação Ecossistema</h3>
-          <div class="amount">R$ 100</div>
-          <p>Preserve uma nascente</p>
-          <div class="eco-benefit">Garante água limpa para comunidades</div>
-        </div>
-      </div>
-  
-      <div class="custom-amount">
-        <h3>Ou escolha um valor personalizado:</h3>
-        <input type="number" id="customAmount" min="1" step="1" placeholder="Digite o valor">
-        <p>Cada R$ 10 = 1 árvore plantada + proteção ambiental</p>
-      </div>
-  
-      <div class="eco-details">
-        <h3>Benefícios da sua doação:</h3>
-        <ul>
-          <li>Reflorestamento de áreas degradadas</li>
-          <li>Proteção de espécies ameaçadas</li>
-          <li>Conservação de recursos hídricos</li>
-          <li>Educação ambiental para comunidades</li>
-          <li>Desenvolvimento sustentável</li>
-        </ul>
-      </div>
-  
-      <div style="text-align: center; margin-top: 2rem;">
-        <button class="donate-btn" onclick="processDonation()">Doar Agora</button>
-      </div>
     </div>
-  
+
+    <footer class="footer">
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Doações Ambientais. Todos os direitos reservados.</p>
+            <p>Desenvolvido com ♥ pela Natureza</p>
+        </div>
+    </footer>
+
     <script>
       let selectedAmount = 0;
-  
-      function selectAmount(amount) {
-        selectedAmount = amount;
-        document.querySelectorAll('.donation-card').forEach(card => {
-          card.style.borderColor = '#e0e0e0';
-        });
-        event.currentTarget.style.borderColor = '#4CAF50';
-        document.getElementById('customAmount').value = '';
-      }
-  
-      function processDonation() {
-        const customAmount = document.getElementById('customAmount').value;
-        const finalAmount = customAmount || selectedAmount;
-  
-        if (finalAmount <= 0 || !finalAmount) {
-          alert('Por favor, selecione um valor ou digite um valor personalizado.');
-          return;
-        }
-  
-        const trees = Math.floor(finalAmount / 10);
-        const co2 = trees * 50;
-  
-        alert(`Obrigado pela sua doação de R$ ${finalAmount}! 
-        \nSeu impacto ambiental:
-        \n🌳 ${trees} árvores serão plantadas
-        \n♻️ ${co2}kg de CO₂ sequestrados por ano
-        \n💚 Proteção de habitat natural`);
-      }
-  
-      // Animação da barra de progresso
-      window.addEventListener('load', () => {
-        document.querySelector('.progress-bar').style.width = '60%';
-      });
+
+function selectAmount(amount) {
+    selectedAmount = amount;
+    const buttons = document.querySelectorAll('.donation-options button');
+    buttons.forEach(btn => btn.classList.remove('selected'));
+    event.target.classList.add('selected');
+    
+    // Add a subtle animation when selecting amount
+    event.target.classList.add('pulse');
+    setTimeout(() => {
+        event.target.classList.remove('pulse');
+    }, 300);
+}
+
+function selectCustomAmount() {
+    const customInput = document.getElementById('customAmountInput');
+    const customAmount = parseFloat(customInput.value);
+    
+    if (isNaN(customAmount) || customAmount <= 0) {
+        customInput.classList.add('shake');
+        setTimeout(() => {
+            customInput.classList.remove('shake');
+        }, 300);
+        alert('Por favor, insira um valor válido.');
+        return;
+    }
+    
+    selectedAmount = customAmount;
+}
+
+function processDonation() {
+    if (selectedAmount <= 0) {
+        const donateBtn = document.querySelector('.donate-btn');
+        donateBtn.classList.add('shake');
+        setTimeout(() => {
+            donateBtn.classList.remove('shake');
+        }, 300);
+        alert('Por favor, selecione um valor para doação.');
+        return;
+    }
+
+    // Aqui você poderia integrar com um gateway de pagamento
+    alert(`Obrigado por sua doação de R$ ${selectedAmount}! Seu apoio faz a diferença.`);
+    
+    // Atualizar barra de progresso
+    const progressBar = document.querySelector('.progress-bar');
+    const currentProgress = parseFloat(progressBar.style.width);
+    const newProgress = Math.min(currentProgress + (selectedAmount / 500), 100);
+    progressBar.style.width = `${newProgress}%`;
+}
+
+function returnToHomePage() {
+    // Redirect to the home page
+    window.location.href = 'pagina.html';
+}
+
+window.addEventListener('load', () => {
+    const progressBar = document.querySelector('.progress-bar');
+    progressBar.style.width = '60%';
+});
+
     </script>
-  </body>
-  </html>
+</body>
+</html>
+

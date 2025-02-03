@@ -1,15 +1,17 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+-<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>faleconosco</title>
+  <title>Cycloroot | Fale Conosco</title>
   <link rel="stylesheet" href="../css/faleconosco.css">
-</html>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
 <body>
   <header class="header">
-    <h1>Fale Conosco</h1>
-    <p>Estamos aqui para ouvir suas sugestões e responder suas dúvidas sobre nossos projetos ambientais</p>
+    <div class="header-content">
+      <h1>Fale Conosco</h1>
+      <p>Conectando pessoas, transformando o meio ambiente</p>
+    </div>
   </header>
 
   <div class="container">
@@ -69,7 +71,7 @@
           </svg>
           <div>
             <h3>E-mail</h3>
-            <p>contato@projetoambiental.org</p>
+            <p>contato@cycloroot.org</p>
           </div>
         </div>
 
@@ -104,16 +106,42 @@
     </div>
   </div>
 
-  <script>
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-text">
+        <p>&copy; 2023 Cycloroot. Todos os direitos reservados.</p>
+        <p>Transformando o meio ambiente, uma ação de cada vez.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#">Política de Privacidade</a>
+        <a href="#">Termos de Uso</a>
+        <a href="#">Contato</a>
+      </div>
+    </div>
+  </footer>
+
+  <script >
     function handleSubmit(event) {
       event.preventDefault();
       
-      // Simular envio do formulário
       const form = document.getElementById('contactForm');
       const successMessage = document.getElementById('successMessage');
       
-      // Mostrar mensagem de sucesso
+      // Validate form fields
+      const nameInput = document.getElementById('name');
+      const emailInput = document.getElementById('email');
+      const subjectInput = document.getElementById('subject');
+      const messageInput = document.getElementById('message');
+    
+      if (!nameInput.value || !emailInput.value || !subjectInput.value || !messageInput.value) {
+        alert('Por favor, preencha todos os campos.');
+        return;
+      }
+    
+      // Simular envio do formulário com animação
       successMessage.style.display = 'block';
+      form.style.opacity = '0.5';
+      form.style.pointerEvents = 'none';
       
       // Limpar formulário
       form.reset();
@@ -121,8 +149,11 @@
       // Esconder mensagem após 5 segundos
       setTimeout(() => {
         successMessage.style.display = 'none';
+        form.style.opacity = '1';
+        form.style.pointerEvents = 'auto';
       }, 5000);
     }
+
   </script>
 </body>
 </html>

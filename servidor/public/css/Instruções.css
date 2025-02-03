@@ -6,24 +6,13 @@ body {
   flex-direction: column;
   min-height: 100vh;
   text-align: center;
-  background-image: url(../image/Gemini_Generated_Image_8bnue8bnue8bnue8.jpg);
-  background-repeat: no-repeat; /* Impede a repetição da imagem */
-  background-size: cover; /* Faz a imagem ocupar todo o espaço disponível */
-  background-position: center center; /* Centraliza a imagem no fundo */
 }
 
 header {
   position: relative;
-  background: linear-gradient(135deg, #558355, #99c599);
+  background-color: #2ecc71;
   color: white;
   padding: 20px;
-}
-header h1{
-  font-family: 'Times New Roman', Times, serif;
-  margin-right: 10px;
-}
-header p{
-  font-family: 'Times New Roman', Times, serif;
 }
 
 .tipo-instrucoes {
@@ -56,8 +45,7 @@ main {
 }
 
 #instrucoes-container {
-  background-color: #7a977a;
-  color: white;
+  background-color: white;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   padding: 30px;
@@ -98,56 +86,13 @@ button:hover {
   text-decoration: none;
   transition: transform 0.3s ease;
 }
-/* ... todo o código anterior permanece igual ... */
-
-button:disabled {
-  background-color: #777;
-  cursor: not-allowed;
-}
-
-/* CSS DO FOOTER ADICIONADO AQUI */
-footer {
-  background-color: rgba(18, 49, 13, 0.9); /* Verde escuro com transparência */
-  padding: 25px 0;
-  text-align: center;
-  margin-top: 40px;
-  border-top: 2px solid #2a6a0d;
-  backdrop-filter: blur(5px); /* Efeito de vidro fosco */
-}
-
-footer p {
-  color: #e0e0e0;
-  margin: 0;
-  font-size: 0.9em;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-@media (max-width: 600px) {
-  body {
-    margin: 10px;
-  }
-/* ... o restante do media query permanece igual ... */
 
 .back-arrow:hover {
   transform: scale(1.1);
 }
 
 footer {
-  background-color: #99c599;
+  background-color: #2ecc71;
   color: white;
   padding: 10px;
-}
-
-.leaf-icon {
-  animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
 }

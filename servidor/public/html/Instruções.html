@@ -1,525 +1,193 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/Instruções.css" />
-    <title>Instruções</title>
-
-  </head>
-  <body>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Guia Ecológico Diário</title>
+    <link rel="stylesheet" href="../css/Instruções.css">
+</head>
+<body>
     <header>
-      <h1>Instruções de Reciclagem</h1>
+        <a href="../html/pagina.html" class="back-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M15 18l-6-6 6-6"/>
+            </svg>
+        </a>
+        <h1>🌍 Guia de Práticas Ecológicas</h1>
+        <p>Pequenas ações para um grande impacto ambiental</p>
+        <nav class="tipo-instrucoes">
+            <button class="tipo-btn" data-tipo="diarias">Diárias</button>
+            <button class="tipo-btn" data-tipo="semanais">Semanais</button>
+            <button class="tipo-btn" data-tipo="mensais">Mensais</button>
+        </nav>
     </header>
-    
-    <div class="search-container">
-      <input
-        type="text"
-        id="searchInput"
-        placeholder="Pesquisar Instruções..."
-        oninput="filterArticles()"
-      />
-    </div>
 
-    <div id="content">
-      <div class="no-results" id="noResultsMessage">
-        Nenhum artigo encontrado.
-      </div>
-      <section class="page" id="capitulo-i">
-        <h2>Instruções diárias</h2>
-        <p>
-          <strong>1. Reduza o uso de plásticos descartáveis</strong>: Use
-          garrafinhas de água reutilizáveis, sacolas de pano e embalagens
-          biodegradáveis.
-        </p>
-        <p>
-          <strong>2. Compre alimentos a granel</strong>: Evite embalagens
-          plásticas, comprando produtos a granel ou em embalagens recicláveis.
-        </p>
-        <p>
-          <strong>3. Prefira transportes sustentáveis</strong>: Opte por
-          caminhar, pedalar ou usar transporte público.
-        </p>
-        <p>
-          <strong>4. Plante árvores ou jardins</strong>: Plantar árvores e
-          plantas ajuda a absorver CO2 e melhora o ambiente.
-        </p>
-        <p>
-          <strong>5. Evite o desperdício de água</strong>: Feche a torneira
-          enquanto escova os dentes ou lava a louça, use chuveiros de baixo
-          consumo.
-        </p>
-        <p>
-          <strong>6. Reaproveite materiais</strong>: Use roupas, móveis e
-          utensílios de segunda mão, sempre que possível.
-        </p>
-        <p>
-          <strong>7. Compre produtos locais e sazonais</strong>: Isso reduz a
-          pegada de carbono associada ao transporte de alimentos.
-        </p>
-        <p>
-          <strong>8. Troque lâmpadas incandescentes por LED</strong>: As
-          lâmpadas LED consomem menos energia e duram mais.
-        </p>
-        <p>
-          <strong>9. Use pilhas recarregáveis</strong>: Elimine pilhas
-          descartáveis e opte por versões recarregáveis.
-        </p>
-        <p>
-          <strong>10. Recicle corretamente</strong>: Separe lixo reciclável
-          (plástico, vidro, papel) de forma adequada.
-        </p>
-        <p>
-          <strong>11. Compre menos e escolha com consciência</strong>: Evite o
-          consumismo e compre apenas o necessário, optando por produtos
-          duráveis.
-        </p>
-        <p>
-          <strong>12. Conserte ao invés de descartar</strong>: Reparar objetos
-          em vez de jogá-los fora ajuda a reduzir o desperdício.
-        </p>
-        <p>
-          <strong>13. Desligue os aparelhos quando não estiverem em uso</strong
-          >: Evite deixar eletrônicos em stand-by para economizar energia.
-        </p>
-        <p>
-          <strong>14. Utilize energias renováveis</strong>: Instale painéis
-          solares ou opte por fornecedores de energia renovável.
-        </p>
-        <p>
-          <strong>15. Use produtos de limpeza ecológicos</strong>: Substitua
-          produtos de limpeza tradicionais por opções ecológicas, sem produtos
-          químicos.
-        </p>
-        <p>
-          <strong>16. Substitua o uso de papel por digital</strong>: Sempre que
-          possível, evite imprimir documentos e use versões digitais.
-        </p>
-        <p>
-          <strong>17. Leve seus próprios talheres e copos</strong>: Evite o uso
-          de utensílios descartáveis quando for comer fora.
-        </p>
-        <p>
-          <strong>18. Compre roupas sustentáveis</strong>: Escolha roupas de
-          marcas que se preocupam com o impacto ambiental, feitas de materiais
-          sustentáveis.
-        </p>
-        <p>
-          <strong>19. Use sabão e detergente biodegradável</strong>: Escolha
-          produtos que não agridem o meio ambiente, especialmente na lavagem de
-          roupas e louças.
-        </p>
-        <p>
-          <strong>20. Aproveite melhor os alimentos</strong>: Evite desperdícios
-          cozinhando porções menores e aproveitando as sobras.
-        </p>
-        <p>
-          <strong>21. Faça compostagem</strong>: Transforme restos de alimentos
-          em adubo natural para suas plantas.
-        </p>
-        <p>
-          <strong>22. Use papel reciclado</strong>: Opte por produtos feitos com
-          papel reciclado, sempre que possível.
-        </p>
-        <p>
-          <strong>23. Troque o carro por um veículo elétrico</strong>: Se
-          possível, escolha um carro elétrico ou híbrido para reduzir a emissão
-          de poluentes.
-        </p>
-        <p>
-          <strong>24. Evite produtos com microplásticos</strong>: Opte por
-          cosméticos e produtos de higiene pessoal sem microplásticos, que são
-          prejudiciais aos oceanos.
-        </p>
-        <p>
-          <strong>25. Aproveite a luz natural</strong>: Deixe as cortinas
-          abertas durante o dia para reduzir o uso de luz artificial.
-        </p>
-        <p>
-          <strong>26. Descarte lixo eletrônico de forma responsável</strong>:
-          Leve seus eletrônicos antigos para centros de reciclagem
-          especializados.
-        </p>
-        <p>
-          <strong>27. Instale torneiras e chuveiros de baixo fluxo</strong>:
-          Economize água e energia com dispositivos de baixo consumo.
-        </p>
-        <p>
-          <strong>28. Adote uma alimentação mais vegetal</strong>: Reduza o
-          consumo de carne e opte por refeições à base de plantas.
-        </p>
-        <p>
-          <strong>29. Use produtos de higiene pessoal sustentáveis</strong>:
-          Troque cotonetes plásticos por opções de papel e use shampoos sólidos.
-        </p>
-        <p>
-          <strong>30. Participe de ações de limpeza de áreas públicas</strong>:
-          Participe de mutirões de limpeza de praças, praias e outros espaços
-          naturais.
-        </p>
-      </section>
+    <main>
+        <div id="instrucoes-container">
+            <div id="instrucoes-display">
+                <!-- Conteúdo será inserido pelo JavaScript -->
+            </div>
+            <div class="navegacao">
+                <button id="btn-anterior">← Anterior</button>
+                <button id="btn-proximo">Próximo →</button>
+            </div>
+        </div>
+    </main>
 
-      <section class="page" id="capitulo-ii" style="display: none">
-        <h2>Instruções semanais</h2>
-        <p>
-          <strong>1. Limpe e organize sua casa semanalmente</strong>: Mantenha
-          seu espaço arrumado, limpando superfícies e organizando os itens.
-        </p>
-        <p>
-          <strong>2. Faça uma análise do seu consumo de energia</strong>:
-          Verifique aparelhos e luzes que podem ser desligados ou atualizados
-          para modelos mais eficientes.
-        </p>
-        <p>
-          <strong>3. Realize a separação do lixo reciclável</strong>: Separe e
-          lave materiais recicláveis como plásticos, vidros e metais antes de
-          descartá-los.
-        </p>
-        <p>
-          <strong>4. Revise a lista de alimentos em casa</strong>: Verifique se
-          os alimentos estão vencendo e organize-os para evitar desperdícios.
-        </p>
-        <p>
-          <strong
-            >5. Verifique se seus produtos de limpeza são ecológicos</strong
-          >: Substitua produtos químicos por alternativas ecológicas para evitar
-          poluição.
-        </p>
-        <p>
-          <strong>6. Prepare refeições saudáveis e equilibradas</strong>:
-          Planeje cardápios semanais com alimentos frescos e sazonais.
-        </p>
-        <p>
-          <strong>7. Faça atividades físicas ao ar livre</strong>: Aproveite o
-          tempo ao ar livre para caminhar, correr ou praticar esportes,
-          reduzindo o uso de transportes motorizados.
-        </p>
-        <p>
-          <strong
-            >8. Limpeza de filtros de ar condicionado ou ventiladores</strong
-          >: Mantenha os filtros limpos para melhorar a qualidade do ar e a
-          eficiência dos aparelhos.
-        </p>
-        <p>
-          <strong>9. Lave roupas em ciclos curtos</strong>: Utilize a máquina de
-          lavar em ciclos curtos e com água fria para economizar energia.
-        </p>
-        <p>
-          <strong>10. Verifique vazamentos em casa</strong>: Identifique e
-          conserte vazamentos de água para evitar desperdício.
-        </p>
-        <p>
-          <strong>11. Planeje sua compra de supermercado</strong>: Faça uma
-          lista de compras consciente e evite comprar em excesso para reduzir
-          desperdícios.
-        </p>
-        <p>
-          <strong>12. Descarte alimentos e produtos vencidos</strong>: Faça uma
-          revisão semanal da sua despensa para evitar produtos vencidos e
-          expiração.
-        </p>
-        <p>
-          <strong>13. Cuide das suas plantas ou jardim</strong>: Regue e cuide
-          das plantas para manter o ambiente saudável e equilibrado.
-        </p>
-        <p>
-          <strong>14. Verifique o uso de produtos descartáveis</strong>: Evite o
-          uso de itens descartáveis, como talheres e copos plásticos,
-          substituindo-os por alternativas reutilizáveis.
-        </p>
-        <p>
-          <strong>15. Limpeza de utensílios de cozinha</strong>: Lave bem os
-          utensílios e aparelhos, como panelas e eletrodomésticos, para garantir
-          seu bom funcionamento.
-        </p>
-        <p>
-          <strong>16. Realize o controle de estoque doméstico</strong>:
-          Verifique os produtos que estão em falta em casa e reabasteça-os de
-          forma responsável.
-        </p>
-        <p>
-          <strong>17. Organize sua agenda de compromissos</strong>: Planeje a
-          semana com antecedência para otimizar o tempo e reduzir deslocamentos
-          desnecessários.
-        </p>
-        <p>
-          <strong>18. Verifique o estado das pilhas e baterias</strong>:
-          Certifique-se de que suas pilhas e baterias estão em bom estado ou
-          troque-as por versões recarregáveis.
-        </p>
-        <p>
-          <strong>19. Faça revisão de seu plano de sustentabilidade</strong>:
-          Avalie suas ações para reduzir o impacto ambiental e ajuste conforme
-          necessário.
-        </p>
-        <p>
-          <strong
-            >20. Verifique a necessidade de manutenção em
-            eletrodomésticos</strong
-          >: Faça manutenção preventiva em aparelhos como geladeiras,
-          micro-ondas e fogões.
-        </p>
-        <p>
-          <strong>21. Utilize o transporte público ou bicicleta</strong>: Ao
-          invés de usar o carro, prefira o transporte público ou a bicicleta
-          para se deslocar.
-        </p>
-        <p>
-          <strong>22. Envolva a família em atividades ecológicas</strong>:
-          Ensine boas práticas ambientais aos membros da sua casa, como
-          reciclagem e economia de energia.
-        </p>
-        <p>
-          <strong>23. Verifique o consumo de água semanalmente</strong>: Avalie
-          se há maneiras de reduzir o consumo de água durante a semana.
-        </p>
-        <p>
-          <strong>24. Realize um backup digital semanal</strong>: Organize seus
-          arquivos e faça backup de dados importantes para evitar a perda de
-          informações.
-        </p>
-        <p>
-          <strong>25. Faça a limpeza de seus dispositivos eletrônicos</strong>:
-          Limpe seu celular, computador e outros dispositivos para garantir seu
-          bom funcionamento e longevidade.
-        </p>
-        <p>
-          <strong
-            >26. Avalie a quantidade de embalagens que você está
-            consumindo</strong
-          >: Tente diminuir o uso de produtos com excessivas embalagens
-          plásticas.
-        </p>
-        <p>
-          <strong>27. Atualize seu orçamento financeiro</strong>: Planeje suas
-          finanças para garantir que você esteja consumindo de forma responsável
-          e sustentável.
-        </p>
-        <p>
-          <strong
-            >28. Inspecione sua casa em busca de áreas que podem ser melhoradas
-            para eficiência energética</strong
-          >: Veja onde pode melhorar a eficiência energética, como lacrar
-          janelas ou adicionar isolamento.
-        </p>
-        <p>
-          <strong>29. Organize as roupas para lavar</strong>: Separe as roupas
-          por cores e tipos de tecido para otimizar o processo de lavagem.
-        </p>
-        <p>
-          <strong>30. Desconecte-se de dispositivos por um tempo</strong>: Faça
-          pausas tecnológicas para diminuir a sobrecarga mental e reduzir o
-          consumo de energia elétrica.
-        </p>
-      </section>
-      <section class="page" id="capitulo-iii" style="display: none">
-        <h2>Instruções mensais</h2>
-        <p>
-          <strong>1. Faça uma revisão dos seus hábitos de consumo</strong>:
-          Avalie seus hábitos de compra e veja onde você pode melhorar para
-          reduzir o desperdício.
-        </p>
-        <p>
-          <strong>2. Realize a manutenção de sistemas domésticos</strong>:
-          Verifique o estado de aquecedores, sistemas de água e outros
-          equipamentos importantes.
-        </p>
-        <p>
-          <strong>3. Doe itens que não usa mais</strong>: Faça uma revisão dos
-          itens que não usa e doe ou recicle o que não precisa.
-        </p>
-        <p>
-          <strong>4. Verifique seu consumo de energia no mês</strong>: Avalie
-          seu consumo de energia elétrica e ajuste práticas para diminuir o uso.
-        </p>
-        <p>
-          <strong>5. Organize os documentos em casa</strong>: Arquive ou
-          descarte documentos desnecessários para evitar o acúmulo de papéis.
-        </p>
-        <p>
-          <strong>6. Atualize suas metas de sustentabilidade</strong>: Revise as
-          metas ambientais que você se propôs a alcançar e defina novas
-          estratégias para melhorar.
-        </p>
-        <p>
-          <strong
-            >7. Realize a troca de produtos de limpeza por opções
-            ecológicas</strong
-          >: Refaça suas compras de produtos de limpeza, priorizando opções mais
-          sustentáveis.
-        </p>
-        <p>
-          <strong>8. Planeje um mês sem desperdício de alimentos</strong>:
-          Organize suas compras e refeições de forma que não haja sobra de
-          alimentos que possam se estragar.
-        </p>
-        <p>
-          <strong>9. Organize suas finanças para reduzir desperdícios</strong>:
-          Faça uma revisão do orçamento para identificar áreas onde você pode
-          cortar gastos desnecessários.
-        </p>
-        <p>
-          <strong
-            >10. Realize uma verificação do estado de sua residência</strong
-          >: Faça uma inspeção geral na sua casa para garantir que tudo esteja
-          em bom estado e funcionando corretamente.
-        </p>
-        <p>
-          <strong
-            >11. Atualize seus dispositivos com as últimas versões de
-            software</strong
-          >: Mantenha seus dispositivos atualizados para melhorar a segurança e
-          a eficiência.
-        </p>
-        <p>
-          <strong>12. Participe de atividades de voluntariado ambiental</strong
-          >: Envolva-se em projetos ou mutirões para melhorar o meio ambiente.
-        </p>
-        <p>
-          <strong>13. Faça um jejum de plástico por um mês</strong>: Durante o
-          mês, evite ao máximo o uso de plásticos descartáveis.
-        </p>
-        <p>
-          <strong>14. Adote novos hábitos para economizar água</strong>:
-          Identifique novas formas de reduzir o consumo de água em sua casa ou
-          trabalho.
-        </p>
-        <p>
-          <strong>15. Organize uma limpeza de primavera em casa</strong>: Faça
-          uma limpeza mais profunda nos cantos da casa, além da manutenção
-          diária.
-        </p>
-        <p>
-          <strong>16. Refaça seu planejamento de transporte</strong>: Revise
-          suas opções de transporte e considere alternativas mais ecológicas,
-          como caronas ou transporte público.
-        </p>
-        <p>
-          <strong>17. Revise o estado das suas roupas e acessórios</strong>:
-          Verifique o que precisa de conserto ou doação e descarte ou recicle o
-          que não pode mais ser usado.
-        </p>
-        <p>
-          <strong>18. Invista em produtos duráveis e reutilizáveis</strong>:
-          Priorize produtos que duram mais, reduzindo a necessidade de
-          substituições frequentes.
-        </p>
-        <p>
-          <strong>19. Adote um mês de alimentação consciente</strong>: Coma de
-          maneira mais sustentável, focando em produtos orgânicos e vegetais.
-        </p>
-        <p>
-          <strong>20. Avalie a pegada de carbono da sua vida</strong>: Analise
-          suas ações e faça ajustes para reduzir a sua pegada de carbono mensal.
-        </p>
-        <p>
-          <strong>21. Faça a revisão de sua conta de água</strong>: Verifique o
-          uso de água durante o mês e procure formas de economizar.
-        </p>
-        <p>
-          <strong
-            >22. Realize uma doação mensal de roupas e itens não usados</strong
-          >: Doe itens que você não usa mais para aqueles que precisam.
-        </p>
-        <p>
-          <strong>23. Reduza o consumo de carne por um mês</strong>: Tente
-          adotar uma alimentação com menos produtos de origem animal para
-          reduzir o impacto ambiental.
-        </p>
-        <p>
-          <strong>24. Faça uma reciclagem de móveis ou objetos antigos</strong>:
-          Reaproveite ou recicle móveis e itens que você não usa mais.
-        </p>
-        <p>
-          <strong>25. Reduza o uso de papel no escritório</strong>: Use mais
-          tecnologia e evite imprimir sempre que possível.
-        </p>
-        <p>
-          <strong
-            >26. Monitore seu consumo de produtos de higiene pessoal</strong
-          >: Escolha opções mais ecológicas e com menos embalagem.
-        </p>
-        <p>
-          <strong>27. Conserte ou restaure objetos quebrados</strong>: Ao invés
-          de jogar fora, conserte ou repare os objetos danificados.
-        </p>
-        <p>
-          <strong>28. Participe de campanhas de arrecadação e doação</strong>:
-          Contribua com produtos ou tempo para apoiar causas ambientais ou
-          sociais.
-        </p>
-        <p>
-          <strong>29. Faça um check-up em seus aparelhos eletrônicos</strong>:
-          Verifique a eficiência de seus aparelhos e considere substituições por
-          modelos mais eficientes.
-        </p>
-        <p>
-          <strong>30. Avalie o impacto ambiental das suas viagens</strong>: Se
-          for viajar, considere opções mais sustentáveis, como transportes
-          coletivos ou destinos mais próximos.
-        </p>
-      </section>
-    </div>
-
-    <div class="navigation">
-      <button id="prevBtn" onclick="changePage(-1)">Anterior</button>
-      <button id="nextBtn" onclick="changePage(1)">Próximo</button>
-    </div>
+    <footer>
+        <p>        <svg
+          class="leaf-icon"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="white"
+        >
+          <path
+            d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"
+          />
+        </svg><strong>cycloroot</strong> | Guia Ecológico | Cuidando do Nosso Planeta</p>
+    </footer>
 
     <script>
-      let currentPage = 0;
-      const pages = document.querySelectorAll(".page");
+      const instrucoes = {
+    diarias: [
+        "Desligue as luzes ao sair de um ambiente",
+        "Use caneca ou garrafa reutilizável",
+        "Reduza o consumo de água no banho",
+        "Separe o lixo reciclável",
+        "Utilize transporte público ou bicicleta",
+        "Evite sacos plásticos em compras",
+        "Desligue aparelhos eletrônicos na tomada",
+        "Use ambas as faces do papel",
+        "Prefira iluminação natural durante o dia",
+        "Compre apenas alimentos necessários",
+        "Utilize sacolas retornáveis",
+        "Diminua o uso de ar-condicionado",
+        "Mantenha a temperatura do refrigerador adequada",
+        "Use produtos de limpeza biodegradáveis",
+        "Feche torneiras enquanto escova os dentes",
+        "Evite descartáveis em refeições",
+        "Utilize lâmpadas LED",
+        "Faça compostagem doméstica simples",
+        "Prefira desligar eletrônicos totalmente",
+        "Use filtro de água em vez de garrafas plásticas",
+        "Não deixe aparelhos em standby",
+        "Regue plantas no início da manhã ou final da tarde",
+        "Prefira alimentos locais e da estação",
+        "Utilize papel reciclado",
+        "Evite imprimir documentos desnecessários",
+        "Mantenha pneus do carro calibrados",
+        "Use sacos de pano para compras",
+        "Limpe filtros de eletrodomésticos",
+        "Utilize energias renováveis quando possível",
+        "Pratique consumo consciente"
+    ],
+    semanais: [
+        "Faça a compostagem dos restos de alimentos",
+        "Limpe os filtros do ar-condicionado",
+        "Verifique vazamentos em torneiras",
+        "Planeje compras para reduzir desperdício",
+        "Organize coleta seletiva em casa",
+        "Limpe geladeira, evitando desperdício",
+        "Faça manutenção de equipamentos",
+        "Verifique vedação de janelas e portas",
+        "Calcule sua pegada de carbono",
+        "Limpe área externa sem usar água em excesso",
+        "Plante ervas ou vegetais pequenos",
+        "Recicle óleo de cozinha corretamente",
+        "Faça pequenos reparos em roupas",
+        "Limpe armários, doe o que não usa",
+        "Verifique consumo de energia",
+        "Prepare refeições congeladas",
+        "Limpe sistema de ar-condicionado",
+        "Experimente receitas veganas",
+        "Organize troca de itens com vizinhos",
+        "Limpe sistema de aquecimento",
+        "Verifique isolamento térmico",
+        "Faça limpeza ecológica",
+        "Planeje deslocamentos eficientes",
+        "Organizar sistema de reciclagem",
+        "Verificar consumo de água",
+        "Preparar comida congelada",
+        "Estudar sobre sustentabilidade",
+        "Manter jardim ou vasos",
+        "Verificar consumo energético",
+        "Participar de comunidades sustentáveis"
+    ],
+    mensais: [
+        "Faça manutenção do carro para reduzir emissões",
+        "Doe objetos em bom estado",
+        "Revise a conta de energia e água",
+        "Plante uma árvore ou participe de reflorestamento",
+        "Faça auditoria de consumo energético",
+        "Limpe e calibre eletrodomésticos",
+        "Participe de evento ambiental local",
+        "Revise gastos e consumo",
+        "Troque produtos por versões sustentáveis",
+        "Faça manutenção preventiva de veículos",
+        "Compare contas de serviços públicos",
+        "Desenvolva projeto de economia",
+        "Participe de mutirão ambiental",
+        "Faça curso online de sustentabilidade",
+        "Revise contratos de energia",
+        "Implemente sistema de compostagem",
+        "Analise consumo de água",
+        "Faça isolamento térmico residencial",
+        "Participe de grupo ambiental",
+        "Troque para produtos biodegradáveis",
+        "Implemente horta doméstica",
+        "Audite gastos e consumo",
+        "Planeje viagem sustentável",
+        "Investigue energia solar",
+        "Faça inventário de resíduos",
+        "Treine coleta seletiva",
+        "Desenvolva projeto de economia circular",
+        "Pesquise tecnologias sustentáveis",
+        "Crie metas ambientais pessoais",
+        "Networking em comunidades ecológicas"
+    ]
+};
 
-      // Função para alterar a página
-      function changePage(direction) {
-        pages[currentPage].style.display = "none"; // Esconde a página atual
-        currentPage += direction; // Muda a página atual
+let tipoAtual = 'diarias';
+let indiceAtual = 0;
 
-        // Verifica os limites antes de atualizar a exibição
-        if (currentPage < 0) currentPage = 0;
-        if (currentPage >= pages.length) currentPage = pages.length - 1;
+const displayInstrucoes = document.getElementById('instrucoes-display');
+const btnAnterior = document.getElementById('btn-anterior');
+const btnProximo = document.getElementById('btn-proximo');
+const tipoBtns = document.querySelectorAll('.tipo-btn');
 
-        pages[currentPage].style.display = "block"; // Mostra a nova página
+function atualizarInstrucao() {
+    displayInstrucoes.innerHTML = `
+        <h2>${tipoAtual.charAt(0).toUpperCase() + tipoAtual.slice(1)}</h2>
+        <p>${instrucoes[tipoAtual][indiceAtual]}</p>
+    `;
+    
+    // Update active button
+    tipoBtns.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.tipo === tipoAtual);
+    });
+}
 
-        // Atualiza os botões de navegação
-        document.getElementById("prevBtn").disabled = currentPage === 0;
-        document.getElementById("nextBtn").disabled =
-          currentPage === pages.length - 1;
+// Navigation button event listeners
+btnProximo.addEventListener('click', () => {
+    indiceAtual = (indiceAtual + 1) % instrucoes[tipoAtual].length;
+    atualizarInstrucao();
+});
 
-        // Esconde a mensagem de 'no results' ao navegar
-        document.getElementById("noResultsMessage").style.display = "none";
-      }
+btnAnterior.addEventListener('click', () => {
+    indiceAtual = (indiceAtual - 1 + instrucoes[tipoAtual].length) % instrucoes[tipoAtual].length;
+    atualizarInstrucao();
+});
 
-      // Função de filtro de artigos
-      function filterArticles() {
-        const input = document
-          .getElementById("searchInput")
-          .value.toLowerCase();
-        const articles = document.querySelectorAll(".article-content");
-        let hasResults = false;
+// Tipo buttons event listeners
+tipoBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        tipoAtual = btn.dataset.tipo;
+        indiceAtual = 0;
+        atualizarInstrucao();
+    });
+});
 
-        articles.forEach((article) => {
-          const text = article.innerText.toLowerCase();
-          const isVisible = text.includes(input);
-          article.style.display = isVisible ? "block" : "none"; // Exibe ou oculta conforme a pesquisa
-          if (isVisible) {
-            hasResults = true;
-          }
-        });
-
-        // Mostra ou esconde a mensagem de resultados
-        document.getElementById("noResultsMessage").style.display = hasResults
-          ? "none"
-          : "block";
-      }
-
-      // Inicializa a navegação
-      document.addEventListener("DOMContentLoaded", () => {
-        pages.forEach((page, index) => {
-          page.style.display = index === 0 ? "block" : "none"; // Apenas a primeira página visível
-        });
-        changePage(0);
-      });
+// Initialize with diarias active
+atualizarInstrucao();
     </script>
-  </body>
+</body>
 </html>

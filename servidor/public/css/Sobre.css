@@ -14,7 +14,7 @@ body {
 }
 
 header {
-    background-color: #2ecc71;
+    background: linear-gradient(135deg, #558355, #99c599);
     color: white;
     text-align: center;
     padding: 20px;
@@ -70,9 +70,18 @@ nav a:hover, nav a.active {
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #2ecc71;
+    background: linear-gradient(135deg, #558355, #99c599);
     color: white;
     width: 100vw;
     margin-left: calc(-50vw + 50%);
     margin-bottom: -20px;
 }
+@keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }

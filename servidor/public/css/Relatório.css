@@ -1,6 +1,9 @@
 body, html {
   font-family: 'Arial', sans-serif;
-  background-color: #f0f4f0;
+  background-image: url(../image/Gemini_Generated_Image_8bnue8bnue8bnue8.jpg);
+  background-repeat: no-repeat; /* Impede a repetição da imagem */
+  background-size: cover; /* Faz a imagem ocupar todo o espaço disponível */
+  background-position: center center; /* Centraliza a imagem no fundo */
   color: #2c3e50;
   line-height: 1.6;
   margin: 0;
@@ -15,7 +18,7 @@ body, html {
 }
 
 header {
-  background-color: #2ecc71;
+  background: linear-gradient(135deg, #558355, #99c599);
   color: white;
   text-align: center;
   padding: 20px;
@@ -41,12 +44,15 @@ nav a {
 }
 
 nav a:hover, nav a.active {
-  color: #27ae60;
+  color: #ffffff;
 }
 
 main {
   flex: 1;
   padding: 20px;
+}
+main .annual-report{
+  background-color: #99c599;
 }
 
 .about {
@@ -58,16 +64,22 @@ main {
 }
 
 .about h2 {
-  color: #2ecc71;
+  color: #ffffff;
   border-bottom: 2px solid #2ecc71;
   padding-bottom: 10px;
 }
 
 .about h3 {
-  color: #2ecc71;
+  color: #ffffff;
   margin-top: 20px;
 }
 
+h3{
+  color: white;
+}
+.report-sumary h3{
+  color: white;
+}
 .values ul {
   list-style-type: none;
   padding: 0;
@@ -87,13 +99,23 @@ main {
 }
 
 footer {
-  background-color: #2ecc71;
+  background: linear-gradient(135deg, #558355, #99c599);
   color: white;
   text-align: center;
   padding: 20px;
   width: 100%;
   box-sizing: border-box;
   margin-top: auto;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
 }
 
 .ecological-tips {
@@ -129,7 +151,7 @@ footer {
 #period-selector {
   font-weight: bold;
   font-size: 1.2em;
-  color: #2ecc71;
+  color: #ffffff;
 }
 
 #tips-content {
@@ -150,7 +172,7 @@ footer {
 }
 
 .annual-report h2 {
-  color: #2ecc71;
+  color: #ffffff;
   border-bottom: 2px solid #2ecc71;
   padding-bottom: 10px;
 }
@@ -169,14 +191,14 @@ footer {
 }
 
 .highlight h4 {
-  color: #2ecc71;
+  color: #1d412c;
   margin-bottom: 10px;
 }
 
 .highlight p {
   font-size: 1.5em;
   font-weight: bold;
-  color: #2c3e50;
+  color: #ffffff;
 }
 
 .report-actions {

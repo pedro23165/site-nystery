@@ -76,11 +76,21 @@ main {
 }
 
 footer {
-  background: linear-gradient(135deg, #12310d, #2a6a0d);
+  background: linear-gradient(135deg, #558355, #99c599);
   color: white;
   text-align: center;
   padding: 1rem;
   position: relative;
   bottom: 0;
   width: 100%;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
 }

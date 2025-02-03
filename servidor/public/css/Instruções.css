@@ -10,7 +10,7 @@ body {
 
 header {
   position: relative;
-  background-color: #2ecc71;
+  background: linear-gradient(135deg, #558355, #99c599);
   color: white;
   padding: 20px;
 }
@@ -92,7 +92,16 @@ button:hover {
 }
 
 footer {
-  background-color: #2ecc71;
+  background: linear-gradient(135deg, #558355, #99c599);
   color: white;
   padding: 10px;
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
 }

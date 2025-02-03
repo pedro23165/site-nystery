@@ -176,7 +176,7 @@ label {
 
 footer {
   grid-area: footer;
-  background-color: #16480f;
+  background: linear-gradient(135deg, #558355, #99c599);
   color: white;
   padding: 1rem;
   text-align: center;
@@ -185,4 +185,14 @@ footer {
   justify-content: center;
   margin-top: 40px;
   height: 100px;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
 }

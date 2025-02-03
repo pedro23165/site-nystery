@@ -8,11 +8,8 @@ body {
 }
 
 .header {
-<<<<<<< Updated upstream
   background: linear-gradient(135deg, #558355, #99c599);
-=======
-  background-color: #2ecc71;
->>>>>>> Stashed changes
+
   color: white;
   text-align: center;
   padding: 1rem 0;
@@ -89,8 +86,8 @@ body {
   color: #2c3e50;
 }
 
-.form-group input, 
-.form-group select, 
+.form-group input,
+.form-group select,
 .form-group textarea {
   width: 100%;
   padding: 0.75rem;
@@ -99,8 +96,8 @@ body {
   transition: all 0.3s ease;
 }
 
-.form-group input:focus, 
-.form-group select:focus, 
+.form-group input:focus,
+.form-group select:focus,
 .form-group textarea:focus {
   outline: none;
   border-color: #2ecc71;
@@ -121,7 +118,7 @@ body {
 .submit-btn:hover {
   background-color: #27ae60;
   transform: translateY(-3px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .success-message {
@@ -243,8 +240,13 @@ body {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .logo-container {
@@ -258,6 +260,13 @@ body {
 }
 
 @keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
 }

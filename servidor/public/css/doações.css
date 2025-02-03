@@ -8,14 +8,13 @@ body {
 }
 
 .header {
-<<<<<<< Updated upstream
+
   background: linear-gradient(135deg, #558355, #99c599);
   width: 100%;
   padding: 2.5rem 1rem;
-=======
-  background-color: #2ecc71;
+
   color: white;
->>>>>>> Stashed changes
+
   text-align: center;
   padding: 2rem 0;
 }
@@ -34,7 +33,7 @@ body {
   background-color: white;
   padding: 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin-bottom: 1.5rem;
 }
 
@@ -180,7 +179,7 @@ body {
 
 .pulse-on-hover:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .input-focus {
@@ -214,6 +213,11 @@ body {
 }
 
 @keyframes progressAnimation {
-  0% { background-position: -100% 0; }
-  100% { background-position: 100% 0; }
+  0% {
+    background-position: -100% 0;
+  }
+
+  100% {
+    background-position: 100% 0;
+  }
 }

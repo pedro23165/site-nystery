@@ -28,7 +28,7 @@ body {
 }
 
 .header {
-  background: linear-gradient(135deg, #12310d, #2a6a0d);
+  background: linear-gradient(135deg, #558355, #99c599);
   color: white;
   padding: 3rem 1.5rem;
   text-align: center;
@@ -238,7 +238,7 @@ body {
 footer {
   text-align: center;
   padding: 20px;
-  background: #2a6a0d;
+  background: linear-gradient(135deg, #558355, #99c599);
   color: white;
   margin-top: auto; /* Garante que o rodapé fique no final da página */
 }

@@ -19,7 +19,7 @@ body {
 }
 
 .header {
-  background: #12310d;
+  background: linear-gradient(135deg, #558355, #99c599);
   color: white;
   padding: 2rem;
   text-align: center;

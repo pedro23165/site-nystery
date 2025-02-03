@@ -2,85 +2,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EcoPlaneta - Sobre Nós</title>
+    <title>CycloRoot - Início</title>
     <link rel="stylesheet" href="../css/Sobre.css">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <svg width="100" height="50" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="25" cy="25" r="20" fill="#2ecc71"/>
-                <text x="50" y="35" fill="green" font-weight="bold">EcoPlaneta</text>
-            </svg>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="https://exemplo.com/inicio">Início</a></li>
-                <li><a href="https://exemplo.com/sobre">Sobre Nós</a></li>
-                <li><a href="https://exemplo.com/projetos">Projetos</a></li>
-                <li><a href="https://exemplo.com/contato">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="container">
+        <header>
+            <h1>CycloRoot</h1>
+            <nav>
+                <a href="../html/pagina.html" class="active">Inicio</a>
+            </nav>
+        </header>
 
-    <main>
-        <section class="about-us">
-            <h1>Sobre a EcoPlaneta</h1>
-            <div class="content">
+        <main>
+            <section class="about">
                 <div class="mission">
                     <h2>Nossa Missão</h2>
-                    <p>Somos uma organização dedicada a promover a sustentabilidade e preservação do meio ambiente através de ações concretas e educativas.</p>
+                    <p>A CycloRoot nasceu com o propósito de transformar resíduos em recursos, promovendo soluções sustentáveis para um futuro mais verde e equilibrado.</p>
                 </div>
-                
-                <div class="team">
-                    <h2>Nossa Equipe</h2>
-                    <div class="team-members">
-                        <div class="member">
-                            <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="50" cy="50" r="40" fill="#3498db"/>
-                            </svg>
-                            <h3>Maria Silva</h3>
-                            <p>Fundadora e Coordenadora</p>
-                        </div>
-                        <div class="member">
-                            <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="50" cy="50" r="40" fill="#2ecc71"/>
-                            </svg>
-                            <h3>João Santos</h3>
-                            <p>Especialista Ambiental</p>
-                        </div>
-                    </div>
-                </div>
-                
+
                 <div class="values">
                     <h2>Nossos Valores</h2>
                     <ul>
-                        <li>Sustentabilidade</li>
-                        <li>Responsabilidade Ambiental</li>
-                        <li>Educação Ecológica</li>
-                        <li>Inovação Verde</li>
+                        <li>🌱 Sustentabilidade</li>
+                        <li>♻️ Reciclagem Consciente</li>
+                        <li>🌍 Preservação Ambiental</li>
+                        <li>🤝 Colaboração Comunitária</li>
                     </ul>
                 </div>
-            </div>
-        </section>
-    </main>
 
-    <footer>
-        <div class="footer-content">
-            <div class="contact-info">
-                <h3>Contate-nos</h3>
-                <p>📧 contato@ecoplaneta.org</p>
-                <p>📞 (11) 9999-8888</p>
-            </div>
-            <div class="social-links">
-                <a href="https://facebook.com/ecoplaneta" target="_blank">Facebook</a>
-                <a href="https://instagram.com/ecoplaneta" target="_blank">Instagram</a>
-                <a href="https://twitter.com/ecoplaneta" target="_blank">Twitter</a>
-            </div>
-            <div class="copyright">
-                <p>© 2023 EcoPlaneta. Todos os direitos reservados.</p>
-            </div>
-        </div>
-    </footer>
+                <div class="story">
+                    <h2>Nossa História</h2>
+                    <p>Fundada em 2022 por um grupo de ambientalistas apaixonados, a CycloRoot surgiu da necessidade de criar soluções inovadoras para os desafios ambientais contemporâneos.</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2023 CycloRoot - Transformando Resíduos em Recursos</p>
+        </footer>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const navLinks = document.querySelectorAll('nav a');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Navegação para a página de início
+                window.location.href = link.getAttribute('href');
+            });
+        });
+    });
+    </script>
 </body>
 </html>

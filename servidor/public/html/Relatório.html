@@ -1,162 +1,81 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Relatório Anual</title>
+    <title>CycloRoot - Relatório Anual</title>
     <link rel="stylesheet" href="../css/Relatório.css">
 </head>
 <body>
-    <header class="header">
-        <h1>Relatórios Anuais Ecológicos</h1>
-        <p>Acompanhe nosso impacto ambiental ao longo dos anos</p>
-    </header>
-
     <div class="container">
-      <!-- Relatório de 2024 -->
-      <div class="year-section">
-        <div class="year-header">
-          <h2>Relatório 2024</h2>
-          <!-- Link para baixar o PDF do relatório 2024 -->
-          <a href="../pdfs/relatorio_ambiental_2024.pdf" class="download-btn" download>
-            Baixar Relatório Completo
-          </a>
-        </div>
+        <header>
+            <h1>CycloRoot</h1>
+            <nav>
+                <a href="../html/página.html">Inicio</a>
+                <a href="#">Relatório Anual</a>
+            </nav>
+        </header>
 
-        <div class="stats-grid">
-          <div class="stat-card">
-            <h3>Árvores Plantadas</h3>
-            <div class="stat-value">20.000</div>
-            <p>+30% em relação a 2023</p>
-          </div>
-          <div class="stat-card">
-            <h3>CO₂ Neutralizado</h3>
-            <div class="stat-value">1.000t</div>
-            <p>Equivalente a 220 carros/ano</p>
-          </div>
-          <div class="stat-card">
-            <h3>Área Preservada</h3>
-            <div class="stat-value">1.500ha</div>
-            <p>+25% em relação a 2023</p>
-          </div>
-        </div>
+        <main>
+            <section class="annual-report">
+                <h2>Relatório Anual CycloRoot</h2>
+                <div class="report-summary">
+                    <h3>Destaques de 2023</h3>
+                    <div class="report-highlights">
+                        <div class="highlight">
+                            <h4>Toneladas Recicladas</h4>
+                            <p>150 toneladas</p>
+                        </div>
+                        <div class="highlight">
+                            <h4>Comunidades Impactadas</h4>
+                            <p>25 bairros</p>
+                        </div>
+                        <div class="highlight">
+                            <h4>Eventos de Conscientização</h4>
+                            <p>50 palestras</p>
+                        </div>
+                    </div>
+                </div>
 
-        <div class="highlights">
-          <h3>Destaques do Ano</h3>
-          <ul>
-            <li>Expansão do programa de reflorestamento em 3 estados</li>
-            <li>Lançamento de um app para monitoramento ambiental em tempo real</li>
-            <li>Certificação de 5 unidades com práticas sustentáveis</li>
-            <li>Implementação de mais de 100 pontos de coleta de lixo eletrônico</li>
-          </ul>
-        </div>
-      </div>
+                <div class="report-actions">
+                    <button id="view-pdf-btn" class="pdf-button">
+                        Ver Relatório Completo (PDF)
+                    </button>
+                </div>
 
-      <!-- Relatório de 2023 -->
-      <div class="year-section">
-        <div class="year-header">
-          <h2>Relatório 2023</h2>
-          <!-- Link para baixar o PDF do relatório 2023 -->
-          <a href="../pdfs/relatorioonu.pdf" class="download-btn" download>
-            Baixar Relatório Completo
-          </a>
-        </div>
+                <iframe id="pdf-viewer" src="" style="display:none; width:100%; height:600px;"></iframe>
+            </section>
+        </main>
 
-        <div class="stats-grid">
-          <div class="stat-card">
-            <h3>Árvores Plantadas</h3>
-            <div class="stat-value">15.000</div>
-            <p>+25% em relação a 2022</p>
-          </div>
-          <div class="stat-card">
-            <h3>CO₂ Neutralizado</h3>
-            <div class="stat-value">750t</div>
-            <p>Equivalente a 163 carros/ano</p>
-          </div>
-          <div class="stat-card">
-            <h3>Área Preservada</h3>
-            <div class="stat-value">1.200ha</div>
-            <p>+15% em relação a 2022</p>
-          </div>
-        </div>
-
-        <div class="highlights">
-          <h3>Destaques do Ano</h3>
-          <ul>
-            <li>Implementação do programa de reciclagem em 50 escolas</li>
-            <li>Recuperação de 5 nascentes em áreas críticas</li>
-            <li>Criação de 3 novos corredores ecológicos</li>
-            <li>Redução de 30% no consumo de água nas operações</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Relatório de 2022 -->
-      <div class="year-section">
-        <div class="year-header">
-          <h2>Relatório 2022</h2>
-          <!-- Link para baixar o PDF do relatório 2022 -->
-          <a href="../pdfs/ONU_Brasil_Relatorio_Anual_2022.pdf" class="download-btn" download>
-            Baixar Relatório Completo
-          </a>
-        </div>
-
-        <div class="stats-grid">
-          <div class="stat-card">
-            <h3>Árvores Plantadas</h3>
-            <div class="stat-value">12.000</div>
-            <p>+20% em relação a 2021</p>
-          </div>
-          <div class="stat-card">
-            <h3>CO₂ Neutralizado</h3>
-            <div class="stat-value">600t</div>
-            <p>Equivalente a 130 carros/ano</p>
-          </div>
-          <div class="stat-card">
-            <h3>Área Preservada</h3>
-            <div class="stat-value">1.045ha</div>
-            <p>+10% em relação a 2021</p>
-          </div>
-        </div>
-
-        <div class="highlights">
-          <h3>Destaques do Ano</h3>
-          <ul>
-            <li>Inauguração do Centro de Educação Ambiental</li>
-            <li>Proteção de 3 espécies ameaçadas de extinção</li>
-            <li>Implementação de energia solar em 2 unidades</li>
-            <li>Início do programa de compostagem comunitária</li>
-          </ul>
-        </div>
-      </div>
+        <footer>
+            <p>&copy; 2023 CycloRoot - Transformando Resíduos em Recursos</p>
+        </footer>
     </div>
-
-    <footer>
-      <p>&copy; 2024 Cycloroot. Todos os direitos reservados.</p>
-  </footer>
-  
-    <script>
-      // Animate progress bars on scroll
-      function animateOnScroll() {
-        const yearSections = document.querySelectorAll('.year-section');
-        
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.style.opacity = 1;
-              entry.target.style.transform = 'translateY(0)';
-            }
+    <script> 
+    document.addEventListener('DOMContentLoaded', () => {
+      const navLinks = document.querySelectorAll('nav a');
+      
+      navLinks.forEach(link => {
+          link.addEventListener('click', (e) => {
+              e.preventDefault();
+              window.location.href = link.getAttribute('href');
           });
-        }, {
-          threshold: 0.1
-        });
+      });
   
-        yearSections.forEach(section => {
-          observer.observe(section);
-        });
-      }
+      // PDF Viewer Logic
+      const viewPdfBtn = document.getElementById('view-pdf-btn');
+      const pdfViewer = document.getElementById('pdf-viewer');
   
-      window.addEventListener('load', animateOnScroll);
-    </script>
+      viewPdfBtn.addEventListener('click', () => {
+          // Replace with actual path to your PDF report
+          const pdfPath = '../documents/relatorio-anual-cycloroot-2023.pdf';
+          
+          pdfViewer.src = pdfPath;
+          pdfViewer.style.display = 'block';
+          
+          // Optional: Scroll to PDF viewer
+          pdfViewer.scrollIntoView({ behavior: 'smooth' });
+      });
+  });
+  </script>
 </body>
 </html>

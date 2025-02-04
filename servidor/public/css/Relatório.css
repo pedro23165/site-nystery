@@ -1,6 +1,9 @@
 body, html {
   font-family: 'Arial', sans-serif;
-  background-color: #f0f4f0;
+  background-image: url(../image/Gemini_Generated_Image_8bnue8bnue8bnue8.jpg);
+  background-repeat: no-repeat; /* Impede a repetição da imagem */
+  background-size: cover; /* Faz a imagem ocupar todo o espaço disponível */
+  background-position: center center; /* Centraliza a imagem no fundo */
   color: #2c3e50;
   line-height: 1.6;
   margin: 0;
@@ -15,7 +18,7 @@ body, html {
 }
 
 header {
-  background-color: #2ecc71;
+  background: linear-gradient(135deg, #558355, #99c599);
   color: white;
   text-align: center;
   padding: 20px;
@@ -41,7 +44,7 @@ nav a {
 }
 
 nav a:hover, nav a.active {
-  color: #27ae60;
+  color: #ffffff;
 }
 
 main {
@@ -50,7 +53,7 @@ main {
 }
 
 .about {
-  background-color: white;
+  background-color: #558355;
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -58,13 +61,13 @@ main {
 }
 
 .about h2 {
-  color: #2ecc71;
-  border-bottom: 2px solid #2ecc71;
+  color: #ffffff;
+  border-bottom: 2px solid #ffffff;
   padding-bottom: 10px;
 }
 
 .about h3 {
-  color: #2ecc71;
+  color: #ffffff;
   margin-top: 20px;
 }
 
@@ -87,7 +90,7 @@ main {
 }
 
 footer {
-  background-color: #2ecc71;
+  background: linear-gradient(135deg, #558355, #99c599);
   color: white;
   text-align: center;
   padding: 20px;
@@ -97,7 +100,7 @@ footer {
 }
 
 .ecological-tips {
-  background-color: white;
+  background-color: #558355;
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -113,7 +116,7 @@ footer {
 }
 
 .tips-navigation button {
-  background-color: #2ecc71;
+  background-color: #558355;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -123,25 +126,25 @@ footer {
 }
 
 .tips-navigation button:hover {
-  background-color: #27ae60;
+  background-color: #558355;
 }
 
 #period-selector {
   font-weight: bold;
   font-size: 1.2em;
-  color: #2ecc71;
+  color: #99c599;
 }
 
 #tips-content {
   text-align: left;
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: #99c599;
   border-radius: 5px;
   min-height: 200px;
 }
 
 .annual-report {
-  background-color: white;
+  background-color: #558355;
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -150,8 +153,8 @@ footer {
 }
 
 .annual-report h2 {
-  color: #2ecc71;
-  border-bottom: 2px solid #2ecc71;
+  color: #ffffff;
+  border-bottom: 2px solid #ffffff;
   padding-bottom: 10px;
 }
 
@@ -162,14 +165,14 @@ footer {
 }
 
 .highlight {
-  background-color: #f9f9f9;
+  background-color: #99c599;
   padding: 20px;
   border-radius: 10px;
   width: 30%;
 }
 
 .highlight h4 {
-  color: #2ecc71;
+  color: #ffffff;
   margin-bottom: 10px;
 }
 
@@ -184,7 +187,7 @@ footer {
 }
 
 .pdf-button {
-  background-color: #2ecc71;
+  background-color: #99c599;
   color: white;
   border: none;
   padding: 15px 30px;

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -11,9 +12,14 @@
             <h1>CycloRoot</h1>
             <nav>
                 <a href="../html/pagina.html" class="active">Inicio</a>
+                <a href="../html/Calendário.html" class="active">Calendário</a>
+                <a href="../html/doações.html" class="active">doações</a>
+                <a href="../html/faleconosco.html" class="active">faleconosco</a>
+                <a href="../html/Instruções.html" class="active">Instruções</a>
+                <a href="../html/Reciclagem.html" class="active">Reciclagem</a>
+                <a href="../html/Relatório.html" class="active">Relatório</a>
             </nav>
         </header>
-
         <main>
             <section class="about">
                 <div class="mission">
@@ -42,19 +48,27 @@
             <p>&copy; 2023 CycloRoot - Transformando Resíduos em Recursos</p>
         </footer>
     </div>
+
     <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const navLinks = document.querySelectorAll('nav a');
-        
-        navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                
-                // Navegação para a página de início
-                window.location.href = link.getAttribute('href');
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('nav a');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    
+                    // Navegação para a página de início
+                    window.location.href = link.getAttribute('href');
+                });
             });
         });
-    });
+        function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const main = document.querySelector('main');
+    
+    sidebar.classList.toggle('hidden');
+    main.classList.toggle('sidebar-hidden');
+}
     </script>
 </body>
 </html>

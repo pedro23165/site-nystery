@@ -33,6 +33,15 @@ footer {
   color: white;
   margin-top: auto; /* Garante que o rodapé fique no final da página */
 }
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
 
 .container {
   display: grid;

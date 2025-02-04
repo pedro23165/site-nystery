@@ -52,7 +52,7 @@ header main{
   width: auto;
 }
 
-header h1 {
+header h1 strong{
   margin: 0;
   font-size: 35px;
   font-family: "Times New Roman", Times, serif;

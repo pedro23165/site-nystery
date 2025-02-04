@@ -6,6 +6,10 @@ body {
   flex-direction: column;
   min-height: 100vh;
   text-align: center;
+  background-image: url(../image/Gemini_Generated_Image_8bnue8bnue8bnue8.jpg);
+  background-repeat: no-repeat; /* Impede a repetição da imagem */
+  background-size: cover; /* Faz a imagem ocupar todo o espaço disponível */
+  background-position: center center; /* Centraliza a imagem no fundo */
 }
 
 header {
@@ -13,6 +17,9 @@ header {
   background: linear-gradient(135deg, #558355, #99c599);
   color: white;
   padding: 20px;
+}
+header h1 strong{
+  font-family: 'Times New Roman', Times, serif;
 }
 
 nav a {

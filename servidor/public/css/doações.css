@@ -22,6 +22,17 @@ body {
 .header .leaf {
   font-size: 2rem;
 }
+nav {
+  margin-top: 15px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
 
 .container {
   max-width: 800px;

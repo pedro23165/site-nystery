@@ -15,6 +15,19 @@ header {
   padding: 20px;
 }
 
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+  color: #ffffff;
+}
+
+
 .tipo-instrucoes {
   display: flex;
   justify-content: center;

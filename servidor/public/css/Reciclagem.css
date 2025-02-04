@@ -25,7 +25,17 @@ header {
   flex-shrink: 0; /* Impede que o cabeçalho encolha */
   margin-bottom: 30px;
 }
+nav {
+  margin-top: 15px;
+}
 
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
 footer {
   text-align: center;
   padding: 20px;

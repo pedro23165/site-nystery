@@ -47,6 +47,13 @@ nav a:hover, nav a.active {
   color: #ffffff;
 }
 
+body h3{
+  color: white;
+}
+body p{
+  color: #ffffff;
+}
+
 main {
   flex: 1;
   padding: 20px;

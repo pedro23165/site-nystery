@@ -14,7 +14,7 @@ header {
   text-align: center;
   padding: 1rem;
   color: white;
-  display: flex;
+
   align-items: center;
 }
 header svg{
@@ -27,6 +27,17 @@ header h1 {
   margin-bottom: 0.5rem;
   margin-right: auto;
   margin-left: 0px;
+}
+nav {
+  margin-top: 15px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 main {

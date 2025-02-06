@@ -17,18 +17,21 @@ body {
   background-position: center center; /* Centraliza a imagem no fundo */
 }
 
-.header {
-  width: 100%;
+header {
   background: linear-gradient(135deg, #558355, #99c599);
-  padding: 1rem;
-  text-align: center;
   color: white;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  position: relative;
+  margin-top: -20px; /* Remove a margem superior padrão */
+  padding: 30px;
 }
 
-.leaf-icon {
-  animation: float 3s ease-in-out infinite;
-}
+header h1 strong{
+  font-family: 'Times New Roman', Times, serif;
+  }
 
 @keyframes float {
   0%,
@@ -38,6 +41,17 @@ body {
   50% {
     transform: translateY(-10px);
   }
+}
+nav {
+  margin-top: 15px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 .container {
@@ -149,4 +163,13 @@ button:hover {
 
 .approval-message {
     background-color: #2196F3;  /* Azul para aprovação */
+}
+footer {
+  background: linear-gradient(135deg, #558355, #99c599);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }

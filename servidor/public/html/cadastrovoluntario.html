@@ -7,12 +7,34 @@
     <link rel="stylesheet" href="../css/CadastroVolutário.css">
 </head>
 <body>
-<header class="header">
-  <svg class="leaf-icon" width="50" height="50" viewBox="0 0 24 24" fill="white">
-    <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"/>
-  </svg>
-  <h1>EcoVoluntários</h1>
+  <header>
+    <div class="header-title">
+        <h1>
+            <svg
+                class="leaf-icon"
+                width="30"
+                height="30"
+                viewBox="0 0 24 24"
+                fill="white"
+            >
+                <path
+                    d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"
+                />
+            </svg>
+            <strong>Cycloroot</strong>
+        </h1>
+    <nav>
+        <a href="../html/pagina.html" class="active">Inicio</a>
+        <a href="../html/Calendário.html" class="active">Calendário</a>
+        <a href="../html/doações.html" class="active">doações</a>
+        <a href="../html/faleconosco.html" class="active">faleconosco</a>
+        <a href="../html/Instruções.html" class="active">Instruções</a>
+        <a href="../html/Sobre.html" class="active">Sobre</a>
+        <a href="../html/Relatório.html" class="active">Relatório</a>
+    </nav>
 </header>
+
+
 
 <div class="container">
   <h2 style="color: var(--dark); margin-bottom: 2rem; text-align: center;">
@@ -35,6 +57,8 @@
       <input type="tel" id="phone" name="phone" required>
     </div>
 
+
+    
     <div class="form-group">
       <label for="area">Área de Interesse</label>
       <select id="area" name="area" required>
@@ -68,6 +92,9 @@
     <button type="submit">Enviar</button>
   </form>
 
+
+  
+
   <!-- Mensagem de sucesso -->
   <div id="successMessage" class="success-message" style="display:none;">
     Cadastro realizado com sucesso! Seu cadastro será aprovado em até 5 minutos.
@@ -88,6 +115,20 @@
 <div id="loadingOverlay" class="loading-overlay">
     <div class="loading-message">Processando cadastro... Aguarde</div>
 </div>
+
+<footer>
+  <p>        <svg
+    class="leaf-icon"
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="white"
+  >
+    <path
+      d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"
+    />
+  </svg><strong>cycloroot</strong> | Guia Ecológico | Cuidando do Nosso Planeta</p>
+</footer>
 
 <script>
 // Lida com o envio do formulário
@@ -143,6 +184,23 @@ document.getElementById('phone').addEventListener('input', function(e) {
   
   
   e.target.value = value;
+
+
+  <footer>
+    <p>        <svg
+      class="leaf-icon"
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="white"
+    >
+      <path
+        d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"
+      />
+    </svg><strong>cycloroot</strong> | Guia Ecológico | Cuidando do Nosso Planeta</p>
+</footer>
+
+
 });
 </script>
 </body>

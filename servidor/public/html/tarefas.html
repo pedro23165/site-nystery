@@ -1,4 +1,5 @@
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -6,44 +7,37 @@
     <link rel="stylesheet" href="../css/tarefas.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
 </head>
+
 <body>
     <header>
         <div class="header-title">
             <h1>
-                <svg
-                    class="leaf-icon"
-                    width="30"
-                    height="30"
-                    viewBox="0 0 24 24"
-                    fill="white"
-                >
+                <svg class="leaf-icon" width="30" height="30" viewBox="0 0 24 24" fill="white">
                     <path
-                        d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"
-                    />
+                        d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" />
                 </svg>
                 <strong>Cycloroot</strong>
             </h1>
-        <nav>
-            <a href="../html/pagina.html" class="active">Inicio</a>
-            <a href="../html/Calendário.html" class="active">Calendário</a>
-            <a href="../html/doações.html" class="active">doações</a>
-            <a href="../html/faleconosco.html" class="active">faleconosco</a>
-            <a href="../html/Instruções.html" class="active">Instruções</a>
-            <a href="../html/Reciclagem.html" class="active">Reciclagem</a>
-            <a href="../html/Relatório.html" class="active">Relatório</a>
-        </nav>
-    
-             
+            <nav>
+                <a href="../html/pagina.html" class="active">Inicio</a>
+                <a href="../html/Calendário.html" class="active">Calendário</a>
+                <a href="../html/doações.html" class="active">doações</a>
+                <a href="../html/faleconosco.html" class="active">faleconosco</a>
+                <a href="../html/Instruções.html" class="active">Instruções</a>
+                <a href="../html/Reciclagem.html" class="active">Reciclagem</a>
+                <a href="../html/Relatório.html" class="active">Relatório</a>
+            </nav>
+
+
     </header>
 
     <div class="container">
         <div class="period-selector">
             <button id="ideasBtn" class="nav-btn">Ideias Ambientais</button>
-        </nav>
             <button class="period-btn active" data-period="daily">Diário</button>
             <button class="period-btn" data-period="weekly">Semanal</button>
             <button class="period-btn" data-period="monthly">Mensal</button>
-            
+
         </div>
 
         <div class="progress-container">
@@ -157,13 +151,13 @@
                     category: "Sustentabilidade"
                 }
             ];
-        
+
             const environmentalIdeas = [
-            {
-                title: "Compostagem em Casa",
-                description: "Transforme resíduos orgânicos em adubo nutritivo para plantas.",
-                icon: "bi-recycle",
-                fullDetails: `
+                {
+                    title: "Compostagem em Casa",
+                    description: "Transforme resíduos orgânicos em adubo nutritivo para plantas.",
+                    icon: "bi-recycle",
+                    fullDetails: `
                     <h3>Compostagem Doméstica: Transformando Resíduos em Recurso</h3>
                     <p>A compostagem é uma técnica simples e ecológica para reciclar resíduos orgânicos.</p>
                     
@@ -186,12 +180,12 @@
                     
                     <p>Benefícios: Reduz lixo, produz adubo natural e ajuda o meio ambiente!</p>
                 `
-            },
-            {
-                title: "Horta Vertical",
-                description: "Crie uma horta em vasos ou paletes suspensos em espaços pequenos.",
-                icon: "bi-flower1",
-                fullDetails: `
+                },
+                {
+                    title: "Horta Vertical",
+                    description: "Crie uma horta em vasos ou paletes suspensos em espaços pequenos.",
+                    icon: "bi-flower1",
+                    fullDetails: `
                     <h3>Horta Vertical: Cultivo Sustentável em Espaços Limitados</h3>
                     <p>Transforme sua varanda ou parede em um jardim produtivo!</p>
                     
@@ -213,12 +207,12 @@
                     
                     <p>Vantagens: Economiza espaço, produz alimentos frescos e embeleza o ambiente!</p>
                 `
-            },
-            {
-                title: "Redução de Plástico",
-                description: "Use alternativas sustentáveis para reduzir o consumo de plástico descartável.",
-                icon: "bi-bag-dash",
-                fullDetails: `
+                },
+                {
+                    title: "Redução de Plástico",
+                    description: "Use alternativas sustentáveis para reduzir o consumo de plástico descartável.",
+                    icon: "bi-bag-dash",
+                    fullDetails: `
                     <h3>Redução de Plástico: Escolhas Conscientes no Dia a Dia</h3>
                     <p>Pequenas ações podem fazer grande diferença na redução de resíduos plásticos.</p>
                     
@@ -240,12 +234,12 @@
                     
                     <p>Impacto: Menos poluição, preservação de ecossistemas e redução de resíduos!</p>
                 `
-            },
-            {
-                title: "Economia de Água",
-                description: "Técnicas para reduzir o consumo de água em casa.",
-                icon: "bi-droplet",
-                fullDetails: `
+                },
+                {
+                    title: "Economia de Água",
+                    description: "Técnicas para reduzir o consumo de água em casa.",
+                    icon: "bi-droplet",
+                    fullDetails: `
                     <h3>Economia de Água: Cada Gota Conta!</h3>
                     <p>Descubra maneiras simples de economizar água no dia a dia.</p>
                     
@@ -267,12 +261,12 @@
                     
                     <p>Resultado: Economia financeira e preservação de recursos hídricos!</p>
                 `
-            },
-            {
-                title: "Mutirão de Limpeza",
-                description: "Organize ou participe de ações de limpeza em espaços públicos.",
-                icon: "bi-people",
-                fullDetails: `
+                },
+                {
+                    title: "Mutirão de Limpeza",
+                    description: "Organize ou participe de ações de limpeza em espaços públicos.",
+                    icon: "bi-people",
+                    fullDetails: `
                     <h3>Mutirão de Limpeza: Comunidade em Ação</h3>
                     <p>Unite forças para limpar e preservar espaços públicos!</p>
                     
@@ -294,12 +288,12 @@
                     
                     <p>Impacto: Comunidade unida, ambiente mais limpo e conscientização!</p>
                 `
-            },
-            {
-                title: "Energia Solar",
-                description: "Explore alternativas de energia renovável para sua residência.",
-                icon: "bi-sun",
-                fullDetails: `
+                },
+                {
+                    title: "Energia Solar",
+                    description: "Explore alternativas de energia renovável para sua residência.",
+                    icon: "bi-sun",
+                    fullDetails: `
                     <h3>Energia Solar: Sustentabilidade em Sua Casa</h3>
                     <p>Descubra como implementar energia solar de forma acessível.</p>
                     
@@ -321,25 +315,25 @@
                     
                     <p>Benefícios: Economia, independência energética e redução de emissões!</p>
                 `
-            }
-        ];
+                }
+            ];
 
             function initTasks() {
                 const taskList = document.getElementById('taskList');
                 taskList.innerHTML = ''; // Clear existing tasks
-                
+
                 const completedTasks = JSON.parse(localStorage.getItem('completedTasks') || '[]');
-                
+
                 environmentalTasks.forEach(task => {
                     const taskCompletions = completedTasks.filter(ct => ct.id === task.id);
                     const dailyCompletions = taskCompletions.filter(ct => isToday(ct)).length;
                     const weeklyCompletions = taskCompletions.filter(ct => isThisWeek(ct)).length;
                     const monthlyCompletions = taskCompletions.filter(ct => isThisMonth(ct)).length;
-                    
+
                     const taskCard = document.createElement('div');
                     taskCard.classList.add('task-card');
                     taskCard.dataset.taskId = task.id;
-                    
+
                     taskCard.innerHTML = `
                         <div class="task-icon">
                             <i class="bi ${task.icon}"></i>
@@ -381,14 +375,14 @@
                             </button>
                         </div>
                     `;
-        
+
                     const completeButton = taskCard.querySelector('.complete-task');
                     completeButton.addEventListener('click', () => handleTaskCompletion(task));
-        
+
                     taskList.appendChild(taskCard);
                 });
             }
-        
+
             function setupProgressTracking() {
                 const periodButtons = document.querySelectorAll('.period-btn');
                 const progressBars = {
@@ -396,59 +390,59 @@
                     weekly: document.getElementById('weeklyProgress'),
                     monthly: document.getElementById('monthlyProgress')
                 };
-        
+
                 periodButtons.forEach(button => {
                     button.addEventListener('click', () => {
                         periodButtons.forEach(btn => btn.classList.remove('active'));
                         Object.values(progressBars).forEach(bar => bar.style.display = 'none');
-                        
+
                         const period = button.dataset.period;
                         button.classList.add('active');
                         progressBars[period].style.display = 'block';
-        
+
                         updateProgress(period);
                     });
                 });
-        
+
                 function updateProgress(selectedPeriod = 'daily') {
                     const completedTasks = JSON.parse(localStorage.getItem('completedTasks') || '[]');
-                    
+
                     const periodFilters = {
                         daily: isToday,
                         weekly: isThisWeek,
                         monthly: isThisMonth
                     };
-        
+
                     const filteredTasks = completedTasks.filter(periodFilters[selectedPeriod]);
                     const totalTasks = filteredTasks.length;
                     const percentage = Math.min((totalTasks / 6) * 100, 100);
-        
+
                     const progressElement = progressBars[selectedPeriod];
                     const progressFill = progressElement.querySelector('.progress-fill');
                     const progressLabel = progressElement.querySelector('.progress-label');
-                    
+
                     progressFill.style.width = `${percentage}%`;
                     progressLabel.textContent = `${Math.round(percentage)}%`;
                 }
-        
+
                 updateProgress();
             }
-        
+
             function setupProofModal() {
                 const modal = document.getElementById('proofModal');
                 const closeBtn = document.querySelector('.close');
                 const uploadInput = document.getElementById('proofUpload');
                 const submitBtn = document.getElementById('submitProof');
-        
+
                 closeBtn.onclick = () => modal.style.display = 'none';
-        
+
                 submitBtn.onclick = () => {
                     const file = uploadInput.files[0];
                     const currentTask = JSON.parse(modal.dataset.currentTask);
-        
+
                     if (file) {
                         const reader = new FileReader();
-                        reader.onload = function(e) {
+                        reader.onload = function (e) {
                             saveTaskCompletion(currentTask, e.target.result);
                             modal.style.display = 'none';
                             updateTaskUI(currentTask);
@@ -457,7 +451,7 @@
                     }
                 };
             }
-        
+
             function setupEnvironmentalIdeas() {
                 const ideasBtn = document.getElementById('ideasBtn');
                 const ideasModal = document.getElementById('ideasModal');
@@ -466,7 +460,7 @@
                 const ideaDetailsModal = document.getElementById('ideaDetailsModal');
                 const ideaDetailsContent = document.getElementById('ideaDetailsContent');
                 const closeIdeaDetailsBtn = document.querySelector('.close-idea-details');
-        
+
                 function createIdeaElement(idea) {
                     const ideaElement = document.createElement('div');
                     ideaElement.classList.add('environmental-idea');
@@ -478,143 +472,143 @@
                         <p>${idea.description}</p>
                         <button class="learn-more-btn" data-title="${idea.title}">Saiba Mais</button>
                     `;
-        
+
                     ideaElement.addEventListener('mouseenter', () => {
                         ideaElement.classList.add('idea-hover');
                     });
-        
+
                     ideaElement.addEventListener('mouseleave', () => {
                         ideaElement.classList.remove('idea-hover');
                     });
-        
+
                     const learnMoreBtn = ideaElement.querySelector('.learn-more-btn');
                     learnMoreBtn.addEventListener('click', () => {
                         showIdeaDetails(idea);
                     });
-        
+
                     return ideaElement;
                 }
-        
+
                 function showIdeaDetails(idea) {
                     ideaDetailsContent.innerHTML = idea.fullDetails;
                     ideaDetailsModal.style.display = 'block';
                 }
-        
+
                 ideasBtn.addEventListener('click', () => {
                     environmentalIdeasContainer.innerHTML = '';
-        
+
                     environmentalIdeas.forEach((idea, index) => {
                         const ideaElement = createIdeaElement(idea);
-                        
+
                         ideaElement.style.opacity = '0';
                         ideaElement.style.transform = 'translateY(20px)';
-                        
+
                         environmentalIdeasContainer.appendChild(ideaElement);
-        
+
                         setTimeout(() => {
                             ideaElement.style.transition = 'all 0.5s ease';
                             ideaElement.style.opacity = '1';
                             ideaElement.style.transform = 'translateY(0)';
                         }, index * 100);
                     });
-        
+
                     ideasModal.style.display = 'block';
                 });
-        
+
                 closeIdeasBtn.addEventListener('click', () => {
                     ideasModal.style.display = 'none';
                 });
-        
+
                 closeIdeaDetailsBtn.addEventListener('click', () => {
                     ideaDetailsModal.style.display = 'none';
                 });
-        
+
                 ideasModal.addEventListener('click', (event) => {
                     if (event.target === ideasModal) {
                         ideasModal.style.display = 'none';
                     }
                 });
-        
+
                 ideaDetailsModal.addEventListener('click', (event) => {
                     if (event.target === ideaDetailsModal) {
                         ideaDetailsModal.style.display = 'none';
                     }
                 });
             }
-        
+
             function handleTaskCompletion(task) {
                 const modal = document.getElementById('proofModal');
                 modal.style.display = 'block';
                 modal.dataset.currentTask = JSON.stringify(task);
             }
-        
+
             function saveTaskCompletion(task, proofImage) {
                 const completedTasks = JSON.parse(localStorage.getItem('completedTasks') || '[]');
-                
+
                 completedTasks.push({
                     ...task,
                     date: new Date().toISOString(),
                     proof: proofImage
                 });
-                
+
                 localStorage.setItem('completedTasks', JSON.stringify(completedTasks));
             }
-        
+
             function updateTaskUI(task) {
                 const taskCard = document.querySelector(`.task-card[data-task-id="${task.id}"]`);
-                
+
                 const completedTasks = JSON.parse(localStorage.getItem('completedTasks') || '[]')
                     .filter(ct => ct.id === task.id);
-                
+
                 const dailyCompletions = completedTasks.filter(isToday).length;
                 const weeklyCompletions = completedTasks.filter(isThisWeek).length;
                 const monthlyCompletions = completedTasks.filter(isThisMonth).length;
-                
+
                 updateProgressBar(taskCard, 'daily', dailyCompletions);
                 updateProgressBar(taskCard, 'weekly', weeklyCompletions);
                 updateProgressBar(taskCard, 'monthly', monthlyCompletions);
-                
+
                 taskCard.classList.add('completed');
             }
-        
+
             function updateProgressBar(taskCard, period, completions, maxCompletions = 3) {
                 const progressBar = taskCard.querySelector(`.task-progress-period:has(.progress-text[data-period="${period}"])`);
                 if (!progressBar) return;
-        
+
                 const percentage = Math.min(Math.round((completions / maxCompletions) * 100), 100);
-                
+
                 const progressFill = progressBar.querySelector('.progress-fill');
                 const progressText = progressBar.querySelector('.progress-text');
-                
+
                 progressFill.style.width = `${percentage}%`;
                 progressText.textContent = `${percentage}%`;
                 progressText.dataset.period = period;
             }
-        
+
             function calculatePercentage(completions, maxCompletions = 3) {
                 return Math.min(Math.round((completions / maxCompletions) * 100), 100);
             }
-        
+
             function isToday(task) {
                 const today = new Date();
                 const taskDate = new Date(task.date);
                 return taskDate.toDateString() === today.toDateString();
             }
-        
+
             function isThisWeek(task) {
                 const today = new Date();
                 const taskDate = new Date(task.date);
                 const oneWeekAgo = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 7);
                 return taskDate >= oneWeekAgo && taskDate <= today;
             }
-        
+
             function isThisMonth(task) {
                 const today = new Date();
                 const taskDate = new Date(task.date);
-                return taskDate.getMonth() === today.getMonth() && 
-                       taskDate.getFullYear() === today.getFullYear();
+                return taskDate.getMonth() === today.getMonth() &&
+                    taskDate.getFullYear() === today.getFullYear();
             }
-        
+
             initTasks();
             setupProgressTracking();
             setupProofModal();
@@ -624,4 +618,5 @@
 
     </script>
 </body>
+
 </html>

@@ -2,367 +2,626 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eco Voluntários</title>
-    <style>
-        :root {
-            --cor-primaria: #4CAF50;
-            --cor-secundaria: #81C784;
-            --cor-fundo: #E8F5E9;
-            --cor-texto: #2E7D32;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: var(--cor-fundo);
-            color: var(--cor-texto);
-            line-height: 1.6;
-        }
-
-        header {
-            background-color: var(--cor-primaria);
-            color: white;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 1rem 2rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .header-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 1200px;
-            width: 100%;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1rem;
-        }
-
-        .logo h1 {
-            margin-left: 1rem;
-        }
-
-        nav {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: var(--cor-secundaria);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        main {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
-        #tarefas, #calendario {
-            background-color: white;
-            border-radius: 8px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .tarefas-container {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .tarefa {
-            flex: 1;
-            border: 1px solid var(--cor-primaria);
-            padding: 1rem;
-            border-radius: 8px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .tarefa h3, .tarefa p {
-            margin-bottom: 1rem;
-        }
-
-        .progresso-container {
-            background-color: #E0E0E0;
-            border-radius: 10px;
-            margin-top: auto;
-            width: 100%;
-            height: 20px;
-        }
-
-        .progresso {
-            background-color: var(--cor-primaria);
-            color: white;
-            padding: 0.5rem;
-            text-align: center;
-            border-radius: 10px;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .calendario-container {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .dia {
-            flex: 1;
-            background-color: var(--cor-fundo);
-            padding: 1rem;
-            border-radius: 8px;
-        }
-
-        .dia ul {
-            list-style-type: none;
-        }
-
-        footer {
-            background-color: var(--cor-primaria);
-            color: white;
-            padding: 2rem;
-            text-align: center;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .redes-sociais .icones a {
-            color: white;
-            margin: 0 0.5rem;
-            text-decoration: none;
-        }
-
-        .btn-adicionar-tarefa {
-            margin-top: 1rem;
-            background-color: var(--cor-primaria);
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn-adicionar-tarefa:hover {
-            background-color: var(--cor-secundaria);
-        }
-
-        .lista-tarefas {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .lista-tarefas li {
-            background-color: var(--cor-fundo);
-            margin: 0.5rem 0;
-            padding: 0.5rem;
-            border-radius: 5px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .lista-tarefas li button {
-            background-color: #f44336;
-            color: white;
-            border: none;
-            padding: 0.25rem 0.5rem;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-    </style>
+    <title>Desafios Ambientais</title>
+    <link rel="stylesheet" href="../css/tarefas.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body>
     <header>
-        <div class="header-content">
-            <svg
-            class="leaf-icon"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="white"
-          >
-            <path
-              d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"
-            />
-          </svg>
-                <h1>Eco Voluntários</h1>
-            </div>
-            <nav>
-                <a href="#tarefas">Tarefas</a>
-                <a href="#calendario">Calendário</a>
-                <a href="#progresso">Progresso</a>
-            </nav>
-        </div>
+        <div class="header-title">
+            <h1>
+                <svg
+                    class="leaf-icon"
+                    width="30"
+                    height="30"
+                    viewBox="0 0 24 24"
+                    fill="white"
+                >
+                    <path
+                        d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"
+                    />
+                </svg>
+                <strong>Cycloroot</strong>
+            </h1>
+        <nav>
+            <a href="../html/pagina.html" class="active">Inicio</a>
+            <a href="../html/Calendário.html" class="active">Calendário</a>
+            <a href="../html/doações.html" class="active">doações</a>
+            <a href="../html/faleconosco.html" class="active">faleconosco</a>
+            <a href="../html/Instruções.html" class="active">Instruções</a>
+            <a href="../html/Reciclagem.html" class="active">Reciclagem</a>
+            <a href="../html/Relatório.html" class="active">Relatório</a>
+        </nav>
+    
+             
     </header>
 
-    <main>
-        <section id="tarefas">
-            <h2>Tarefas Disponíveis</h2>
-            <div class="tarefas-container">
-                <div class="tarefa" data-tarefa="Reflorestamento Urbano">
-                    <h3>Reflorestamento Urbano</h3>
-                    <p>Plantio de árvores em áreas urbanas degradadas</p>
-                    <div class="progresso-container">
-                        <div class="progresso" style="width: 65%;">65%</div>
-                    </div>
-                    <button class="btn-adicionar-tarefa">Adicionar à Agenda</button>
+    <div class="container">
+        <div class="period-selector">
+            <button id="ideasBtn" class="nav-btn">Ideias Ambientais</button>
+        </nav>
+            <button class="period-btn active" data-period="daily">Diário</button>
+            <button class="period-btn" data-period="weekly">Semanal</button>
+            <button class="period-btn" data-period="monthly">Mensal</button>
+            
+        </div>
+
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div id="dailyProgress" class="progress daily">
+                    <div class="progress-label">0%</div>
+                    <div class="progress-fill"></div>
                 </div>
-                <div class="tarefa" data-tarefa="Limpeza de Praias">
-                    <h3>Limpeza de Praias</h3>
-                    <p>Coleta de resíduos em áreas costeiras</p>
-                    <div class="progresso-container">
-                        <div class="progresso" style="width: 45%;">45%</div>
-                    </div>
-                    <button class="btn-adicionar-tarefa">Adicionar à Agenda</button>
+                <div id="weeklyProgress" class="progress weekly" style="display:none;">
+                    <div class="progress-label">0%</div>
+                    <div class="progress-fill"></div>
                 </div>
-                <div class="tarefa" data-tarefa="Reciclagem Comunitária">
-                    <h3>Reciclagem Comunitária</h3>
-                    <p>Organização de mutirão de reciclagem</p>
-                    <div class="progresso-container">
-                        <div class="progresso" style="width: 30%;">30%</div>
-                    </div>
-                    <button class="btn-adicionar-tarefa">Adicionar à Agenda</button>
-                </div>
-                <div class="tarefa" data-tarefa="Oficina de Compostagem">
-                    <h3>Oficina de Compostagem</h3>
-                    <p>Aprendizado sobre técnicas de compostagem</p>
-                    <div class="progresso-container">
-                        <div class="progresso" style="width: 20%;">20%</div>
-                    </div>
-                    <button class="btn-adicionar-tarefa">Adicionar à Agenda</button>
-                </div>
-                <div class="tarefa" data-tarefa="Coleta Seletiva">
-                    <h3>Coleta Seletiva</h3>
-                    <p>Organização de coleta seletiva no bairro</p>
-                    <div class="progresso-container">
-                        <div class="progresso" style="width: 40%;">40%</div>
-                    </div>
-                    <button class="btn-adicionar-tarefa">Adicionar à Agenda</button>
-                </div>
-                <div class="tarefa" data-tarefa="Palestra Ambiental">
-                    <h3>Palestra Ambiental</h3>
-                    <p>Palestra sobre conscientização ecológica</p>
-                    <div class="progresso-container">
-                        <div class="progresso" style="width: 50%;">50%</div>
-                    </div>
-                    <button class="btn-adicionar-tarefa">Adicionar à Agenda</button>
+                <div id="monthlyProgress" class="progress monthly" style="display:none;">
+                    <div class="progress-label">0%</div>
+                    <div class="progress-fill"></div>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <section id="calendario">
-            <h2>Calendário de Tarefas</h2>
-            <div class="calendario-container">
-                <div class="dia" data-dia="segunda-feira">
-                    <h3>Segunda-feira</h3>
-                    <ul class="lista-tarefas"></ul>
-                </div>
-                <div class="dia" data-dia="terca-feira">
-                    <h3>Terça-feira</h3>
-                    <ul class="lista-tarefas"></ul>
-                </div>
-                <div class="dia" data-dia="quarta-feira">
-                    <h3>Quarta-feira</h3>
-                    <ul class="lista-tarefas"></ul>
+        <main>
+            <section id="taskList" class="task-list">
+                <!-- Tarefas serão geradas dinamicamente -->
+            </section>
+
+            <div id="proofModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Comprove sua Missão Ambiental</h2>
+                    <div class="modal-upload">
+                        <input type="file" id="proofUpload" accept="image/*" capture="camera">
+                        <label for="proofUpload" class="upload-label">
+                            <i class="bi bi-camera"></i>
+                            <span>Escolher Imagem</span>
+                        </label>
+                    </div>
+                    <button id="submitProof">Enviar Comprovação</button>
                 </div>
             </div>
-        </section>
-    </main>
 
-    <footer>
+            <div id="ideasModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-ideas">&times;</span>
+                    <h2>Ideias de Ações Ambientais</h2>
+                    <div id="environmentalIdeas"></div>
+                </div>
+            </div>
+            <div id="ideaDetailsModal" class="modal">
+                <div class="modal-content idea-details-content">
+                    <span class="close-idea-details">&times;</span>
+                    <div id="ideaDetailsContent"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="main-footer">
         <div class="footer-content">
-            <div class="contato">
-                <h3>Entre em Contato</h3>
-                <p>Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="50333f3e2431243f1035333f263f3c253e243122393f237e3f2237">[email&#160;protected]</a></p>
-                <p>Telefone: (11) 9999-8888</p>
-            </div>
-            <div class="redes-sociais">
-                <h3>Redes Sociais</h3>
-                <div class="icones">
-                    <a href="#" class="icon-facebook">Facebook</a>
-                    <a href="#" class="icon-instagram">Instagram</a>
-                    <a href="#" class="icon-twitter">Twitter</a>
-                </div>
-            </div>
-            <div class="direitos">
-                <p>&copy; 2023 Eco Voluntários. Todos os direitos reservados.</p>
+            <p>&copy; 2023 Eco Missões. Juntos pela Sustentabilidade!</p>
+            <div class="social-links">
+                <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
             </div>
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const tarefas = document.querySelectorAll('.tarefa');
-            const dias = document.querySelectorAll('.dia');
-            
-            // Progress bar initialization
-            tarefas.forEach(tarefa => {
-                const progresso = tarefa.querySelector('.progresso');
-                const porcentagem = parseInt(progresso.textContent);
-                progresso.style.width = `${porcentagem}%`;
-            });
+    <script>
 
-            // Task selection functionality
-            tarefas.forEach(tarefa => {
-                const btnAdicionarTarefa = tarefa.querySelector('.btn-adicionar-tarefa');
-                btnAdicionarTarefa.addEventListener('click', () => {
-                    const nomeTarefa = tarefa.dataset.tarefa;
-                    const diaEscolhido = prompt('Escolha o dia (segunda-feira, terca-feira, quarta-feira):');
+        document.addEventListener('DOMContentLoaded', () => {
+            const environmentalTasks = [
+                {
+                    id: 1,
+                    title: "Separar Resíduos Recicláveis",
+                    description: "Aprenda a separar corretamente diferentes tipos de resíduos.",
+                    icon: "bi-recycle",
+                    category: "Reciclagem"
+                },
+                {
+                    id: 2,
+                    title: "Economizar Água no Banho",
+                    description: "Reduza o tempo do banho e use chuveiro econômico.",
+                    icon: "bi-droplet",
+                    category: "Conservação"
+                },
+                {
+                    id: 3,
+                    title: "Transporte Sustentável",
+                    description: "Use transporte público, bicicleta ou caminhe.",
+                    icon: "bi-bicycle",
+                    category: "Mobilidade"
+                },
+                {
+                    id: 4,
+                    title: "Plantar uma Árvore/Muda",
+                    description: "Contribua para o reflorestamento em sua comunidade.",
+                    icon: "bi-tree",
+                    category: "Reflorestamento"
+                },
+                {
+                    id: 5,
+                    title: "Consumo Consciente de Energia",
+                    description: "Desligue aparelhos quando não estiver usando.",
+                    icon: "bi-lightning",
+                    category: "Energia"
+                },
+                {
+                    id: 6,
+                    title: "Compostagem Doméstica",
+                    description: "Transforme resíduos orgânicos em adubo.",
+                    icon: "bi-flower1",
+                    category: "Sustentabilidade"
+                }
+            ];
+        
+            const environmentalIdeas = [
+            {
+                title: "Compostagem em Casa",
+                description: "Transforme resíduos orgânicos em adubo nutritivo para plantas.",
+                icon: "bi-recycle",
+                fullDetails: `
+                    <h3>Compostagem Doméstica: Transformando Resíduos em Recurso</h3>
+                    <p>A compostagem é uma técnica simples e ecológica para reciclar resíduos orgânicos.</p>
                     
-                    if (diaEscolhido) {
-                        const diaAlvo = document.querySelector(`.dia[data-dia="${diaEscolhido}"] .lista-tarefas`);
+                    <h4>O que você vai precisar:</h4>
+                    <ul>
+                        <li>Um recipiente com tampa</li>
+                        <li>Restos de frutas e verduras</li>
+                        <li>Folhas secas</li>
+                        <li>Serragem ou papel picado</li>
+                    </ul>
+                    
+                    <h4>Passos para iniciar:</h4>
+                    <ol>
+                        <li>Escolha um local ventilado e protegido</li>
+                        <li>Coloque uma camada de folhas secas no fundo</li>
+                        <li>Adicione restos de alimentos</li>
+                        <li>Cubra com folhas secas</li>
+                        <li>Revire o composto semanalmente</li>
+                    </ol>
+                    
+                    <p>Benefícios: Reduz lixo, produz adubo natural e ajuda o meio ambiente!</p>
+                `
+            },
+            {
+                title: "Horta Vertical",
+                description: "Crie uma horta em vasos ou paletes suspensos em espaços pequenos.",
+                icon: "bi-flower1",
+                fullDetails: `
+                    <h3>Horta Vertical: Cultivo Sustentável em Espaços Limitados</h3>
+                    <p>Transforme sua varanda ou parede em um jardim produtivo!</p>
+                    
+                    <h4>Materiais necessários:</h4>
+                    <ul>
+                        <li>Paletes de madeira ou suportes metálicos</li>
+                        <li>Vasos ou sacos de plantio</li>
+                        <li>Terra para plantas</li>
+                        <li>Mudas de ervas e hortaliças</li>
+                    </ul>
+                    
+                    <h4>Dicas de plantio:</h4>
+                    <ol>
+                        <li>Escolha plantas adequadas para vasos</li>
+                        <li>Use terra rica em nutrientes</li>
+                        <li>Garanta boa iluminação</li>
+                        <li>Faça irrigação regular</li>
+                    </ol>
+                    
+                    <p>Vantagens: Economiza espaço, produz alimentos frescos e embeleza o ambiente!</p>
+                `
+            },
+            {
+                title: "Redução de Plástico",
+                description: "Use alternativas sustentáveis para reduzir o consumo de plástico descartável.",
+                icon: "bi-bag-dash",
+                fullDetails: `
+                    <h3>Redução de Plástico: Escolhas Conscientes no Dia a Dia</h3>
+                    <p>Pequenas ações podem fazer grande diferença na redução de resíduos plásticos.</p>
+                    
+                    <h4>Alternativas sustentáveis:</h4>
+                    <ul>
+                        <li>Sacolas reutilizáveis de tecido</li>
+                        <li>Garrafas de água reutilizáveis</li>
+                        <li>Canudos de metal ou bambu</li>
+                        <li>Embalagens reutilizáveis para alimentos</li>
+                    </ul>
+                    
+                    <h4>Estratégias para reduzir:</h4>
+                    <ol>
+                        <li>Compre a granel quando possível</li>
+                        <li>Recuse itens plásticos desnecessários</li>
+                        <li>Prefira produtos com menos embalagens</li>
+                        <li>Recicle corretamente</li>
+                    </ol>
+                    
+                    <p>Impacto: Menos poluição, preservação de ecossistemas e redução de resíduos!</p>
+                `
+            },
+            {
+                title: "Economia de Água",
+                description: "Técnicas para reduzir o consumo de água em casa.",
+                icon: "bi-droplet",
+                fullDetails: `
+                    <h3>Economia de Água: Cada Gota Conta!</h3>
+                    <p>Descubra maneiras simples de economizar água no dia a dia.</p>
+                    
+                    <h4>Dispositivos de economia:</h4>
+                    <ul>
+                        <li>Torneiras com sensor</li>
+                        <li>Chuveiros com limitador de vazão</li>
+                        <li>Válvulas de descarga econômicas</li>
+                        <li>Coletores de água da chuva</li>
+                    </ul>
+                    
+                    <h4>Práticas sustentáveis:</h4>
+                    <ol>
+                        <li>Reutilize água da máquina de lavar</li>
+                        <li>Conserte vazamentos imediatamente</li>
+                        <li>Tome banhos mais curtos</li>
+                        <li>Feche a torneira ao escovar os dentes</li>
+                    </ol>
+                    
+                    <p>Resultado: Economia financeira e preservação de recursos hídricos!</p>
+                `
+            },
+            {
+                title: "Mutirão de Limpeza",
+                description: "Organize ou participe de ações de limpeza em espaços públicos.",
+                icon: "bi-people",
+                fullDetails: `
+                    <h3>Mutirão de Limpeza: Comunidade em Ação</h3>
+                    <p>Unite forças para limpar e preservar espaços públicos!</p>
+                    
+                    <h4>Como organizar um mutirão:</h4>
+                    <ul>
+                        <li>Escolha um local (parque, praia, rua)</li>
+                        <li>Convide amigos, família e vizinhos</li>
+                        <li>Providencie luvas e sacos de lixo</li>
+                        <li>Divulgue nas redes sociais</li>
+                    </ul>
+                    
+                    <h4>Dicas de segurança:</h4>
+                    <ol>
+                        <li>Use equipamentos de proteção</li>
+                        <li>Separe o lixo para reciclagem</li>
+                        <li>Documente a ação</li>
+                        <li>Compartilhe para inspirar outros</li>
+                    </ol>
+                    
+                    <p>Impacto: Comunidade unida, ambiente mais limpo e conscientização!</p>
+                `
+            },
+            {
+                title: "Energia Solar",
+                description: "Explore alternativas de energia renovável para sua residência.",
+                icon: "bi-sun",
+                fullDetails: `
+                    <h3>Energia Solar: Sustentabilidade em Sua Casa</h3>
+                    <p>Descubra como implementar energia solar de forma acessível.</p>
+                    
+                    <h4>Opções de implementação:</h4>
+                    <ul>
+                        <li>Painéis solares para telhado</li>
+                        <li>Aquecedores solares</li>
+                        <li>Carregadores solares portáteis</li>
+                        <li>Lâmpadas e dispositivos com energia solar</li>
+                    </ul>
+                    
+                    <h4>Primeiros passos:</h4>
+                    <ol>
+                        <li>Faça uma auditoria energética</li>
+                        <li>Consulte especialistas</li>
+                        <li>Comece com dispositivos pequenos</li>
+                        <li>Calcule o retorno do investimento</li>
+                    </ol>
+                    
+                    <p>Benefícios: Economia, independência energética e redução de emissões!</p>
+                `
+            }
+        ];
+
+            function initTasks() {
+                const taskList = document.getElementById('taskList');
+                taskList.innerHTML = ''; // Clear existing tasks
+                
+                const completedTasks = JSON.parse(localStorage.getItem('completedTasks') || '[]');
+                
+                environmentalTasks.forEach(task => {
+                    const taskCompletions = completedTasks.filter(ct => ct.id === task.id);
+                    const dailyCompletions = taskCompletions.filter(ct => isToday(ct)).length;
+                    const weeklyCompletions = taskCompletions.filter(ct => isThisWeek(ct)).length;
+                    const monthlyCompletions = taskCompletions.filter(ct => isThisMonth(ct)).length;
+                    
+                    const taskCard = document.createElement('div');
+                    taskCard.classList.add('task-card');
+                    taskCard.dataset.taskId = task.id;
+                    
+                    taskCard.innerHTML = `
+                        <div class="task-icon">
+                            <i class="bi ${task.icon}"></i>
+                        </div>
+                        <div class="task-info">
+                            <h3>${task.title}</h3>
+                            <p>${task.description}</p>
+                            <p class="task-category">${task.category}</p>
+                            
+                            <div class="task-progress-container">
+                                <div class="task-progress-period">
+                                    <span>Diário</span>
+                                    <div class="task-progress">
+                                        <div class="progress-fill" style="width: ${calculatePercentage(dailyCompletions)}%"></div>
+                                        <span class="progress-text" data-period="daily">${calculatePercentage(dailyCompletions)}%</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="task-progress-period">
+                                    <span>Semanal</span>
+                                    <div class="task-progress">
+                                        <div class="progress-fill" style="width: ${calculatePercentage(weeklyCompletions)}%"></div>
+                                        <span class="progress-text" data-period="weekly">${calculatePercentage(weeklyCompletions)}%</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="task-progress-period">
+                                    <span>Mensal</span>
+                                    <div class="task-progress">
+                                        <div class="progress-fill" style="width: ${calculatePercentage(monthlyCompletions)}%"></div>
+                                        <span class="progress-text" data-period="monthly">${calculatePercentage(monthlyCompletions)}%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="task-actions">
+                            <button class="complete-task">
+                                <i class="bi bi-check-circle"></i> Completar
+                            </button>
+                        </div>
+                    `;
+        
+                    const completeButton = taskCard.querySelector('.complete-task');
+                    completeButton.addEventListener('click', () => handleTaskCompletion(task));
+        
+                    taskList.appendChild(taskCard);
+                });
+            }
+        
+            function setupProgressTracking() {
+                const periodButtons = document.querySelectorAll('.period-btn');
+                const progressBars = {
+                    daily: document.getElementById('dailyProgress'),
+                    weekly: document.getElementById('weeklyProgress'),
+                    monthly: document.getElementById('monthlyProgress')
+                };
+        
+                periodButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        periodButtons.forEach(btn => btn.classList.remove('active'));
+                        Object.values(progressBars).forEach(bar => bar.style.display = 'none');
                         
-                        if (diaAlvo) {
-                            const itemTarefa = document.createElement('li');
-                            itemTarefa.innerHTML = `
-                                ${nomeTarefa}
-                                <button class="btn-remover-tarefa">Remover</button>
-                            `;
-                            
-                            // Add remove functionality
-                            itemTarefa.querySelector('.btn-remover-tarefa').addEventListener('click', () => {
-                                itemTarefa.remove();
-                            });
-                            
-                            diaAlvo.appendChild(itemTarefa);
-                        }
+                        const period = button.dataset.period;
+                        button.classList.add('active');
+                        progressBars[period].style.display = 'block';
+        
+                        updateProgress(period);
+                    });
+                });
+        
+                function updateProgress(selectedPeriod = 'daily') {
+                    const completedTasks = JSON.parse(localStorage.getItem('completedTasks') || '[]');
+                    
+                    const periodFilters = {
+                        daily: isToday,
+                        weekly: isThisWeek,
+                        monthly: isThisMonth
+                    };
+        
+                    const filteredTasks = completedTasks.filter(periodFilters[selectedPeriod]);
+                    const totalTasks = filteredTasks.length;
+                    const percentage = Math.min((totalTasks / 6) * 100, 100);
+        
+                    const progressElement = progressBars[selectedPeriod];
+                    const progressFill = progressElement.querySelector('.progress-fill');
+                    const progressLabel = progressElement.querySelector('.progress-label');
+                    
+                    progressFill.style.width = `${percentage}%`;
+                    progressLabel.textContent = `${Math.round(percentage)}%`;
+                }
+        
+                updateProgress();
+            }
+        
+            function setupProofModal() {
+                const modal = document.getElementById('proofModal');
+                const closeBtn = document.querySelector('.close');
+                const uploadInput = document.getElementById('proofUpload');
+                const submitBtn = document.getElementById('submitProof');
+        
+                closeBtn.onclick = () => modal.style.display = 'none';
+        
+                submitBtn.onclick = () => {
+                    const file = uploadInput.files[0];
+                    const currentTask = JSON.parse(modal.dataset.currentTask);
+        
+                    if (file) {
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            saveTaskCompletion(currentTask, e.target.result);
+                            modal.style.display = 'none';
+                            updateTaskUI(currentTask);
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                };
+            }
+        
+            function setupEnvironmentalIdeas() {
+                const ideasBtn = document.getElementById('ideasBtn');
+                const ideasModal = document.getElementById('ideasModal');
+                const closeIdeasBtn = document.querySelector('.close-ideas');
+                const environmentalIdeasContainer = document.getElementById('environmentalIdeas');
+                const ideaDetailsModal = document.getElementById('ideaDetailsModal');
+                const ideaDetailsContent = document.getElementById('ideaDetailsContent');
+                const closeIdeaDetailsBtn = document.querySelector('.close-idea-details');
+        
+                function createIdeaElement(idea) {
+                    const ideaElement = document.createElement('div');
+                    ideaElement.classList.add('environmental-idea');
+                    ideaElement.innerHTML = `
+                        <div class="idea-header">
+                            <i class="bi ${idea.icon} idea-icon"></i>
+                            <h3>${idea.title}</h3>
+                        </div>
+                        <p>${idea.description}</p>
+                        <button class="learn-more-btn" data-title="${idea.title}">Saiba Mais</button>
+                    `;
+        
+                    ideaElement.addEventListener('mouseenter', () => {
+                        ideaElement.classList.add('idea-hover');
+                    });
+        
+                    ideaElement.addEventListener('mouseleave', () => {
+                        ideaElement.classList.remove('idea-hover');
+                    });
+        
+                    const learnMoreBtn = ideaElement.querySelector('.learn-more-btn');
+                    learnMoreBtn.addEventListener('click', () => {
+                        showIdeaDetails(idea);
+                    });
+        
+                    return ideaElement;
+                }
+        
+                function showIdeaDetails(idea) {
+                    ideaDetailsContent.innerHTML = idea.fullDetails;
+                    ideaDetailsModal.style.display = 'block';
+                }
+        
+                ideasBtn.addEventListener('click', () => {
+                    environmentalIdeasContainer.innerHTML = '';
+        
+                    environmentalIdeas.forEach((idea, index) => {
+                        const ideaElement = createIdeaElement(idea);
+                        
+                        ideaElement.style.opacity = '0';
+                        ideaElement.style.transform = 'translateY(20px)';
+                        
+                        environmentalIdeasContainer.appendChild(ideaElement);
+        
+                        setTimeout(() => {
+                            ideaElement.style.transition = 'all 0.5s ease';
+                            ideaElement.style.opacity = '1';
+                            ideaElement.style.transform = 'translateY(0)';
+                        }, index * 100);
+                    });
+        
+                    ideasModal.style.display = 'block';
+                });
+        
+                closeIdeasBtn.addEventListener('click', () => {
+                    ideasModal.style.display = 'none';
+                });
+        
+                closeIdeaDetailsBtn.addEventListener('click', () => {
+                    ideaDetailsModal.style.display = 'none';
+                });
+        
+                ideasModal.addEventListener('click', (event) => {
+                    if (event.target === ideasModal) {
+                        ideasModal.style.display = 'none';
                     }
                 });
-            });
+        
+                ideaDetailsModal.addEventListener('click', (event) => {
+                    if (event.target === ideaDetailsModal) {
+                        ideaDetailsModal.style.display = 'none';
+                    }
+                });
+            }
+        
+            function handleTaskCompletion(task) {
+                const modal = document.getElementById('proofModal');
+                modal.style.display = 'block';
+                modal.dataset.currentTask = JSON.stringify(task);
+            }
+        
+            function saveTaskCompletion(task, proofImage) {
+                const completedTasks = JSON.parse(localStorage.getItem('completedTasks') || '[]');
+                
+                completedTasks.push({
+                    ...task,
+                    date: new Date().toISOString(),
+                    proof: proofImage
+                });
+                
+                localStorage.setItem('completedTasks', JSON.stringify(completedTasks));
+            }
+        
+            function updateTaskUI(task) {
+                const taskCard = document.querySelector(`.task-card[data-task-id="${task.id}"]`);
+                
+                const completedTasks = JSON.parse(localStorage.getItem('completedTasks') || '[]')
+                    .filter(ct => ct.id === task.id);
+                
+                const dailyCompletions = completedTasks.filter(isToday).length;
+                const weeklyCompletions = completedTasks.filter(isThisWeek).length;
+                const monthlyCompletions = completedTasks.filter(isThisMonth).length;
+                
+                updateProgressBar(taskCard, 'daily', dailyCompletions);
+                updateProgressBar(taskCard, 'weekly', weeklyCompletions);
+                updateProgressBar(taskCard, 'monthly', monthlyCompletions);
+                
+                taskCard.classList.add('completed');
+            }
+        
+            function updateProgressBar(taskCard, period, completions, maxCompletions = 3) {
+                const progressBar = taskCard.querySelector(`.task-progress-period:has(.progress-text[data-period="${period}"])`);
+                if (!progressBar) return;
+        
+                const percentage = Math.min(Math.round((completions / maxCompletions) * 100), 100);
+                
+                const progressFill = progressBar.querySelector('.progress-fill');
+                const progressText = progressBar.querySelector('.progress-text');
+                
+                progressFill.style.width = `${percentage}%`;
+                progressText.textContent = `${percentage}%`;
+                progressText.dataset.period = period;
+            }
+        
+            function calculatePercentage(completions, maxCompletions = 3) {
+                return Math.min(Math.round((completions / maxCompletions) * 100), 100);
+            }
+        
+            function isToday(task) {
+                const today = new Date();
+                const taskDate = new Date(task.date);
+                return taskDate.toDateString() === today.toDateString();
+            }
+        
+            function isThisWeek(task) {
+                const today = new Date();
+                const taskDate = new Date(task.date);
+                const oneWeekAgo = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 7);
+                return taskDate >= oneWeekAgo && taskDate <= today;
+            }
+        
+            function isThisMonth(task) {
+                const today = new Date();
+                const taskDate = new Date(task.date);
+                return taskDate.getMonth() === today.getMonth() && 
+                       taskDate.getFullYear() === today.getFullYear();
+            }
+        
+            initTasks();
+            setupProgressTracking();
+            setupProofModal();
+            setupEnvironmentalIdeas();
         });
+
+
     </script>
 </body>
 </html>

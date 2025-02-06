@@ -1,23 +1,26 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guia Ecológico Diário</title>
     <link rel="stylesheet" href="../css/Instruções.css">
 </head>
 <body>
     <header>
-        <svg
-        class="leaf-icon"
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-        fill="white"
-      >
-        <path
-          d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"
-        />
-      </svg>
-        <h1><strong>Cycloroot</strong></h1>
+        <div class="site-title">
+            <svg
+                class="leaf-icon"
+                width="30"
+                height="30"
+                viewBox="0 0 24 24"
+                fill="white"
+            >
+                <path
+                    d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"
+                />
+            </svg>
+            <h1><strong>Cycloroot</strong></h1>
+        </div>
         <nav>
             <a href="../html/pagina.html" class="active">Inicio</a>
             <a href="../html/Calendário.html" class="active">Calendário</a>
@@ -41,162 +44,108 @@
         </div>
     </main>
 
+    <div class="tipo-instrucoes">
+        <div class="select-wrapper">
+            <select id="tipo-select" class="tipo-select">
+                <option value="diarias">Diárias</option>
+                <option value="semanais">Semanais</option>
+                <option value="mensais">Mensais</option>
+            </select>
+        </div>
+    </div>
+
     <footer>
-        <p>        <svg
-          class="leaf-icon"
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="white"
-        >
-          <path
-            d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"
-          />
-        </svg><strong>cycloroot</strong> | Guia Ecológico | Cuidando do Nosso Planeta</p>
+        <div class="site-title">
+            <svg
+                class="leaf-icon"
+                width="30"
+                height="30"
+                viewBox="0 0 24 24"
+                fill="white"
+            >
+                <path
+                    d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"
+                />
+            </svg>
+            <p><strong>Cycloroot</strong> | Guia Ecológico | Cuidando do Nosso Planeta</p>
+        </div>
     </footer>
 
     <script>
-    const instrucoes = {
-      diarias: [
-          "Desligue as luzes ao sair de um ambiente",
-          "Use caneca ou garrafa reutilizável",
-          "Reduza o consumo de água no banho",
-          "Separe o lixo reciclável",
-          "Utilize transporte público ou bicicleta",
-          "Evite sacos plásticos em compras",
-          "Desligue aparelhos eletrônicos na tomada",
-          "Use ambas as faces do papel",
-          "Prefira iluminação natural durante o dia",
-          "Compre apenas alimentos necessários",
-          "Utilize sacolas retornáveis",
-          "Diminua o uso de ar-condicionado",
-          "Mantenha a temperatura do refrigerador adequada",
-          "Use produtos de limpeza biodegradáveis",
-          "Feche torneiras enquanto escova os dentes",
-          "Evite descartáveis em refeições",
-          "Utilize lâmpadas LED",
-          "Faça compostagem doméstica simples",
-          "Prefira desligar eletrônicos totalmente",
-          "Use filtro de água em vez de garrafas plásticas",
-          "Não deixe aparelhos em standby",
-          "Regue plantas no início da manhã ou final da tarde",
-          "Prefira alimentos locais e da estação",
-          "Utilize papel reciclado",
-          "Evite imprimir documentos desnecessários",
-          "Mantenha pneus do carro calibrados",
-          "Use sacos de pano para compras",
-          "Limpe filtros de eletrodomésticos",
-          "Utilize energias renováveis quando possível",
-          "Pratique consumo consciente"
-      ],
-      semanais: [
-          "Faça a compostagem dos restos de alimentos",
-          "Limpe os filtros do ar-condicionado",
-          "Verifique vazamentos em torneiras",
-          "Planeje compras para reduzir desperdício",
-          "Organize coleta seletiva em casa",
-          "Limpe geladeira, evitando desperdício",
-          "Faça manutenção de equipamentos",
-          "Verifique vedação de janelas e portas",
-          "Calcule sua pegada de carbono",
-          "Limpe área externa sem usar água em excesso",
-          "Plante ervas ou vegetais pequenos",
-          "Recicle óleo de cozinha corretamente",
-          "Faça pequenos reparos em roupas",
-          "Limpe armários, doe o que não usa",
-          "Verifique consumo de energia",
-          "Prepare refeições congeladas",
-          "Limpe sistema de ar-condicionado",
-          "Experimente receitas veganas",
-          "Organize troca de itens com vizinhos",
-          "Limpe sistema de aquecimento",
-          "Verifique isolamento térmico",
-          "Faça limpeza ecológica",
-          "Planeje deslocamentos eficientes",
-          "Organizar sistema de reciclagem",
-          "Verificar consumo de água",
-          "Preparar comida congelada",
-          "Estudar sobre sustentabilidade",
-          "Manter jardim ou vasos",
-          "Verificar consumo energético",
-          "Participar de comunidades sustentáveis"
-      ],
-      mensais: [
-          "Faça manutenção do carro para reduzir emissões",
-          "Doe objetos em bom estado",
-          "Revise a conta de energia e água",
-          "Plante uma árvore ou participe de reflorestamento",
-          "Faça auditoria de consumo energético",
-          "Limpe e calibre eletrodomésticos",
-          "Participe de evento ambiental local",
-          "Revise gastos e consumo",
-          "Troque produtos por versões sustentáveis",
-          "Faça manutenção preventiva de veículos",
-          "Compare contas de serviços públicos",
-          "Desenvolva projeto de economia",
-          "Participe de mutirão ambiental",
-          "Faça curso online de sustentabilidade",
-          "Revise contratos de energia",
-          "Implemente sistema de compostagem",
-          "Analise consumo de água",
-          "Faça isolamento térmico residencial",
-          "Participe de grupo ambiental",
-          "Troque para produtos biodegradáveis",
-          "Implemente horta doméstica",
-          "Audite gastos e consumo",
-          "Planeje viagem sustentável",
-          "Investigue energia solar",
-          "Faça inventário de resíduos",
-          "Treine coleta seletiva",
-          "Desenvolva projeto de economia circular",
-          "Pesquise tecnologias sustentáveis",
-          "Crie metas ambientais pessoais",
-          "Networking em comunidades ecológicas"
-      ]
-  };
+
+const instrucoes = {
+  diarias: [
+    "Desligue as luzes ao sair de um ambiente",
+    "Use caneca ou garrafa reutilizável",
+    "Reduza o consumo de água no banho",
+    "Separe o lixo reciclável",
+    "Utilize transporte público ou bicicleta",
+    "Comece misturando os ingredientes secos em uma tigela.",
+    "Adicione os ingredientes líquidos lentamente, mexendo bem.",
+    "Despeje a massa na forma untada.",
+    "Asse em forno preaquecido por cerca de 30 minutos.",
+    "Faça 10 agachamentos com os pés na largura dos ombros.",
+    "Realize 15 flexões, mantendo o corpo alinhado.",
+    "Faça prancha por 30 segundos, mantendo o core contraído.",
+    "Termine com alongamentos para cada grupo muscular.",
+    "Mantenha-se hidratado durante o dia.",
+    "Pratique exercícios de respiração para reduzir o estresse.",
+    "Tente dormir pelo menos 7-8 horas por noite.",
+    "Faça pausas regulares durante o trabalho para se movimentar."
+  ],
+  semanais: [
+    "Faça a compostagem dos restos de alimentos",
+    "Limpe os filtros do ar-condicionado",
+    "Verifique vazamentos em torneiras"
+  ],
+  mensais: [
+    "Faça manutenção do carro para reduzir emissões",
+    "Doe objetos em bom estado",
+    "Revise a conta de energia e água"
+  ]
+};
+
+let tipoAtual = 'diarias';
+let indiceAtual = 0;
+
+const displayInstrucoes = document.getElementById('instrucoes-display');
+const btnAnterior = document.getElementById('btn-anterior');
+const btnProximo = document.getElementById('btn-proximo');
+const tipoSelect = document.getElementById('tipo-select');
+
+function atualizarInstrucao() {
+ !displayInstrucoes || (displayInstrucoes.innerHTML = `
+    <h2>${tipoAtual.charAt(0).toUpperCase() + tipoAtual.slice(1)}</h2>
+    <p>${instrucoes[tipoAtual][indiceAtual]}</p>
+  `);
   
-  let tipoAtual = 'diarias';
-  let indiceAtual = 0;
-  
-  const displayInstrucoes = document.getElementById('instrucoes-display');
-  const btnAnterior = document.getElementById('btn-anterior');
-  const btnProximo = document.getElementById('btn-proximo');
-  const tipoBtns = document.querySelectorAll('.tipo-btn');
-  
-  function atualizarInstrucao() {
-      displayInstrucoes.innerHTML = `
-          <h2>${tipoAtual.charAt(0).toUpperCase() + tipoAtual.slice(1)}</h2>
-          <p>${instrucoes[tipoAtual][indiceAtual]}</p>
-      `;
-      
-      // Update active button
-      tipoBtns.forEach(btn => {
-          btn.classList.toggle('active', btn.dataset.tipo === tipoAtual);
-      });
-  }
-  
-  // Navigation button event listeners
-  btnProximo.addEventListener('click', () => {
-      indiceAtual = (indiceAtual + 1) % instrucoes[tipoAtual].length;
-      atualizarInstrucao();
-  });
-  
-  btnAnterior.addEventListener('click', () => {
-      indiceAtual = (indiceAtual - 1 + instrucoes[tipoAtual].length) % instrucoes[tipoAtual].length;
-      atualizarInstrucao();
-  });
-  
-  // Tipo buttons event listeners
-  tipoBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-          tipoAtual = btn.dataset.tipo;
-          indiceAtual = 0;
-          atualizarInstrucao();
-      });
-  });
-  
-  // Initialize with diarias active
+  // Update select element
+  tipoSelect && (tipoSelect.value = tipoAtual);
+}
+
+// Navigation button event listeners
+btnProximo && btnProximo.addEventListener('click', () => {
+  indiceAtual = (indiceAtual + 1) % instrucoes[tipoAtual].length;
   atualizarInstrucao();
-  </script>
+});
+
+btnAnterior && btnAnterior.addEventListener('click', () => {
+  indiceAtual = (indiceAtual - 1 + instrucoes[tipoAtual].length) % instrucoes[tipoAtual].length;
+  atualizarInstrucao();
+});
+
+// Tipo select event listener
+tipoSelect && tipoSelect.addEventListener('change', () => {
+  tipoAtual = tipoSelect.value;
+  indiceAtual = 0;
+  atualizarInstrucao();
+});
+
+// Initialize with diarias active
+atualizarInstrucao();
+
+
+
+    </script>
 </body>
 </html>

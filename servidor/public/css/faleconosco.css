@@ -11,18 +11,27 @@ body {
   background-position: center center; /* Centraliza a imagem no fundo */
 }
 
-.header {
-  background: linear-gradient(135deg, #558355, #99c599);
-
-  color: white;
+header {
   text-align: center;
-  padding: 1rem 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-  margin-top: -30px;
+  padding: 30px;
+  background: linear-gradient(135deg, #558355, #99c599);
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0; /* Impede que o cabeçalho encolha */
+  margin-bottom: 30px;
+}
+header svg{
+width: 24px; /* Ajusta o tamanho do SVG */
+  height: 24px; /* Ajusta o tamanho do SVG */
+  margin-left: 1px;
+}
+header h1 strong{
+font-family: 'Times New Roman', Times, serif;
+}
+
+.leaf-icon {
+  animation: float 2s ease-in-out infinite;
 }
 
 .header-content {

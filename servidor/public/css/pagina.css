@@ -177,7 +177,7 @@ button {
 
 footer {
   grid-area: footer;
-  background-color:  #639862;
+  background: linear-gradient(135deg, #558355, #99c599);
   color: rgb(255, 255, 255);
   padding: 1rem;
   text-align: center;

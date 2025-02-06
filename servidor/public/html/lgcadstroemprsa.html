@@ -1,0 +1,179 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CycloRoot - Login e Cadastro</title>
+    <link rel="stylesheet" href="../css/lgcadstroemprsa.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+</head>
+<body>
+    <header>
+        <h1>
+            <svg
+                class="leaf-icon"
+                width="30"
+                height="30"
+                viewBox="0 0 24 24"
+                fill="white"
+            >
+                <path
+                    d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"
+                />
+            </svg>
+            <strong>Cycloroot</strong>
+        </h1>
+        </div>
+        <nav>
+            <ul>
+                <a href="../html/pagina.html" class="active">Inicio</a>
+                <a href="../html/Calendário.html" class="active">Calendário</a>
+                <a href="../html/doações.html" class="active">doações</a>
+                <a href="../html/faleconosco.html" class="active">faleconosco</a>
+                <a href="../html/Sobre.html" class="active">Sobre</a>
+                <a href="../html/Reciclagem.html" class="active">Reciclagem</a>
+                <a href="../html/Relatório.html" class="active">Relatório</a>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <form id="login-form" class="form active">
+                <h2>Login</h2>
+                <div class="input-group">
+                    <label for="login-email">E-mail</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                <div class="input-group">
+                    <label for="login-password">Senha</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <button type="submit" class="btn-submit" onclick="redirecionarInstruções">Entrar</button>
+                <a href="#" class="forgot-password">Esqueceu a senha?</a>
+                
+                <div class="signup-toggle">
+                    <p>Não tem uma conta? <a href="#" id="show-signup" class="signup-link">Cadastre-se</a></p>
+                </div>
+            </form>
+
+            <form id="signup-form" class="form signup-form">
+                <h2>Cadastro</h2>
+                <div class="input-group">
+                    <label for="signup-name">Nome Completo</label>
+                    <input type="text" id="signup-name" required>
+                </div>
+                <div class="input-group">
+                    <label for="signup-email">E-mail</label>
+                    <input type="email" id="signup-email" required>
+                </div>
+                <div class="input-group">
+                    <label for="signup-password">Senha</label>
+                    <input type="password" id="signup-password" required>
+                </div>
+                <div class="input-group">
+                    <label for="signup-confirm-password">Confirmar Senha</label>
+                    <input type="password" id="signup-confirm-password" required>
+                </div>
+                <button type="submit" class="btn-submit">Cadastrar</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>        <svg
+          class="leaf-icon"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="white"
+        >
+          <path
+            d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"
+          />
+        </svg><strong>cycloroot</strong> | Login b2b | Cuidando do Nosso Planeta</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loginForm = document.getElementById('login-form');
+            const signupForm = document.getElementById('signup-form');
+            const showSignupLink = document.getElementById('show-signup');
+
+            const validateSignupForm = (event) => {
+                event.preventDefault();
+                const name = document.getElementById('signup-name').value.trim();
+                const email = document.getElementById('signup-email').value.trim();
+                const password = document.getElementById('signup-password').value;
+                const confirmPassword = document.getElementById('signup-confirm-password').value;
+
+                if (name.length < 3) {
+                    toastr.error('Nome deve ter pelo menos 3 caracteres');
+                    return;
+                }
+
+                if (!isValidEmail(email)) {
+                    toastr.error('Por favor, insira um e-mail válido');
+                    return;
+                }
+
+                if (password.length < 6) {
+                    toastr.error('Senha deve ter pelo menos 6 caracteres');
+                    return;
+                }
+
+                if (password !== confirmPassword) {
+                    toastr.error('As senhas não coincidem');
+                    return;
+                }
+
+                toastr.success('Cadastro realizado com sucesso!');
+            };
+
+            const validateLoginForm = (event) => {
+                event.preventDefault();
+                const email = document.getElementById('login-email').value.trim();
+                const password = document.getElementById('login-password').value;
+
+                if (!isValidEmail(email)) {
+                    toastr.error('Por favor, insira um e-mail válido');
+                    return;
+                }
+
+                if (password.length < 6) {
+                    toastr.error('Senha inválida');
+                    return;
+                }
+
+                toastr.success('Login bem-sucedido! Redirecionando...', '', {
+                    onHidden: () => {
+                        window.location.href = '../html/pagina.html';
+                    }
+                });
+            };
+
+            function isValidEmail(email) {
+                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return re.test(email);
+            }
+
+            // Toggle signup form visibility
+            showSignupLink.addEventListener('click', (event) => {
+                event.preventDefault();
+                loginForm.classList.toggle('active');
+                signupForm.classList.toggle('active');
+            });
+
+            document.getElementById('signup-form').addEventListener('submit', validateSignupForm);
+            document.getElementById('login-form').addEventListener('submit', validateLoginForm);
+        });
+          // Funções de redirecionamento
+      function redirecionarInstruções() {
+        window.location.href = "pagina.html"; // Redireciona para Instruções
+      }
+
+    </script>
+</body>
+</html>

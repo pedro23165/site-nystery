@@ -2,121 +2,338 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nossos Projetos Parceiros</title>
-    <link href="../css/mostruário.css" rel="stylesheet"></link>
+    <title>Nossos Projetos Parceiros - Cycloroot</title>
+    <link rel="stylesheet" href="../css/mostruário.css">
+    <link href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" rel="stylesheet">
 </head>
 <body>
     <header>
-            <div class="logo">
-                <h1>                <svg
-                    class="leaf-icon"
-                    width="30"
-                    height="30"
-                    viewBox="0 0 24 24"
-                    fill="white"
-                  >
-                    <path
-                      d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"
-                    />
-                  </svg><strong>Cycloroot</strong></h1>
-            </div>
-            <nav class="main-nav">
-                <ul>
-                    <a href="../html/pagina.html" class="active">Inicio</a>
-                    <a href="../html/Calendário.html" class="active">Calendário</a>
-                    <a href="../html/doações.html" class="active">doações</a>
-                    <a href="../html/faleconosco.html" class="active">faleconosco</a>
-                    <a href="../html/Instruções.html" class="active">Instruções</a>
-                    <a href="../html/Reciclagem.html" class="active">Reciclagem</a>
-                    <a href="../html/Relatório.html" class="active">Relatório</a>
-                </ul>
-            </nav>
+        <h1>
+            <svg
+                class="leaf-icon"
+                width="30"
+                height="30"
+                viewBox="0 0 24 24"
+                fill="white"
+            >
+                <path
+                    d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"
+                />
+            </svg>
+            <strong>Cycloroot</strong>
+        </h1>
         </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="pagina.html" class="nav-link">Inicio</a></li>
+                <li><a href="Calendário.html" class="nav-link">Calendário</a></li>
+                <li><a href="doações.html" class="nav-link">Doações</a></li>
+                <li><a href="faleconosco.html" class="nav-link">Fale Conosco</a></li>
+                <li><a href="Instruções.html" class="nav-link">Instruções</a></li>
+                <li><a href="Reciclagem.html" class="nav-link">Reciclagem</a></li>
+                <li><a href="Relatório.html" class="nav-link">Relatório</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main class="container">
         <section class="projects-section">
-            <h1>Projetos e Empresas Parceiras</h1>
-            <div class="card-grid">
-                <div class="card">
-                    <div class="card-header">
-                        <h2>Tech Innovations</h2>
-                    </div>
-                    <div class="card-body">
-                        <p>Desenvolvimento de soluções tecnológicas inovadoras para empresas de diversos setores.</p>
-                    </div>
-            <div class="card-footer">
-                        <a href="#" class="btn">Saiba Mais</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <h2>Green Solutions</h2>
-                    </div>
-                    <div class="card-body">
-                        <p>Projetos sustentáveis e ecologicamente responsáveis para um futuro mais verde.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="btn">Saiba Mais</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <h2>Digital Transformation</h2>
-                    </div>
-                    <div class="card-body">
-                        <p>Consultoria em transformação digital para empresas que buscam modernização.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="btn">Saiba Mais</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <h2>Startup Accelerator</h2>
-                    </div>
-                    <div class="card-body">
-                        <p>Programa de aceleração para startups inovadoras com potencial de crescimento.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="btn">Saiba Mais</a>
-                    </div>
-                </div>
+            <h1 class="section-title">Projetos e Empresas Parceiras</h1>
+            <div class="card-grid" id="projectsGrid">
+                <!-- Cards will be dynamically added here -->
             </div>
         </section>
+
+        <!-- Modal for project details -->
+        <div id="projectModal" class="modal">
+            <div class="modal-content animate__animated">
+                <span class="close-btn">&times;</span>
+                <div class="modal-header">
+                    <h2 id="modalTitle"></h2>
+                </div>
+                <div class="modal-body">
+                    <p id="modalDescription"></p>
+                    <div id="modalDetails"></div>
+                </div>
+                <div class="modal-footer">
+                    <button id="contactBtn" class="btn btn-contact">Entrar em Contato</button>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer>
-        <p>        <svg
-          class="leaf-icon"
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="white"
-        >
-          <path
-            d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"
-          />
-        </svg><strong>cycloroot</strong> | Ínicio | Cuidando do Nosso Planeta</p>
+        <p>
+            <svg class="leaf-icon" width="20" height="20" viewBox="0 0 24 24" fill="white">
+                <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" />
+            </svg>
+            <strong>Cycloroot</strong> | Ínicio | Cuidando do Nosso Planeta
+        </p>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const cards = document.querySelectorAll('.card');
-            
-            cards.forEach(card => {
-                card.addEventListener('mouseenter', () => {
-                    card.style.transform = 'scale(1.05)';
-                });
-                
-                card.addEventListener('mouseleave', () => {
-                    card.style.transform = 'scale(1)';
-                });
-            });
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const projectsData = [
+        {
+            title: 'Tech Innovations',
+            description: 'Desenvolvimento de soluções tecnológicas inovadoras para empresas de diversos setores.',
+            buttonText: 'Saiba Mais',
+            details: {
+                services: [
+                    'Consultoria em TI',
+                    'Desenvolvimento de Software',
+                    'Soluções em Nuvem'
+                ],
+                contact: 'contato@techinnovations.com',
+                phone: '+55 (11) 1234-5678',
+                website: 'www.techinnovations.com'
+            }
+        },
+        {
+            title: 'Green Solutions',
+            description: 'Projetos sustentáveis e ecologicamente responsáveis para um futuro mais verde.',
+            buttonText: 'Saiba Mais',
+            details: {
+                services: [
+                    'Consultoria Ambiental',
+                    'Gestão de Resíduos',
+                    'Energia Renovável'
+                ],
+                contact: 'contato@greensolutions.com',
+                phone: '+55 (11) 8765-4321',
+                website: 'www.greensolutions.com'
+            }
+        },
+        {
+            title: 'Digital Transformation',
+            description: 'Consultoria em transformação digital para empresas que buscam modernização.',
+            buttonText: 'Saiba Mais',
+            details: {
+                services: [
+                    'Estratégia Digital',
+                    'Análise de Dados',
+                    'Implementação de Tecnologias'
+                ],
+                contact: 'contato@digitaltransformation.com',
+                phone: '+55 (11) 5555-5555',
+                website: 'www.digitaltransformation.com'
+            }
+        },
+        {
+            title: 'Startup Accelerator',
+            description: 'Programa de aceleração para startups inovadoras com potencial de crescimento.',
+            buttonText: 'Saiba Mais',
+            details: {
+                services: [
+                    'Mentoria',
+                    'Investimento',
+                    'Networking'
+                ],
+                contact: 'contato@startupaccelerator.com',
+                phone: '+55 (11) 9999-9999',
+                website: 'www.startupaccelerator.com'
+            }
+        }
+    ];
+
+    const projectsGrid = document.getElementById('projectsGrid');
+    const modal = document.getElementById('projectModal');
+    const modalContent = modal.querySelector('.modal-content');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDescription = document.getElementById('modalDescription');
+    const modalDetails = document.getElementById('modalDetails');
+    const closeBtn = document.querySelector('.close-btn');
+    const contactBtn = document.getElementById('contactBtn');
+
+    function createProjectCard(project) {
+        const card = document.createElement('div');
+        card.classList.add('card');
+        card.innerHTML = `
+            <div class="card-header">
+                <h2>${project.title}</h2>
+            </div>
+            <div class="card-body">
+                <p>${project.description}</p>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-details" data-title="${project.title}">
+                    ${project.buttonText}
+                </button>
+            </div>
+        `;
+
+        const detailsBtn = card.querySelector('.btn-details');
+        detailsBtn.addEventListener('click', () => openProjectModal(project));
+
+        return card;
+    }
+
+    function openProjectModal(project) {
+        // Reset any previous animations
+        modalContent.classList.remove('animate__fadeIn', 'animate__fadeOut');
+        
+        // Populate modal content
+        modalTitle.textContent = project.title;
+        modalDescription.textContent = project.description;
+        
+        // Create details list
+        const detailsList = document.createElement('ul');
+        detailsList.classList.add('project-details');
+        
+        // Add services section
+        const servicesTitle = document.createElement('h3');
+        servicesTitle.textContent = 'Serviços';
+        detailsList.appendChild(servicesTitle);
+        
+        project.details.services.forEach(service => {
+            const serviceItem = document.createElement('li');
+            serviceItem.textContent = service;
+            detailsList.appendChild(serviceItem);
         });
+
+        // Add contact information
+        const contactTitle = document.createElement('h3');
+        contactTitle.textContent = 'Contato';
+        detailsList.appendChild(contactTitle);
+        
+        const emailItem = document.createElement('li');
+        emailItem.innerHTML = `Email: <a href="mailto:${project.details.contact}">${project.details.contact}</a>`;
+        detailsList.appendChild(emailItem);
+
+        const phoneItem = document.createElement('li');
+        phoneItem.innerHTML = `Telefone: <a href="tel:${project.details.phone}">${project.details.phone}</a>`;
+        detailsList.appendChild(phoneItem);
+
+        const websiteItem = document.createElement('li');
+        websiteItem.innerHTML = `Website: <a href="https://${project.details.website}" target="_blank">${project.details.website}</a>`;
+        detailsList.appendChild(websiteItem);
+
+        // Clear previous details and add new ones
+        modalDetails.innerHTML = '';
+        modalDetails.appendChild(detailsList);
+
+        // Update contact button to open contact modal
+        contactBtn.onclick = () => openContactForm(project);
+
+        // Show the modal with animation
+        modal.style.display = 'block';
+        modalContent.classList.add('animate__animated', 'animate__fadeIn');
+    }
+
+    function openContactForm(project) {
+        // Create a new modal for contact form
+        const contactModal = document.createElement('div');
+        contactModal.classList.add('modal', 'contact-modal');
+        contactModal.innerHTML = `
+            <div class="modal-content animate__animated animate__fadeIn">
+                <span class="close-btn">&times;</span>
+                <div class="modal-header">
+                    <h2>Contato - ${project.title}</h2>
+                </div>
+                <div class="modal-body">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nome Completo</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-submit">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        `;
+
+        // Add the contact modal to the body
+        document.body.appendChild(contactModal);
+
+        // Close button functionality
+        const contactModalCloseBtn = contactModal.querySelector('.close-btn');
+        contactModalCloseBtn.addEventListener('click', () => {
+            contactModal.classList.remove('animate__fadeIn');
+            contactModal.classList.add('animate__fadeOut');
+            setTimeout(() => {
+                document.body.removeChild(contactModal);
+            }, 300);
+        });
+
+        // Form submission handling
+        const contactForm = contactModal.querySelector('#contactForm');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Collect form data
+            const formData = new FormData(contactForm);
+            const formObject = Object.fromEntries(formData.entries());
+
+            // Simple validation
+            if (!formObject.name || !formObject.email || !formObject.message) {
+                alert('Por favor, preencha todos os campos obrigatórios.');
+                return;
+            }
+
+            // Prepare email body
+            const emailBody = `
+Nome: ${formObject.name}
+Email: ${formObject.email}
+Telefone: ${formObject.phone || 'Não informado'}
+
+Mensagem:
+${formObject.message}
+
+Sobre o Projeto: ${project.title}
+            `;
+
+            // Open default email client
+            window.location.href = `mailto:${project.details.contact}?subject=Contato%20sobre%20${encodeURIComponent(project.title)}&body=${encodeURIComponent(emailBody)}`;
+
+            // Close the modal
+            contactModal.classList.remove('animate__fadeIn');
+            contactModal.classList.add('animate__fadeOut');
+            setTimeout(() => {
+                document.body.removeChild(contactModal);
+            }, 300);
+        });
+    }
+
+    // Close modal when close button is clicked
+    closeBtn.addEventListener('click', () => {
+        modalContent.classList.remove('animate__fadeIn');
+        modalContent.classList.add('animate__fadeOut');
+        setTimeout(() => {
+            modal.style.display = 'none';
+        }, 300);
+    });
+
+    // Close modal when clicking outside of it
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modalContent.classList.remove('animate__fadeIn');
+            modalContent.classList.add('animate__fadeOut');
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+        }
+    });
+
+    // Populate the projects grid
+    projectsData.forEach(project => {
+        const projectCard = createProjectCard(project);
+        projectsGrid.appendChild(projectCard);
+    });
+});
+
+
     </script>
 </body>
 </html>

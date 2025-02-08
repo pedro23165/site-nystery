@@ -149,7 +149,7 @@ nav a {
 
 .success-message {
   display: none;
-  background-color: #2ecc71;
+  background-color: #4c8665;
   color: white;
   text-align: center;
   padding: 0.75rem;
@@ -160,7 +160,7 @@ nav a {
 
 .contact-info {
   flex: 1;
-  background-color: #27ae60;
+  background-color: #4c8665;
   color: white;
   padding: 2rem;
   display: flex;

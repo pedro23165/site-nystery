@@ -5,25 +5,15 @@
     <title>CycloRoot - Login e Cadastro</title>
     <link rel="stylesheet" href="../css/lgcadstroemprsa.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-
 </head>
 <body>
     <header>
         <h1>
-            <svg
-                class="leaf-icon"
-                width="30"
-                height="30"
-                viewBox="0 0 24 24"
-                fill="white"
-            >
-                <path
-                    d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"
-                />
+            <svg class="leaf-icon" width="30" height="30" viewBox="0 0 24 24" fill="white">
+                <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"/>
             </svg>
             <strong>Cycloroot</strong>
         </h1>
-        </div>
         <nav>
             <ul>
                 <a href="../html/pagina.html" class="active">Inicio</a>
@@ -39,6 +29,7 @@
 
     <main>
         <div class="form-container">
+            <!-- Formulário de Login -->
             <form id="login-form" class="form active">
                 <h2>Login</h2>
                 <div class="input-group">
@@ -49,7 +40,7 @@
                     <label for="login-password">Senha</label>
                     <input type="password" id="login-password" required>
                 </div>
-                <button type="submit" class="btn-submit" onclick="redirecionarInstruções">Entrar</button>
+                <button type="submit" class="btn-submit">Entrar</button>
                 <a href="#" class="forgot-password">Esqueceu a senha?</a>
                 
                 <div class="signup-toggle">
@@ -57,6 +48,7 @@
                 </div>
             </form>
 
+            <!-- Formulário de Cadastro -->
             <form id="signup-form" class="form signup-form">
                 <h2>Cadastro</h2>
                 <div class="input-group">
@@ -81,17 +73,12 @@
     </main>
 
     <footer>
-        <p>        <svg
-          class="leaf-icon"
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="white"
-        >
-          <path
-            d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"
-          />
-        </svg><strong>cycloroot</strong> | Login b2b | Cuidando do Nosso Planeta</p>
+        <p>
+            <svg class="leaf-icon" width="20" height="20" viewBox="0 0 24 24" fill="white">
+                <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"/>
+            </svg>
+            <strong>cycloroot</strong> | Login b2b | Cuidando do Nosso Planeta
+        </p>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -129,7 +116,14 @@
                     return;
                 }
 
-                toastr.success('Cadastro realizado com sucesso!');
+                // Exibe sucesso e retorna para o login
+                toastr.success('Cadastro realizado com sucesso! Agora faça login.');
+                
+                // Após o cadastro, escondemos o formulário de cadastro e mostramos o de login
+                setTimeout(() => {
+                    loginForm.classList.add('active');
+                    signupForm.classList.remove('active');
+                }, 2000); // Espera 2 segundos antes de redirecionar para o login
             };
 
             const validateLoginForm = (event) => {
@@ -149,7 +143,8 @@
 
                 toastr.success('Login bem-sucedido! Redirecionando...', '', {
                     onHidden: () => {
-                        window.location.href = '../html/pagina.html';
+                        // Após login, redireciona para a página do mostruário
+                        window.location.href = '../html/mostruário.html'; // Altere para o caminho correto
                     }
                 });
             };
@@ -169,11 +164,6 @@
             document.getElementById('signup-form').addEventListener('submit', validateSignupForm);
             document.getElementById('login-form').addEventListener('submit', validateLoginForm);
         });
-          // Funções de redirecionamento
-      function redirecionarInstruções() {
-        window.location.href = "pagina.html"; // Redireciona para Instruções
-      }
-
     </script>
 </body>
 </html>

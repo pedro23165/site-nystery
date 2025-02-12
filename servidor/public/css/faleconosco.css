@@ -20,6 +20,7 @@ header {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   flex-shrink: 0; /* Impede que o cabeçalho encolha */
   margin-bottom: 30px;
+  margin-top: -30px;
 }
 header svg{
 width: 24px; /* Ajusta o tamanho do SVG */
